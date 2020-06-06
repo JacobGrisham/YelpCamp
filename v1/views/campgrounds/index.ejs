@@ -16,25 +16,26 @@
 			<h3>Our Most Popular Campgrounds!</h3>
 		</div>
 	</div>
-	
-	<div class="row text-center" style="display:flex; flex-wrap: wrap">
+</div>
+
+<div class="container">
+	<div class="row text-center" id="campground-listings">
 		<% campgrounds.forEach(function(campground){ %>
 		<div class="col-md-3 col-sm-6">
-			<div class="card" style="width: 18rem;">
-				<div class="thumbnail">
-				<img src="<%= campground.image %>" class="img-fluid img-thumbnail" alt="Responsive image" style="background-size:cover;"></img>
-			</div>
+			<div class="card small-card">
+				<div>
+					<img src="<%= campground.image %>" class="img-fluid img-thumbnail" alt="Responsive image"></img>
+				</div>
 				<div class="caption">
 					<h4><%= campground.name %></h4>
 				</div>
-				<p>
+				<p class="info-button">
 					<a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">Info</a>
 				</p>
 			</div>
 		</div	   
 		<% }); %>
 	</div>
-
 </div>
 
 <%- include ("../partials/footer") %>

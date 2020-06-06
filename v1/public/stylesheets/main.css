@@ -10,3 +10,24 @@
 	display: flex;
 	justify-content: space-around;
 }
+
+#campground-listings {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(auto, 1fr);
+	gap: 2rem 2rem;
+}
+
+.small-card {
+	width: 20rem;
+	height: 20rem;
+	margin-bottom: 2rem;
+}
+
+.caption {
+	text-align: center;
+}
+
+.info-button {
+	text-align: center;
+}
