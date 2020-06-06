@@ -1,0 +1,16 @@
+{
+  "name": "version_2",
+  "version": "2.0.0",
+  "description": "YelpCamp final project for the Web Developer Bootcamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jacob Grisham",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.10"
+  }
+}
