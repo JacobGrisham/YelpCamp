@@ -1,0 +1,12 @@
+#navbar {
+	z-index: 3;
+}
+
+#delete-form {
+	display: inline;
+}
+
+#campground-container {
+	display: flex;
+	justify-content: space-around;
+}
