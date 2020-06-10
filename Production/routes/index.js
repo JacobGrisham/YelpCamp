@@ -19,6 +19,10 @@ router.get("/register", function(req, res){
 //handle sign up logic
 router.post("/register", function(req, res){
 	var newUser = new User({username: req.body.username});
+	// Use locus npm package for admin user role authorization
+	if(req.body.adminCode === process.env.ADMIN_CODE){
+		newUser.isAdmin = true;
+	}
 	User.register(newUser, req.body.password, function(err, user){
 		if(err){
 			console.log(err);

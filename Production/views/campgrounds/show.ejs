@@ -13,7 +13,7 @@
 					<h4><a><%= campground.name %></a></h4>
 					<p><%= campground.description %></p>
 					<p><em>Submitted by </em><%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %></p>
-					<% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+					<% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
 						<div class="d-inline-flex">
 							<a href="/campgrounds/<%= campground._id %>/edit" class="btn btn-outline-warning mr-2">Edit</a>
 							<form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
@@ -40,7 +40,7 @@
 									<p class="float-right"><%= moment(campground.createdAt).fromNow() %></p>
 									<p class="card-title"><strong><%= comment.author.username %></strong></p>
 									<p class="card-text"><%= comment.text %></p>
-									<% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+									<% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
 									<div class="float-right d-inline-flex">
 										<a href="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit" class="btn btn-xs btn-outline-warning mr-2">Edit</a>
 										<form action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
