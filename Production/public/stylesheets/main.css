@@ -1,0 +1,21 @@
+/* Bringing the navbar to the very top to avoid fade effect on it */
+#navbar {
+	z-index: 3;
+}
+
+/* Campground index page campground card positioning */
+#campground-container {
+	display: flex;
+	justify-content: space-around;
+}
+
+/* Aligning blue info button on campground cards on index page */
+.info-button {
+	text-align: center;
+}
+
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
+}

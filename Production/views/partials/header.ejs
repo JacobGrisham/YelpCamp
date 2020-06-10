@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>YelpCamp</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/stylesheets/main.css">
+		<link rel="stylesheet" href="/stylesheets/landing.css">
+		<!-- Enables greater cross-browser compatibility -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+	</head>
+	<body>
+		<!-- NAVBAR -->
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4" id="navbar">
+		  <a class="navbar-brand" href="/">YelpCamp</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarCollapse">
+			  <ul class="navbar-nav mr-auto">
+				  <li class="nav-item"><a href="/campgrounds" class="btn btn-outline-primary">Home</a></li>
+			  </ul>
+			<ul class="navbar-nav">
+				<% if(!currentUser){ %>
+				<li class="nav-item">
+					<a class="nav-link btn btn-primary" href="/register">Sign Up</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link btn .btn-outline-primary" href="/login">Login</a>
+				</li>
+				<% } else { %>
+				<li class="nav-item">
+					<a class="nav-link btn .btn-outline-primary disabled">Signed in as <%= currentUser.username %></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link btn .btn-outline-primary" href="/logout">Logout</a>
+				</li>
+				<% } %>
+			</ul>
+		  </div>
+		</nav>
+		<!-- FLASH MESSAGES -->
+		<div class="container">
+			<% if(error && error.length > 0){ %> <!-- error.length > 0 checks to see if there is anything in the array. An empty array will still display something. We watnt to prevent that -->
+				<!--message functionality comes from flash in app.js -->
+				<div class="alert alert-danger" role="alert"><%= error %></div>
+			<% } %>
+			<% if(success && success.length > 0){ %>
+				<div class="alert alert-success" role="alert"><%= success %></div>
+			<% } %>
+		</div>
+	
