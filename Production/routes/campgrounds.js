@@ -13,44 +13,45 @@ var options = {
 };
 var geocoder = NodeGeocoder(options);
 
-/*
-// This is an array that we used to work with some starter data
-var campgrounds = [
-		{name: "Salmon Creek", image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"},
-		{name: "Granite Hill", image: "https://images.unsplash.com/photo-1532339142463-fd0a8979791a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"},
-		{name: "Mountain Goat's Rest", image: "https://images.unsplash.com/photo-1584291414588-4c2cbcfa0c80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"}
-	]
-*/
+//=======================
+// ROUTES
+//=======================
 
+// For Fuzzy Search
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 // INDEX ROUTE
 // This is how we see the data
 router.get("/", function(req,res){
-	// Get all campgrounds from DB
-	Campground.find({}, function(err, allCampgrounds){
-		if(err){
-			console.log(err);
-		} else {
-			res.render("campgrounds/index", {campgrounds:allCampgrounds});
-			// "campgrounds" is the name of the data that we expect to find in that file
-			// recall that {"name we want":"data"}. We could name them differently, but they are commonly called the same thing. 
-		}
-	});
+	var noMatch = null;
+	if (req.query.search) {
+		const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+		// Get the campground that matches the query string
+		Campground.find({name: regex}, function(err, allCampgrounds){
+			if(err){
+				console.log(err);
+			} else {
+				if(allCampgrounds.length < 1) {
+					noMatch = "No campgrounds found";
+				}
+				res.render("campgrounds/index", {campgrounds:allCampgrounds, noMatch: noMatch});
+				// "campgrounds" is the name of the data that we expect to find in that file
+				// recall that {"name we want":"data"}. We could name them differently, but they are commonly called the same thing. 
+			}
+		});
+	} else  {
+		// Get all campgrounds from DB
+		Campground.find({}, function(err, allCampgrounds){
+			if(err){
+				console.log(err);
+			} else {
+				res.render("campgrounds/index", {campgrounds:allCampgrounds, noMatch: noMatch});
+			}
+		});
+	}
 });
-
-
-/*
-// This is a database insertion that we used to verify connection to database
-Campground.create(
-	{name: "Granite Hill", image: "https://images.unsplash.com/photo-1532339142463-fd0a8979791a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80", description: "The ground is so hard!!"}, function(err, campground){
-		if(err){
-			console.log(err);
-		} else {
-			console.log("New campground");
-			console.log(campground);
-		}
-	});
-*/
 
 //CREATE ROUTE - add new campground to DB
 router.post("/", middleware.isLoggedIn, function(req, res){
@@ -146,17 +147,6 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
 });
 
 // DESTROY ROUTE
-/*router.delete("/:id", function(req, res){
-	// Find by ID and remove
-	Campground.findByIdAndRemove(req.params.id, function(err){
-		if(err){
-			res.redirect("./campgrounds");
-		} else {
-			res.redirect("./campgrounds");
-		}
-	});
-});
-*/
 router.delete("/:id", middleware.checkCampgroundOwnership, async(req, res) => {
   try {
     let foundCampground = await Campground.findById(req.params.id);
