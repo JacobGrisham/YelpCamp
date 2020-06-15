@@ -20,26 +20,17 @@ const commentRoutes 	= require("./routes/comments"),
 	campgroundRoutes 	= require("./routes/campgrounds"),
 	indexRoutes 		= require("./routes/index");
 
-//seedDB();
+
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 // linking the database here with the one on Heroku
-var url = process.env.DATABASEURL || "mongodb://localhost/temporary_database" // Two options. The last one is back up.
+var url = "mongodb://localhost/temporary_database" || process.env.DATABASEURL // Two options.
 // checking DATABASEURL value
 console.log(process.env.DATABASEURL);
 mongoose.connect(url);
-/* // Deployed mongoose.connect
-mongoose.connect("mongodb+srv://jgrisham:bpbytypa@cluster0-gbfds.mongodb.net/YelpCamp?retryWrites=true&w=majority", {
-		useNewUrlParser: true,
-		useCreateIndex: true
-	}). then (() => {
-		console.log("Conencted to DB");
-	}). catch(err => {
-		console.log("ERROR:", err.message);
-});
-*/
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public")); // Using __dirname + is a better way to navigate to the file
 app.set("view engine", "ejs");

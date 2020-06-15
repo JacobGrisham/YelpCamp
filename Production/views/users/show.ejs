@@ -1,0 +1,20 @@
+<%- include ("../partials/header") %>
+
+<div class="container">
+	<div class="row d-flex justify-content-center bg-light text-center mb-4">
+		<div class="col-lg-12">
+			<h1><%=user.username%></h1>
+			<img src="<%=user.avatar%>" alt="User's profile image">
+		</div>
+		<div class="col-lg-12">
+			<h5><%=user.username%>'s campgrounds:</h5>
+			<ul>
+				<% campgrounds.forEach(function(campground) { %>
+					<li><a href="/campgrounds/<%=campground.id%>"><%=campground.name%></a></li>
+				<% }); %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<%- include ("../partials/footer") %>

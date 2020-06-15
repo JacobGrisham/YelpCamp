@@ -19,3 +19,8 @@
     height: 400px;
     width: 100%;
 }
+
+.signup-login {
+	width: 30%;
+	margin: 5rem auto;
+}
