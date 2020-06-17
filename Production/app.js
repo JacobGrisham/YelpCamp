@@ -15,10 +15,11 @@ const express 			= require("express"),
 	User 				= require("./models/user"),
 	seedDB 				= require("./seeds"),
 	MongoClient			= require("mongodb");
-
-const commentRoutes 	= require("./routes/comments"),
-	campgroundRoutes 	= require("./routes/campgrounds"),
-	indexRoutes 		= require("./routes/index");
+// CALLING ROUTES
+const 	commentRoutes 		= require("./routes/comments"),
+		reviewRoutes     	= require("./routes/reviews"),
+		campgroundRoutes 	= require("./routes/campgrounds"),
+		indexRoutes 		= require("./routes/index");
 
 
 mongoose.set('useNewUrlParser', true);
@@ -64,6 +65,7 @@ app.use(function(req, res, next){
 app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/campgrounds/:id/reviews", reviewRoutes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, process.env.IP, function(){

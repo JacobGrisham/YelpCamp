@@ -3,62 +3,61 @@
 	<head>
 		<title>YelpCamp</title>
 		<!-- FAVICON -->
-		<link rel="apple-touch-icon" sizes="180x180" href="../../img/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
 		<link rel="manifest" href="../../img/site.webmanifest">
-		<!-- Bootstrap -->
+		<!-- BOOTSTRAP -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+		<!-- FONT AWESOME -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,400;0,500;1,300&family=Montserrat:ital,wght@0,400;0,600;1,400&family=Pacifico&display=swap" rel="stylesheet">
 		<!-- CUSTOM CSS -->
 		<link rel="stylesheet" href="/stylesheets/main.css">
 		<link rel="stylesheet" href="/stylesheets/landing.css">
 		<!-- Enables greater cross-browser compatibility -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
 	</head>
-	<body>
-		<!-- NAVBAR -->
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4" id="navbar">
-			<a class="navbar-brand" href="/">YelpCamp</a>
-			<form action="/campgrounds" method="GET" class="form-inline">
-				<div class="form-group">
-					<input type="text" name="search" placeholder="Campground search ..." class="form-control mr-2">
-					<input type="submit" value="Search" class="btn btn-outline-light">
+	<body class="site">
+		<main class="site-content body-font">
+			<!-- NAVBAR -->
+			<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4" id="navbar">
+				<a class="navbar-brand logo" href="/">YelpCamp</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav ml-auto">
+						<% if(!currentUser){ %>
+						<li class="nav-item">
+							<a class="nav-link btn btn-primary" href="/register">Sign Up</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link btn .btn-outline-primary" href="/login">Login</a>
+						</li>
+						<% } else { %>
+						<li class="nav-item">
+							<a class="nav-link btn .btn-outline-primary disabled"><i class="fa fa-user add" aria-hidden="true"></i> <%= currentUser.username %></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link btn .btn-outline-primary" href="/logout">Logout</a>
+						</li>
+						<% } %>
+					</ul>
 				</div>
-			</form>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarCollapse">
-				<ul class="navbar-nav ml-auto">
-					<% if(!currentUser){ %>
-					<li class="nav-item">
-						<a class="nav-link btn btn-primary" href="/register">Sign Up</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link btn .btn-outline-primary" href="/login">Login</a>
-					</li>
-					<% } else { %>
-					<li class="nav-item">
-						<a class="nav-link btn .btn-outline-primary disabled">Signed in as <%= currentUser.username %></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link btn .btn-outline-primary" href="/logout">Logout</a>
-					</li>
-					<% } %>
-				</ul>
+			</nav>
+			<!-- FLASH MESSAGES -->
+			<div class="container">
+				<% if(error && error.length > 0){ %> <!-- error.length > 0 checks to see if there is anything in the array. An empty array will still display something. We watnt to prevent that -->
+					<!--message functionality comes from flash in app.js -->
+					<div class="alert alert-danger" role="alert"><%= error %></div>
+				<% } %>
+				<% if(success && success.length > 0){ %>
+					<div class="alert alert-success" role="alert"><%= success %></div>
+				<% } %>
 			</div>
-		</nav>
-		<!-- FLASH MESSAGES -->
-		<div class="container">
-			<% if(error && error.length > 0){ %> <!-- error.length > 0 checks to see if there is anything in the array. An empty array will still display something. We watnt to prevent that -->
-				<!--message functionality comes from flash in app.js -->
-				<div class="alert alert-danger" role="alert"><%= error %></div>
-			<% } %>
-			<% if(success && success.length > 0){ %>
-				<div class="alert alert-success" role="alert"><%= success %></div>
-			<% } %>
-		</div>
 	

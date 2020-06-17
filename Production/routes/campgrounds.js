@@ -1,6 +1,7 @@
 var express = require("express");
 var	router = express.Router();
 var Campground = require("../models/campground");
+var Review = require("../models/review");
 var middleware = require("../middleware"); // Note that the default file in a directory is index.js. Therefore, we don't need to write out ("../middleware/index.js")
 
 // Google Geocoder API Middleware
@@ -100,7 +101,10 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
 // It's important that the show route is written after the new route. Otherwise, this code will treat "/campgrounds/new" as an id
 router.get("/:id", function(req, res){
 	// find the campground with the provided ID
-	Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
+	Campground.findById(req.params.id).populate("comments").populate({
+			path: "reviews",
+			options: {sort: {createdAt: -1}}
+	}).exec(function(err, foundCampground){
 		if(err){
 			console.log(err);
 		} else {
@@ -122,6 +126,7 @@ router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res){
 
 // UPDATE CAMPGROUND ROUTE
 router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
+	delete req.body.campground.rating; // protect the campground.rating field from manipulation
   geocoder.geocode(req.body.location, function (err, data) {
     if (err || !data.length) {
       req.flash('error', 'Invalid address');
@@ -147,15 +152,32 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
 });
 
 // DESTROY ROUTE
-router.delete("/:id", middleware.checkCampgroundOwnership, async(req, res) => {
-  try {
-    let foundCampground = await Campground.findById(req.params.id);
-    await foundCampground.remove();
-    res.redirect("/campgrounds");
-  } catch (error) {
-    console.log(error.message);
-    res.redirect("/campgrounds");
-  }
+// Remove all the associated Comment and Review documents from the database when we delete the campground
+router.delete("/:id", middleware.checkCampgroundOwnership, function (req, res) {
+    Campground.findById(req.params.id, function (err, campground) {
+        if (err) {
+            res.redirect("/campgrounds");
+        } else {
+            // deletes all comments associated with the campground
+            Comment.remove({"_id": {$in: campground.comments}}, function (err) {
+                if (err) {
+                    console.log(err);
+                    return res.redirect("/campgrounds");
+                }
+                // deletes all reviews associated with the campground
+                Review.remove({"_id": {$in: campground.reviews}}, function (err) {
+                    if (err) {
+                        console.log(err);
+                        return res.redirect("/campgrounds");
+                    }
+                    //  delete the campground
+                    campground.remove();
+                    req.flash("success", "Campground deleted successfully!");
+                    res.redirect("/campgrounds");
+                });
+            });
+        }
+    });
 });
 
 module.exports = router;

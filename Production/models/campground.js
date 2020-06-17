@@ -7,7 +7,9 @@ var campgroundSchema = new mongoose.Schema({
 		   required: "Campground name cannot be blank."
 		  },
 	price: String,
-	image: String,
+	image: {type: String,
+			required: "Campground image cannot be blank."
+		   },
 	description: String,
 	lcoation: String,
 	lat: Number,
@@ -25,7 +27,17 @@ var campgroundSchema = new mongoose.Schema({
 			type: mongoose.Schema.Types.ObjectId,
 			ref: "Comment"
 		}
-	]
+	],
+	reviews: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Review"
+        }
+    ],
+    rating: {
+        type: Number,
+        default: 0
+    }
 });
 
 const Comment = require('./comment');

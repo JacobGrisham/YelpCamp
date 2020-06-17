@@ -1,3 +1,22 @@
+/* Fonts */
+.logo {
+	font-family: 'Pacifico', cursive;
+}
+.logo-lg {
+	font-family: 'Pacifico', cursive;
+	font-size: 5.5rem;
+}
+.logo-md {
+	font-family: 'Pacifico', cursive;
+	font-size: 3rem;
+}
+.title-font {
+	font-family: 'Montserrat Alternates', sans-serif;
+}
+.body-font {
+	font-family: 'Montserrat', sans-serif;
+}
+
 /* Bringing the navbar to the very top to avoid fade effect on it */
 #navbar {
 	z-index: 3;
@@ -21,6 +40,63 @@
 }
 
 .signup-login {
-	width: 30%;
 	margin: 5rem auto;
+}
+
+/* Coloring the review stars yellow  */
+.checked {
+    color: yellow;
+}
+/* Hiding review stars to prevent empty/black starts from showing */
+.transparent {
+	display: none;
+}
+
+.new-edit-forms {
+	margin: 5rem auto;
+}
+
+/* Coloring back arrow icon blue */
+.back {
+	color: rgb(38,126,246);
+}
+
+/* Coloring plus icon white */
+.add {
+	color: white;
+}
+
+/* Coloring heart icon red */
+.heart {
+	color: red;
+}
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+
+/* footer properties */
+.footer {
+	font-size: .75rem;
+}
+
+.campground-index {
+	background-image: url(https://images.unsplash.com/photo-1513781419235-2988ecacab83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+	background-size: cover;
+	background-position: 95%;
+}
+
+.photo-link {
+	cursor: pointer;
+}
+
+.photo-link:hover {
+	background-color: white;
+	opacity: .8;
 }

@@ -10,6 +10,7 @@
 #landing-header {
   z-index: 1;
   position: relative;
+  transform: translateY(-6rem);
   text-align: center;
   padding-top: 40vh;
   color: white;

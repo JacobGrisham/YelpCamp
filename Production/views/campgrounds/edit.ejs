@@ -2,8 +2,8 @@
 
 <div class="container">
 	<div class="row">
-			<div class="signup-login">
-				<h1 class="text-center">Edit <%= campground.name %></h1>
+			<div class="col-12 col-md-9 new-edit-forms">
+				<h2 class="text-center">Edit <%= campground.name %></h2>
 				<form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
 					<!-- Note that the action="__" should equal the name of the post request url. -->
 					<div class="form-group">
@@ -31,7 +31,7 @@
 						<button class="btn btn-lg btn-block btn-success">Submit!</button>
 					</div>
 				</form>
-				<a href="/campgrounds">Back</a>
+				<a href="/campgrounds"><i class="fa fa-angle-left back" aria-hidden="true"></i> Back</a>
 			</div>
 	</div>
 

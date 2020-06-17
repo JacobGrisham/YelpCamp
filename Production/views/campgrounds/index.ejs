@@ -1,19 +1,18 @@
 <%- include ("../partials/header") %>
 
 <div class="container">
-	<header class="jumbotron">
+	<header class="jumbotron campground-index">
 		<div class="container">
-			<h1>Welcome to YelpCamp</h1>
-			<p>View user-submitted campgrounds from all over the world</p>
-			<p>
-				<a href="/campgrounds/new" class="btn btn-primary btn-lg">Add a New Campground</a>
-			</p>
-			<form action="/campgrounds" method="GET" class="form-inline">
-				<div class="form-group">
-					<input type="text" name="search" placeholder="Campground search ..." class="form-control">
-					<input type="submit" value="Search" class="btn btn-light">
-				</div>
-			</form>
+			<h1 class="text-white logo">Welcome to <span class="logo-md">YelpCamp</span>!</h1>
+			<p class="text-white title-font mt-4">Upload your favorite campgrounds, give ratings the ones you've visited, and engage the community with comments. Click on each campground to learn more. Happy exploring!</p>
+			<div class="d-flex">
+				<a href="/campgrounds/new" class="btn btn-outline-light rounded-pill mr-2"><i class="fa fa-plus-circle white" aria-hidden="true"></i> Campground </a>
+				<form action="/campgrounds" method="GET" class="form-inline">
+					<div class="form-group">
+						<input type="text" name="search" placeholder="search" class="form-control rounded-pill">
+					</div>
+				</form>
+			</div>
 		</div>
 	</header>
 
@@ -26,10 +25,18 @@
 		<% campgrounds.forEach(function(campground){ %>
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
 				<div class="card">
-					<img src="<%= campground.image %>" class="img-fluid img-thumbnail" alt="<%= campground.name %>"></img>
+					<a href="/campgrounds/<%= campground._id %>"><img src="<%= campground.image %>" class="img-fluid img-thumbnail photo-link" alt="<%= campground.name %>"></img></a>
 					<div class="card-body">
 						<h4><%= campground.name %></h4>
-						<a href="/campgrounds/<%= campground._id %>" class="btn btn-primary info-button">Info</a>
+						<% if (campground.rating === 0) { %>
+							<em>No reviews yet.</em>
+						<% } else { %>
+							<span class="fa fa-star bg-warning rounded-pill p-1 checked"></span>
+							<span class="fa fa-star bg-warning rounded-pill p-1 <% if (campground.rating > 1.5) { %> checked <% } else { %> transparent <% } %>"></span>
+							<span class="fa fa-star bg-warning rounded-pill p-1 <% if (campground.rating > 2.5) { %> checked <% } else { %> transparent <% } %>"></span>
+							<span class="fa fa-star bg-warning rounded-pill p-1 <% if (campground.rating > 3.5) { %> checked <% } else { %> transparent <% } %>"></span>
+							<span class="fa fa-star bg-warning rounded-pill p-1 <% if (campground.rating > 4.5) { %> checked <% } else { %> transparent <% } %>"></span>
+						<% } %>
 					</div>
 				</div>
 			</div>
