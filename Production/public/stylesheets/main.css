@@ -35,7 +35,7 @@
 .landing-header {
 	z-index: 1;
 	position: relative;
-	transform: translateY(3rem);
+	margin-top: 10vh;
 	text-align: center;
 	color: white;
 }
@@ -104,7 +104,6 @@
 
 .photo-link {
 	overflow: hidden;
-	cursor: pointer;
 }
 
 .photo-link img {

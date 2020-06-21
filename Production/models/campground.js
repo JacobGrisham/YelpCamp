@@ -6,12 +6,12 @@ var campgroundSchema = new mongoose.Schema({
 	name: {type: String,
 		   required: "Campground name cannot be blank."
 		  },
-	price: String,
+	price: Number,
 	image: {type: String,
 			required: "Campground image cannot be blank."
 		   },
 	description: String,
-	lcoation: String,
+	location: String,
 	lat: Number,
 	lng: Number,
 	createdAt: {type: Date, default: Date.now},

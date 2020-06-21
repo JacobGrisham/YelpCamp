@@ -129,7 +129,8 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
 	delete req.body.campground.rating; // protect the campground.rating field from manipulation
   geocoder.geocode(req.body.location, function (err, data) {
     if (err || !data.length) {
-      req.flash('error', 'Invalid address');
+      req.flash('error', "Something went wrong");
+	  console.log(err);
       return res.redirect('back');
     }
     req.body.campground.lat = data[0].latitude;

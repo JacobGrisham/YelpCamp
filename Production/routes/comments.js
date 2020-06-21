@@ -39,7 +39,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 					// Fourth connect new comment to campground
 					campground.comments.push(comment);
 					campground.save();
-					req.flash("success", "Commend added");
+					req.flash("success", "Comment added");
 					// Fourth redirect back to the campground show page
 					res.redirect('/campgrounds/' + campground._id);
 				}
@@ -48,14 +48,19 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 	});
 });
 
-// COMMENTS EDIT ROUTE - broken at campground_id
+// COMMENTS EDIT ROUTE
 router.get("/:comment_id/edit", function(req, res){
 	Comment.findById(req.params.comment_id, function(err, foundComment){
 		if(err){
 			res.redirect("back");
 		} else {
-			// campground_id isn't working. Shows as null in the error log of the terminal
-			res.render("comments/edit", {campground_id: req.params.id, comment: foundComment});
+			Campground.findById(req.params.id, function(err, foundCampground){
+				if (err){
+					console.log(err);
+				} else {
+					res.render("comments/edit", {campground: foundCampground, comment: foundComment});
+				}
+			});
 		}
 	});
 });
@@ -68,6 +73,7 @@ router.put("/:comment_id", function(req, res){
 		} else {
 			// Second redirect to the show page. We need to add the Id.
 			// We can use req.params.id or updatedCampground._id
+			req.flash("success", "Comment edited");
 			res.redirect("/campgrounds/" + req.params.id);
 		}
 	});
