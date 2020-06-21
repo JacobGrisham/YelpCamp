@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="row">
 			<div class="col-12 col-md-9 new-edit-forms">
-				<h2 class="text-center">Edit <%= campground.name %></h2>
+				<h2 class="text-center title-font">Edit <%= campground.name %></h2>
 				<form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
 					<!-- Note that the action="__" should equal the name of the post request url. -->
 					<div class="form-group">

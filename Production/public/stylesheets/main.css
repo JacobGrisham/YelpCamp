@@ -11,10 +11,33 @@
 	font-size: 3rem;
 }
 .title-font {
-	font-family: 'Montserrat Alternates', sans-serif;
+	font-family: 'Sriracha', cursive;
 }
 .body-font {
 	font-family: 'Montserrat', sans-serif;
+}
+
+.site {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	background: linear-gradient(160deg, rgb(208,236,253), rgb(232,246,254));
+}
+
+.site-content {
+	flex: 1;
+	background-image: url(YelpCamp_Optimized.svg);
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+
+
+.landing-header {
+	z-index: 1;
+	position: relative;
+	transform: translateY(3rem);
+	text-align: center;
+	color: white;
 }
 
 /* Bringing the navbar to the very top to avoid fade effect on it */
@@ -28,14 +51,13 @@
 	justify-content: space-around;
 }
 
-/* Aligning blue info button on campground cards on index page */
-.info-button {
-	text-align: center;
+.show-btn {
+	width: 100%;
 }
 
 /* Google Maps */
 #map {
-    height: 400px;
+	height: 500px;
     width: 100%;
 }
 
@@ -71,32 +93,24 @@
 	color: red;
 }
 
-.site {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.site-content {
-  flex: 1;
-}
-
 /* footer properties */
 .footer {
 	font-size: .75rem;
 }
 
-.campground-index {
-	background-image: url(https://images.unsplash.com/photo-1513781419235-2988ecacab83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
-	background-size: cover;
-	background-position: 95%;
+.transparent-header-background {
+	background-color: rgba(253,253,253,0.5);
 }
 
 .photo-link {
+	overflow: hidden;
 	cursor: pointer;
 }
 
-.photo-link:hover {
-	background-color: white;
-	opacity: .8;
+.photo-link img {
+	transition: transform .5s ease;
+}
+
+.photo-link:hover img {
+	transform: scale(1.25);
 }

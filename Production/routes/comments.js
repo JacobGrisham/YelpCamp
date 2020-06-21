@@ -49,7 +49,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 });
 
 // COMMENTS EDIT ROUTE - broken at campground_id
-router.get("/:comments_id/edit", function(req, res){
+router.get("/:comment_id/edit", function(req, res){
 	Comment.findById(req.params.comment_id, function(err, foundComment){
 		if(err){
 			res.redirect("back");

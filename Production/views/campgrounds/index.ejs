@@ -1,15 +1,15 @@
 <%- include ("../partials/header") %>
 
 <div class="container">
-	<header class="jumbotron campground-index">
+	<header class="jumbotron transparent-header-background">
 		<div class="container">
-			<h1 class="text-white logo">Welcome to <span class="logo-md">YelpCamp</span>!</h1>
-			<p class="text-white title-font mt-4">Upload your favorite campgrounds, give ratings the ones you've visited, and engage the community with comments. Click on each campground to learn more. Happy exploring!</p>
+			<h1 class="logo">Welcome to <span class="logo-md">YelpCamp</span>!</h1>
+			<p class="title-font mt-4">Upload your favorite campgrounds, rate the ones you've visited, and engage the community with comments. Click on each campground photo to learn more. Happy camping!</p>
 			<div class="d-flex">
-				<a href="/campgrounds/new" class="btn btn-outline-light rounded-pill mr-2"><i class="fa fa-plus-circle white" aria-hidden="true"></i> Campground </a>
+				<a href="/campgrounds/new" class="btn btn-outline-dark rounded-pill mr-2"><i class="fa fa-plus-circle" aria-hidden="true"></i> Campground </a>
 				<form action="/campgrounds" method="GET" class="form-inline">
 					<div class="form-group">
-						<input type="text" name="search" placeholder="search" class="form-control rounded-pill">
+						<input type="text" name="search" placeholder="Search" class="form-control rounded-pill">
 					</div>
 				</form>
 			</div>
@@ -25,11 +25,14 @@
 		<% campgrounds.forEach(function(campground){ %>
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
 				<div class="card">
-					<a href="/campgrounds/<%= campground._id %>"><img src="<%= campground.image %>" class="img-fluid img-thumbnail photo-link" alt="<%= campground.name %>"></img></a>
-					<div class="card-body">
-						<h4><%= campground.name %></h4>
+					<a href="/campgrounds/<%= campground._id %>"><div class="photo-link">
+						<img src="<%= campground.image %>" class="img-fluid" alt="<%= campground.name %>"></img>
+					</div>
+					</a>
+					<div class="card-body p-1">
+						<h4 class="title-font"><%= campground.name %></h4>
 						<% if (campground.rating === 0) { %>
-							<em>No reviews yet.</em>
+							No reviews yet
 						<% } else { %>
 							<span class="fa fa-star bg-warning rounded-pill p-1 checked"></span>
 							<span class="fa fa-star bg-warning rounded-pill p-1 <% if (campground.rating > 1.5) { %> checked <% } else { %> transparent <% } %>"></span>
@@ -37,6 +40,7 @@
 							<span class="fa fa-star bg-warning rounded-pill p-1 <% if (campground.rating > 3.5) { %> checked <% } else { %> transparent <% } %>"></span>
 							<span class="fa fa-star bg-warning rounded-pill p-1 <% if (campground.rating > 4.5) { %> checked <% } else { %> transparent <% } %>"></span>
 						<% } %>
+						<p class="mt-1"><%= campground.reviews.length %> reviews</p>
 					</div>
 				</div>
 			</div>

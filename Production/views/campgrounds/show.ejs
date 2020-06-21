@@ -2,16 +2,12 @@
 <div class="container">
 	<!-- CAMPGROUND INFO AND USER SECTION -->
 	<div class="row" id="campground-container">
-		<div class="col-md-3 mb-4">
-			<!-- Google Map -->
-			<div id="map"></div>
-		</div>
 		<div class="col-md-9">
 			<div class="card p-3 mb-4">
 				<img src="<%= campground.image %> " class="img-fluid">
 				<div>
-					<h4 class="text-right">$<%= campground.price %>/night</h4>
-					<h4 class="title-font"><a><%= campground.name %></a></h4>
+					<h4 class="text-right mt-2">$<%= campground.price %>/night</h4>
+					<h1 class="title-font"><a><%= campground.name %></a></h1>
 					<p><%= campground.description %></p>
 					<p>Submitted by <strong><a href="/users/<%= campground.author.id %>"><%= campground.author.username %></a></strong> on <em> <%= moment(campground.createdAt).format("dddd, MMMM Do YYYY")%></em></p>
 					<% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
@@ -25,16 +21,33 @@
 				</div>
 			</div>
 		</div>
+		<!-- Tools Section -->
+		<div class="col-md-3 mb-4 d-flex flex-column justify-content-between">
+			<div class="card border border-white mb-2" id="map"></div>
+			<div class="mb-2">
+				<a href="https://www.accuweather.com/en/world-weather" class="btn btn-light show-btn"><i class="fa fa-sun-o" aria-hidden="true"></i> Weather</a>
+			</div>
+			<div class="mb-2">
+				<a href="https://ngmdb.usgs.gov/topoview/viewer/#4/39.98/-100.06" class="btn btn-light show-btn"><i class="fa fa-map" aria-hidden="true"></i> Topo Map</a>
+			</div>
+			<div class="mb-2">
+				<a href="https://www.rei.com/h/camping-and-hiking" class="btn btn-light show-btn"><i class="fa fa-binoculars" aria-hidden="true"></i> Gear Up</a>
+			</div>
+		</div>
 	</div>
 	
 	<!-- REVIEWS SECTION -->
-	<div class="row">
-		<div class="col-12 d-flex justify-content-end mb-4">
+	<div class="row mt-5">
+		<div class="col-12 d-flex justify-content-start mb-4">
 			<div class="card col-12 col-md-9 bg-light p-3">
 				<div class="d-flex flex-column">
 					<!-- DISPLAY REVIEW SECTION -->
 					<% if (campground.rating === 0) { %>
 					<h5>Be the first to write a review!</h5>
+					<span>
+						<a class="btn btn-success float-right <% if (currentUser && campground.reviews.some(function (review) {return review.author.id.equals(currentUser._id)})) { %> disabled <% } %>" href="/campgrounds/<%= campground._id %>/reviews/new">
+							Add Review <i class="fa fa-pencil add" aria-hidden="true"></i></a>
+					</span>
 					<% } else { %>
 					<p>
 						<span class="fa fa-star bg-warning rounded-pill p-1 checked"></span>
@@ -42,10 +55,10 @@
 						<span class="fa fa-star bg-warning rounded-pill p-1 <% if (campground.rating > 2.5) { %> checked <% } else { %> transparent <% } %>"></span>
 						<span class="fa fa-star bg-warning rounded-pill p-1 <% if (campground.rating > 3.5) { %> checked <% } else { %> transparent <% } %>"></span>
 						<span class="fa fa-star bg-warning rounded-pill p-1 <% if (campground.rating > 4.5) { %> checked <% } else { %> transparent <% } %>"></span>
-						(total reviews: <%= campground.reviews.length %>)
+						<span class="ml-1"><%= campground.reviews.length %> reivews</span>
 					</p>
 					<p class="mb-0">
-						Current campground rating: <strong><%= campground.rating.toFixed(2) %></strong>
+						Average rating: <strong><%= campground.rating.toFixed(2) %></strong>
 					</p>
 					<!-- ADD REVIEW -->
 					<span>
@@ -88,7 +101,7 @@
 	
 	<!-- COMMENT SECTION -->
 	<div class="row">
-		<div class="col-12 d-flex justify-content-end mb-4">
+		<div class="col-12 d-flex justify-content-start mb-4">
 			<div class="card col-12 col-md-9 bg-light p-3">
 				<div class="text-right">
 					<a href="/campgrounds/<%= campground._id %>/comments/new" class="btn btn-success">Add Comment <i class="fa fa-comment add" aria-hidden="true"></i></a>
