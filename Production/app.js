@@ -27,10 +27,19 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 // linking the database here with the one on Heroku
-var url = "mongodb://localhost/temporary_database" || process.env.DATABASEURL // Two options.
+var url = process.env.DATABASEURL
+// Use the database below when in production
+// "mongodb://localhost/temporary_database"
 // checking DATABASEURL value
 console.log(process.env.DATABASEURL);
-mongoose.connect(url);
+mongoose.connect(url, {
+		useNewUrlParser: true,
+		useCreateIndex: true
+	}). then (() => {
+		console.log("Conencted to DB");
+	}). catch(err => {
+		console.log("ERROR:", err.message);
+});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public")); // Using __dirname + is a better way to navigate to the file
