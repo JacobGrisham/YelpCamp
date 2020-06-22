@@ -34,9 +34,8 @@
 
 .landing-header {
 	z-index: 1;
-	position: relative;
-	margin-top: 10vh;
 	text-align: center;
+	margin-top: 3rem;
 	color: white;
 }
 
