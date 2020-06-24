@@ -33,7 +33,7 @@
 					<div class="card-body p-1">
 						<h4 class="title-font"><%= campground.name %></h4>
 						<% if (campground.rating === 0) { %>
-							No reviews yet
+							
 						<% } else { %>
 							<span class="fa fa-star bg-warning rounded-pill p-1 checked"></span>
 							<span class="fa fa-star bg-warning rounded-pill p-1 <% if (campground.rating > 1.5) { %> checked <% } else { %> transparent <% } %>"></span>
