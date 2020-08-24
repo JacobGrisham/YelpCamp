@@ -22,23 +22,24 @@ First full-stack web application. Fundamentally, it's Yelp for campsites. Compar
 Graphic Design |  Front-End | Back-End | Database | Deployment
 -------------- | ---------- | -------- | -------- | ----------
 Inkscape | HTML5 | Node.js | Mongoose | Heroku |
-. | CSS3 | ExpressJS | MongoDB | MongoDB Atlas |
+. | CSS3 | ExpressJS | MongoDB | [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) |
 . | Bootstrap 4 | EJS | . | Git |
 . | Javascript | . | . | . |
 
 ## Methodology
-- Developed app in [GoormIDE](https://ide.goorm.io/) to gain exposure to cloud-based IDE
-- Bootstrap 4 as the CSS framework to keep the UI simple and quick to build
-- ExpressJS as the Node.js application framework for its basic functionality. Some companies still use ExpressJS so it was important to implement it.
-- PassportJs for the authentication and authorization
-- NoSQL database for the flexibility compared to a SQL database, MongoDB in particular because of its prevalence in the industry.
+- Developed app in [GoormIDE](https://ide.goorm.io/) to gain exposure to cloud-based IDE.
+- [Bootstrap 4](https://getbootstrap.com/) as the CSS framework to keep the UI simple and quick to build.
+- [ExpressJS](https://expressjs.com/) as the Node.js application framework for its basic functionality. Some companies still use ExpressJS so it was important to implement it.
+- [PassportJs](https://github.com/jaredhanson/passport) for the authentication and authorization.
+- NoSQL database for the flexibility compared to a SQL database, [MongoDB](https://www.mongodb.com/) in particular because of its prevalence in the industry.
+- [Heroku](https://www.heroku.com/) due to the simple nature of the application and don't foresee scaling up server usage.
 
 ## Features
 - Login, sign-up, Admin role
 - Create, Edit, Update, Delete (CRUD) for campgrounds, comments, and reviews
 - Create routes have authentication
 - Edit, Update, and Delete routes have authentication and authorization
-- Google Maps API
+- [Google Maps API](https://developers.google.com/maps/documentation)
 
 To Do:
 - Forgot password, change username, change password
