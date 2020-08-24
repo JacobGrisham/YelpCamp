@@ -31,7 +31,7 @@ var url = process.env.DATABASEURL
 // Use the database below when in production
 // "mongodb://localhost/temporary_database"
 // checking DATABASEURL value
-console.log(process.env.DATABASEURL);
+//console.log(process.env.DATABASEURL);
 mongoose.connect(url, {
 		useNewUrlParser: true,
 		useCreateIndex: true
