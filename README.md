@@ -17,6 +17,8 @@ First full-stack web application. Fundamentally, it's Yelp for campsites. The ma
 - [App demo video](https://youtu.be/9IqcgAHhJ8k)
 
 ## Technologies
+#### Graphic Design:
+- Inkscape
 #### Front-End:
 - HTML5, CSS3, Bootstrap 4, Javascript
 #### Back-End:
