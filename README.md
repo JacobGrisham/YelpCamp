@@ -2,27 +2,28 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 First full-stack web application. Fundamentally, it's Yelp for campsites. The main features are login, sign-up, Admin role, Google Maps API, and Create, Edit, Update, Delete (CRUD) for campgrounds, comments, and reviews. Create routes have authentication. Edit, Update, and Delete routes have authentication and authorization. Compared to the other projects, this one is meant to display proficiency with basic technologies.
-![Landing Page](production/public/stylesheets/Thumbnail-rectangle.png)
+
+![Landing Page](https://aqueous-reaches-28926.herokuapp.com/stylesheets/Thumbnail-rectangle.png)
 
 ## Table of Contents
-### [Application Links](#application-links)
-### [Technologies](#technologies)
-### [Methodology](#methodology)
-### [Getting Started](#getting-started)
-### [Acknowledgments](#acknowledgements)
+- [Application Links](#application-links)
+- [Technologies](#technologies)
+- [Methodology](#methodology)
+- [Getting Started](#getting-started)
+- [Acknowledgments](#acknowledgments)
 
 ## Application Links
 - [App](https://aqueous-reaches-28926.herokuapp.com/)
-- [App demo](https://youtu.be/9IqcgAHhJ8k)
+- [App demo video](https://youtu.be/9IqcgAHhJ8k)
 
 ## Technologies
-### Front-End:
+#### Front-End:
 - HTML5, CSS3, Bootstrap 4, Javascript
-### Back-End:
+#### Back-End:
 - Node.js, ExpressJS, EJS
-### Database:
+#### Database:
 - Mongoose, MongoDB
-### Deployment:
+#### Deployment:
 - Heroku, MongoDB Atlas, Git
 
 ## Methodology
@@ -36,7 +37,6 @@ First full-stack web application. Fundamentally, it's Yelp for campsites. The ma
 To run this project, install it locally using npm:
 
 ```
-$ cd ../lorem
 $ npm install
 $ npm start
 ```
