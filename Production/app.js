@@ -14,7 +14,11 @@ const express 			= require("express"),
 	Comment 			= require("./models/comment"),
 	User 				= require("./models/user"),
 	seedDB 				= require("./seeds"),
-	MongoClient			= require("mongodb");
+	MongoClient			= require("mongodb"),
+	Morgan				= require("morgan"),
+	Cors				= require("cors"),
+	Winston				= require("winston");
+
 // CALLING ROUTES
 const 	commentRoutes 		= require("./routes/comments"),
 		reviewRoutes     	= require("./routes/reviews"),
@@ -46,6 +50,8 @@ app.use(express.static(__dirname + "/public")); // Using __dirname + is a better
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(flash());
+//app.use(Cors()); // CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options. Use for production purposes
+//app.use(Morgan("combined")); // HTTP request logger middleware for node.js. Use for production purposes
 
 // Moment JS for timestamps
 app.locals.moment = require("moment");

@@ -49,6 +49,9 @@
   position: relative; 
   width: 100%;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .text {
   color:  rgb(30,30,30);
