@@ -19,16 +19,12 @@ First full-stack web application. Fundamentally, it's Yelp for campsites. Compar
 - [App demo video](https://youtu.be/9IqcgAHhJ8k)
 
 ## Technologies
-Graphic Design
-- Inkscape
- Front-End:
-- HTML5, CSS3, Bootstrap 4, Javascript
-Back-End:
-- Node.js, ExpressJS, EJS
-Database:
-- Mongoose, MongoDB
-Deployment:
-- Heroku, MongoDB Atlas, Git
+Graphic Design |  Front-End | Back-End | Database | Deployment
+-------------- | ---------- | -------- | -------- | ----------
+Inkscape | HTML5 | Node.js | Mongoose | Heroku |
+. | CSS3 | ExpressJS | MongoDB | MongoDB Atlas |
+. | Bootstrap 4 | EJS | . | Git |
+. | Javascript | . | . | . |
 
 ## Methodology
 - Developed app in [GoormIDE](https://ide.goorm.io/) to gain exposure to cloud-based IDE
@@ -43,8 +39,17 @@ Deployment:
 - Create routes have authentication
 - Edit, Update, and Delete routes have authentication and authorization
 - Google Maps API
+
 To Do:
-- 
+- Forgot password, change username, change password
+- Sort campgrounds by review, distance, country, and state
+- Disallow duplicate campgrounds. I.e. no more than one unique campground
+- Not safe for work (NSFW) picture filter
+- Allow multiple photos to be uploaded
+- Write comment directly on show page
+- Write review directly on show page
+- Show 1/3, 1/2, and 2/3 star
+
 ## Project Status
 - Complete
 
