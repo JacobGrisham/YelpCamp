@@ -17,7 +17,8 @@ const express 			= require("express"),
 	MongoClient			= require("mongodb"),
 	Morgan				= require("morgan"),
 	Cors				= require("cors"),
-	Winston				= require("winston");
+	Winston				= require("winston"),
+	Helmet				= require("helmet");
 
 // CALLING ROUTES
 const 	commentRoutes 		= require("./routes/comments"),
@@ -52,6 +53,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 //app.use(Cors()); // CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options. Use for production purposes
 //app.use(Morgan("combined")); // HTTP request logger middleware for node.js. Use for production purposes
+app.use(Helmet()); // Helmet helps you secure your Express apps by setting various HTTP headers
 
 // Moment JS for timestamps
 app.locals.moment = require("moment");
