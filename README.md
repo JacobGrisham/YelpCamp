@@ -22,7 +22,7 @@ First full-stack web application. Fundamentally, it's Yelp for campsites. Compar
 ## Technologies
 Graphic Design |  Front-End | Back-End | Database | Deployment
 -------------- | ---------- | -------- | -------- | ----------
-Inkscape | HTML5 | Node.js | Mongoose | Heroku |
+[Inkscape](https://inkscape.org/) | HTML5 | Node.js | Mongoose | Heroku |
 . | CSS3 | ExpressJS | MongoDB | [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) |
 . | Bootstrap 4 | EJS | . | Git |
 . | Javascript | . | . | . |
