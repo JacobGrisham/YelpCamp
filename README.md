@@ -13,6 +13,7 @@ First full-stack web application. Fundamentally, it's Yelp for campsites. Compar
 - [Project Status](#project-status)
 - [Getting Started](#getting-started)
 - [Acknowledgments](#acknowledgments)
+- [License](#license)
 
 ## Application Links
 - [App](https://aqueous-reaches-28926.herokuapp.com/)
@@ -64,3 +65,6 @@ $ npm start
 
 ## Acknowledgments
 - [Colt Steele's YelpCamp Github Repository](https://github.com/Colt/yelp-camp-refactored)
+
+## License
+Copyright Notice and Statement: currently not offering any license. Permission only to view and download.
