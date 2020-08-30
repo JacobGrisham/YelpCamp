@@ -13,7 +13,6 @@ const express 			= require("express"),
 	Campground 			= require("./models/campground"),
 	Comment 			= require("./models/comment"),
 	User 				= require("./models/user"),
-	seedDB 				= require("./seeds"),
 	MongoClient			= require("mongodb"),
 	morgan				= require("morgan"),
 	cors				= require("cors"),
@@ -27,7 +26,7 @@ const 	commentRoutes 		= require("./routes/comments"),
 		indexRoutes 		= require("./routes/index");
 
 
-mongoose.set("useNewUrlParse", true);
+mongoose.set("useNewUrlParser", true);
 mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
 mongoose.set("useUnifiedTopology", true);
