@@ -53,7 +53,12 @@ app.use(flash());
 // Uncomment the code below for additional logging during development
 //app.use(cors()); // CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options. Use for production purposes
 //app.use(morgan("combined")); // HTTP request logger middleware for node.js. Use for production purposes
-app.use(helmet()); // Helmet helps you secure your Express apps by setting various HTTP headers
+// Helmet helps you secure your Express apps by setting various HTTP headers
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 
 // Moment JS for timestamps
 app.locals.moment = require("moment");
