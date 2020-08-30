@@ -16,7 +16,7 @@ middlewareObj.isLoggedIn = function(req, res, next){
 	}
 	req.flash("error", "You need to logged in to do that"); // line must come before the redirect.
 	res.redirect("/login");
-}
+};
 
 // Middleware: Campground Authorization
 middlewareObj.checkCampgroundOwnership = function(req, res, next){
@@ -115,4 +115,4 @@ middlewareObj.checkReviewExistence = function (req, res, next) {
     }
 };
 
-module.exports = middlewareObj
+module.exports = middlewareObj;

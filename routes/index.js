@@ -14,7 +14,7 @@ router.get("/", function(req,res){
 // Authorization Routes
 // Show register form
 router.get("/register", function(req, res){
-	 res.render("register");
+	res.render("register");
 });
 
 //handle sign up logic

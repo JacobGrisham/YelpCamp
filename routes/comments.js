@@ -14,7 +14,7 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
 		} else {
 			res.render("comments/new", {campground: campground});
 		}
-	})
+	});
 	
 });
 
@@ -41,7 +41,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 					campground.save();
 					req.flash("success", "Comment added");
 					// Fourth redirect back to the campground show page
-					res.redirect('/campgrounds/' + campground._id);
+					res.redirect("/campgrounds/" + campground._id);
 				}
 			});
 		}

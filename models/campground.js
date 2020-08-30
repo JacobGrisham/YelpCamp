@@ -4,12 +4,12 @@ var mongoose = require("mongoose");
 // SCHEMA SETUP
 var campgroundSchema = new mongoose.Schema({
 	name: {type: String,
-		   required: "Campground name cannot be blank."
-		  },
+			required: "Campground name cannot be blank."
+		},
 	price: Number,
 	image: {type: String,
 			required: "Campground image cannot be blank."
-		   },
+		},
 	description: String,
 	location: String,
 	lat: Number,
@@ -40,8 +40,8 @@ var campgroundSchema = new mongoose.Schema({
     }
 });
 
-const Comment = require('./comment');
-campgroundSchema.pre('remove', async function() {
+const Comment = require("./comment");
+campgroundSchema.pre("remove", async function() {
 	await Comment.remove({
 		_id: {
 			$in: this.comments

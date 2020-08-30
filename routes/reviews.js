@@ -55,7 +55,7 @@ router.post("/", middleware.isLoggedIn, middleware.checkReviewExistence, functio
             //save campground
             campground.save();
             req.flash("success", "Review added");
-            res.redirect('/campgrounds/' + campground._id);
+            res.redirect("/campgrounds/" + campground._id);
         });
     });
 });

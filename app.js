@@ -1,5 +1,5 @@
 // CALLING ENVIRONMENTAL VARIABLE MODULE
-require('dotenv').config();
+require("dotenv").config();
 
 // CALLING DEPENDECNIES IN PACKAGE.JSON
 const express 			= require("express"),
@@ -15,10 +15,10 @@ const express 			= require("express"),
 	User 				= require("./models/user"),
 	seedDB 				= require("./seeds"),
 	MongoClient			= require("mongodb"),
-	Morgan				= require("morgan"),
-	Cors				= require("cors"),
-	Winston				= require("winston"),
-	Helmet				= require("helmet");
+	morgan				= require("morgan"),
+	cors				= require("cors"),
+	winston				= require("winston"),
+	helmet				= require("helmet");
 
 // CALLING ROUTES
 const 	commentRoutes 		= require("./routes/comments"),
@@ -27,12 +27,12 @@ const 	commentRoutes 		= require("./routes/comments"),
 		indexRoutes 		= require("./routes/index");
 
 
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
+mongoose.set("useNewUrlParse", true);
+mongoose.set("useFindAndModify", false);
+mongoose.set("useCreateIndex", true);
+mongoose.set("useUnifiedTopology", true);
 // linking the database here with the one on Heroku
-var url = process.env.DATABASEURL
+var url = process.env.DATABASEURL;
 // Use the database below when in production
 // "mongodb://localhost/temporary_database"
 // checking DATABASEURL value
@@ -51,9 +51,10 @@ app.use(express.static(__dirname + "/public")); // Using __dirname + is a better
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(flash());
-//app.use(Cors()); // CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options. Use for production purposes
-//app.use(Morgan("combined")); // HTTP request logger middleware for node.js. Use for production purposes
-app.use(Helmet()); // Helmet helps you secure your Express apps by setting various HTTP headers
+// Uncomment the code below for additional logging during development
+//app.use(cors()); // CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options. Use for production purposes
+//app.use(morgan("combined")); // HTTP request logger middleware for node.js. Use for production purposes
+app.use(helmet()); // Helmet helps you secure your Express apps by setting various HTTP headers
 
 // Moment JS for timestamps
 app.locals.moment = require("moment");

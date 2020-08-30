@@ -5,10 +5,10 @@ var Review = require("../models/review");
 var middleware = require("../middleware"); // Note that the default file in a directory is index.js. Therefore, we don't need to write out ("../middleware/index.js")
 
 // Google Geocoder API Middleware
-var NodeGeocoder = require('node-geocoder');
+var NodeGeocoder = require("node-geocoder");
 var options = {
-  provider: 'google',
-  httpAdapter: 'https',
+  provider: "google",
+  httpAdapter: "https",
   apiKey: process.env.GEOCODER_API_KEY,
   formatter: null
 };
@@ -21,14 +21,14 @@ var geocoder = NodeGeocoder(options);
 // For Fuzzy Search
 function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-};
+}
 
 // INDEX ROUTE
 // This is how we see the data
 router.get("/", function(req,res){
 	var noMatch = null;
 	if (req.query.search) {
-		const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+		const regex = new RegExp(escapeRegex(req.query.search), "gi");
 		// Get the campground that matches the query string
 		Campground.find({name: regex}, function(err, allCampgrounds){
 			if(err){
@@ -67,8 +67,8 @@ router.post("/", middleware.isLoggedIn, function(req, res){
   }
   geocoder.geocode(req.body.location, function (err, data) {
     if (err || !data.length) {
-      req.flash('error', 'Invalid address');
-      return res.redirect('back');
+      req.flash("error", "Invalid address");
+      return res.redirect("back");
     }
     var lat = data[0].latitude;
     var lng = data[0].longitude;
@@ -80,7 +80,6 @@ router.post("/", middleware.isLoggedIn, function(req, res){
             console.log(err);
         } else {
             //redirect back to campgrounds page
-            console.log(newlyCreated);
             res.redirect("/campgrounds");
 			// Note that the redirect defaults to the GET request, not the POST request
         }
@@ -108,7 +107,6 @@ router.get("/:id", function(req, res){
 		if(err){
 			console.log(err);
 		} else {
-			console.log(foundCampground);
 			// render the show template with that campground
 			res.render("campgrounds/show", {campground: foundCampground});
 		}
@@ -129,9 +127,9 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
 	delete req.body.campground.rating; // protect the campground.rating field from manipulation
   geocoder.geocode(req.body.location, function (err, data) {
     if (err || !data.length) {
-      req.flash('error', "Something went wrong");
-	  console.log(err);
-      return res.redirect('back');
+      req.flash("error", "Something went wrong");
+		console.log(err);
+		return res.redirect("back");
     }
     req.body.campground.lat = data[0].latitude;
     req.body.campground.lng = data[0].longitude;
