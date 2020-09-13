@@ -16,7 +16,33 @@ jobs:
       - run: npm install
       - run: npm test
       - store_test_results:
-          path: test-results
+          path: test-results/jest
+  test-coverage:
+    environment:
+      CC_TEST_REPORTER_ID: fad92a4ec77b2ed64e56cb0368a0be8904ebf5d2459df1056113b4a0fd3c342b
+    docker:
+      - image: "mileschou/xdebug:7.3"
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Setup dependencies
+          command: |
+            sudo composer self-update
+            composer install -n --prefer-dist
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+          # download test reporter as a static binary
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      - run:
+          name: Run tests
+          command: |
+            sudo docker-php-ext-enable xdebug
+            ./cc-test-reporter before-build
+            sudo vendor/bin/phpunit --coverage-clover clover.xml
+            ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
 
 workflows:
   version: 2
@@ -24,3 +50,4 @@ workflows:
     jobs:
       - build
       - test
+	  - test-coverage
