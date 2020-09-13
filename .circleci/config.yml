@@ -15,7 +15,7 @@ jobs:
       - run: echo "testing stuff"
       - run: npm install
       - run: npm test
-	  - store_test_results:
+      - store_test_results:
 	     path: test-results
 
 workflows:
