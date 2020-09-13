@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1598836074630" clover="3.2.0">
+  <project timestamp="1598836074630" name="All files">
+    <metrics statements="18" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0" elements="19" coveredelements="17" complexity="0" loc="18" ncloc="18" packages="1" files="4" classes="4"/>
+    <file name="campground.js" path="/workspace/goorm-ide-test/TheWebDeveloperBootcamp/YelpCamp/models/campground.js">
+      <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="43" count="1" type="stmt"/>
+      <line num="44" count="1" type="stmt"/>
+      <line num="45" count="0" type="stmt"/>
+      <line num="53" count="1" type="stmt"/>
+      <line num="55" count="1" type="stmt"/>
+    </file>
+    <file name="comment.js" path="/workspace/goorm-ide-test/TheWebDeveloperBootcamp/YelpCamp/models/comment.js">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+    </file>
+    <file name="review.js" path="/workspace/goorm-ide-test/TheWebDeveloperBootcamp/YelpCamp/models/review.js">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="42" count="1" type="stmt"/>
+    </file>
+    <file name="user.js" path="/workspace/goorm-ide-test/TheWebDeveloperBootcamp/YelpCamp/models/user.js">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

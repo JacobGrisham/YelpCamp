@@ -7,7 +7,7 @@ First full-stack web application. Fundamentally, it's Yelp for campsites. Compar
 
 ![Landing Page](https://aqueous-reaches-28926.herokuapp.com/stylesheets/Thumbnail-rectangle.png)
 
--	[App](https://aqueous-reaches-28926.herokuapp.com/)
+-  [App](https://aqueous-reaches-28926.herokuapp.com/)
 -	[App demo video](https://youtu.be/9IqcgAHhJ8k)
 
 ## Table of Contents
@@ -20,7 +20,7 @@ First full-stack web application. Fundamentally, it's Yelp for campsites. Compar
 -	[Acknowledgments](#acknowledgments)
 -	[License](#license)
 
-## Technologies
+## 🛠 Technologies
 Graphic Design|Front-End|Back-End|Database|Deployment|Testing
 ------------- | ------- | ------ | ------ | -------- | -------
 Inkscape	  |HTML5	|Node.js |Mongoose|Heroku	 |Jest
@@ -28,7 +28,7 @@ Inkscape	  |HTML5	|Node.js |Mongoose|Heroku	 |Jest
 .			  |Bootstrap 4|EJS	 |.		  |Git		 |.
 .			  |Javascript|.		 |.		  |.		 |.
 
-## Methodology
+## ⚖️ Methodology
 -	Developed app in [GoormIDE](https://ide.goorm.io/) to gain exposure to cloud-based IDE.
 -	[Bootstrap 4](https://getbootstrap.com/) as the CSS framework to keep the UI simple and quick to build.
 -	[ExpressJS](https://expressjs.com/) as the Node.js application framework for its basic functionality. Some companies still use ExpressJS so it was important to implement it.
@@ -36,7 +36,7 @@ Inkscape	  |HTML5	|Node.js |Mongoose|Heroku	 |Jest
 -	NoSQL database for the flexibility compared to a SQL database, [MongoDB](https://www.mongodb.com/) in particular because of its prevalence in the industry.
 -	[Heroku](https://www.heroku.com/) due to the simple nature of the application and don't foresee scaling up server usage.
 
-## Features
+## ⚙️ Features
 -	Login, sign-up, Admin role
 -	REST API (create, read, update, delete) for campgrounds, comments, and reviews
 -	Create routes have authentication
@@ -53,10 +53,10 @@ To Do:
 -	Show 1/3, 1/2, and 2/3 of a star
 -	Forgot password, change username, change password
 
-## Project Status
+## ✅ Project Status
 -	Complete
 
-## Getting Started
+## 🚀 Getting Started
 To run this project, install it locally using npm:
 
 ```
@@ -64,15 +64,15 @@ $ npm install
 $ npm start
 ```
 
-## Tests
+## 📐 Tests
 The unit tests using [Jest](https://jestjs.io/) test the creation of data, the functionality of the schema, and the functionality of the validation. The tests are iterated over each of the models: campgrounds, comments, reviews, users.
 To run the tests:
 ```
 $ npm test
 ```
 
-## Acknowledgments
+## 📣 Acknowledgments
 -	[Colt Steele's YelpCamp Github Repository](https://github.com/Colt/yelp-camp-refactored)
 
-## License
+## 🔒 License
 Copyright Notice and Statement: currently not offering any license. Permission only to view and download.

@@ -17,7 +17,8 @@ const express 			= require("express"),
 	morgan				= require("morgan"),
 	cors				= require("cors"),
 	winston				= require("winston"),
-	helmet				= require("helmet");
+	helmet				= require("helmet"),
+	compression			= require("compression");
 
 // CALLING ROUTES
 const 	commentRoutes 		= require("./routes/comments"),
@@ -50,15 +51,33 @@ app.use(express.static(__dirname + "/public")); // Using __dirname + is a better
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(flash());
+
 // Uncomment the code below for additional logging during development
 //app.use(cors()); // CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options. Use for production purposes
 //app.use(morgan("combined")); // HTTP request logger middleware for node.js. Use for production purposes
+
 // Helmet helps you secure your Express apps by setting various HTTP headers
 app.use(
   helmet({
     contentSecurityPolicy: false,
   })
 );
+
+// CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+const whitelist = ["https://goorm-ide-test-ngvdz.run-us-west2.goorm.io/", "https://aqueous-reaches-28926.herokuapp.com/"]
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error("Not allowed by CORS"))
+    }
+  }
+}
+pp.use(cors(corsOptions))
+
+// compress all responses
+app.use(compression())
 
 // Moment JS for timestamps
 app.locals.moment = require("moment");
