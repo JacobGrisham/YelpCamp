@@ -1,6 +1,10 @@
 const {MongoClient} = require('mongodb');
 const mongoose = require('mongoose');
 
+// ============================================
+// Obtaining up models and creating mock data
+// ============================================
+
 const CampgroundModel = require('./models/campground.js');
 const CampgroundData = {name: "Upper Pines Campground", price: 30, image: "https://images.unsplash.com/photo-1532339142463-fd0a8979791a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80", description: "Upper Pines campground is a backpacking campground site with no amenities", location: "Yosemite", createdAt: new Date()} // Want to add author and its keys: id and username.
 
@@ -53,7 +57,7 @@ describe('Test insert', () => {
 // ======================
 describe('Campground Model Test', () => {
 	
-    // Cconnect to the MongoDB Memory Server by using mongoose.connect
+    // Connect to the MongoDB Memory Server by using mongoose.connect
     beforeAll(async () => {
         await mongoose.connect(global.__MONGO_URI__, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }, (err) => {
             if (err) {
@@ -102,6 +106,11 @@ describe('Campground Model Test', () => {
         expect(err).toBeInstanceOf(mongoose.Error.ValidationError)
         expect(err.errors.image).toBeDefined();
     });
+	
+	// Close MongoDB server once complete
+	afterAll( async () =>{
+        await mongoose.connection.close()
+    });
 })
 
 
@@ -140,6 +149,11 @@ describe('Comment Model Test', () => {
 		expect(savedCommentWithInvalidField.text).toBeDefined();
 		expect(savedCommentWithInvalidField.createdAt).toBeDefined();
         expect(savedCommentWithInvalidField.moreText).toBeUndefined();
+    });
+	
+	// Close MongoDB server once complete
+	afterAll( async () =>{
+        await mongoose.connection.close()
     });
 })
 
@@ -197,6 +211,11 @@ describe('Review Model Test', () => {
         }
         expect(err).toBeInstanceOf(mongoose.Error.ValidationError)
         expect(err.errors.rating).toBeDefined();
+    });
+	
+	// Close MongoDB server once complete
+	afterAll( async () =>{
+        await mongoose.connection.close()
     });
 })
 
@@ -262,5 +281,10 @@ describe('User Model Test', () => {
         }
         expect(err).toBeInstanceOf(mongoose.Error.ValidationError)
         expect(err.errors.username).toBeDefined();
+    });
+	
+	// Close MongoDB server once complete
+	afterAll( async () =>{
+        await mongoose.connection.close()
     });
 })

@@ -32,6 +32,7 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^1.2.3",
     "jest": "^26.4.2"
   }
 }
