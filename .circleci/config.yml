@@ -50,4 +50,4 @@ workflows:
     jobs:
       - build
       - test
-	  - test-coverage
+      - test-coverage
