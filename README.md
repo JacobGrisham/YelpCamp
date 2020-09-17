@@ -6,10 +6,10 @@
 
 First full-stack web application. Yelp for campsites. Compared to other projects, this application is meant to display proficiency with the basics of the technologies listed in the table below. Furthermore, this application is featured as a showcase project in my portfolio at [jacobgrisham.com](https://www.jacobgrisham.com/). The skeleton of this project was based on the capstone project from the Udemy course [The Web Developer Bootcamp](https://www.udemy.com/course/the-web-developer-bootcamp/).
 
-![Landing Page](https://aqueous-reaches-28926.herokuapp.com/stylesheets/Thumbnail-rectangle.png)
+![Landing Page](public/stylesheets/Thumbnail-rectangle.png)
 
--  [App](https://aqueous-reaches-28926.herokuapp.com/)
--	[App demo video](https://youtu.be/9IqcgAHhJ8k)
+## [App](https://aqueous-reaches-28926.herokuapp.com/)
+## [App demo video](https://youtu.be/9IqcgAHhJ8k)
 
 ## Table of Contents
 -	[Technologies](#technologies)
