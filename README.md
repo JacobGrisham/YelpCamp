@@ -12,14 +12,14 @@ First full-stack web application. Yelp for campsites. Compared to other projects
 ## [App demo video](https://youtu.be/9IqcgAHhJ8k)
 
 ## Table of Contents
--	[Technologies](#technologies)
--	[Methodology](#methodology)
--	[Features](#features)
--	[Project Status](#project-status)
--	[Getting Started](#getting-started)
--	[Tests](#tests)
--	[Acknowledgments](#acknowledgments)
--	[License](#license)
+-	[Technologies](https://github.com/JacobGrisham/YelpCamp#-technologies)
+-	[Methodology](https://github.com/JacobGrisham/YelpCamp#%EF%B8%8F-methodology)
+-	[Features](https://github.com/JacobGrisham/YelpCamp#%EF%B8%8F-features)
+-	[Project Status](https://github.com/JacobGrisham/YelpCamp#-project-status)
+-	[Getting Started](https://github.com/JacobGrisham/YelpCamp#-getting-started)
+-	[Tests](https://github.com/JacobGrisham/YelpCamp#-tests)
+-	[Acknowledgments](https://github.com/JacobGrisham/YelpCamp#-acknowledgments)
+-	[License](https://github.com/JacobGrisham/YelpCamp#-license)
 
 ## 🛠 Technologies
 Graphic Design|Front-End|Back-End|Database|Deployment|Testing
