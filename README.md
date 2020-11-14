@@ -9,7 +9,7 @@ First full-stack web application. Yelp for campsites. Compared to other projects
 ![Landing Page](public/stylesheets/Thumbnail-rectangle.png)
 
 ## 🖥 Walkthrough on Youtube
-[<img src="https://img.youtube.com/vi/9IqcgAHhJ8k/maxresdefault.jpg" width="50%">](https://youtu.be/9IqcgAHhJ8k)
+[<img src="https://img.youtube.com/vi/9IqcgAHhJ8k/maxresdefault.jpg" width="100%">](https://youtu.be/9IqcgAHhJ8k)
 
 ## Table of Contents
 -	[Technologies](https://github.com/JacobGrisham/YelpCamp#-technologies)
