@@ -1,4 +1,4 @@
-# YelpCamp
+# [YelpCamp](https://aqueous-reaches-28926.herokuapp.com/)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat&color=green)](https://github.com/feross/standard)
 [![Maintainability](https://api.codeclimate.com/v1/badges/5db672c308be3e556462/maintainability)](https://codeclimate.com/github/JacobGrisham/YelpCamp/maintainability)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/6272d48144774479b06e9b4b2caea0d6)](https://www.codacy.com/manual/JacobGrisham/YelpCamp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JacobGrisham/YelpCamp&amp;utm_campaign=Badge_Grade)
@@ -7,8 +7,6 @@
 First full-stack web application. Yelp for campsites. Compared to other projects, this application is meant to display proficiency with the basics of the technologies listed in the table below. Furthermore, this application is featured as a showcase project in my portfolio at [jacobgrisham.com](https://www.jacobgrisham.com/). The skeleton of this project was based on the capstone project from the Udemy course [The Web Developer Bootcamp](https://www.udemy.com/course/the-web-developer-bootcamp/).
 
 ![Landing Page](public/stylesheets/Thumbnail-rectangle.png)
-
-## [App](https://aqueous-reaches-28926.herokuapp.com/)
 
 ## 🖥 Walkthrough on Youtube
 [![YelpCamp Demo](https://img.youtube.com/vi/9IqcgAHhJ8k/0.jpg)](https://www.youtube.com/watch?v=9IqcgAHhJ8k)
