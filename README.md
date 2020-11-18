@@ -4,12 +4,11 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/6272d48144774479b06e9b4b2caea0d6)](https://www.codacy.com/manual/JacobGrisham/YelpCamp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JacobGrisham/YelpCamp&amp;utm_campaign=Badge_Grade)
 [![JacobGrisham](https://circleci.com/gh/JacobGrisham/YelpCamp.svg?style=svg)](https://app.circleci.com/pipelines/github/JacobGrisham/YelpCamp)
 
-First full-stack web application. Yelp for campsites. Compared to other projects, this application is meant to display proficiency with the basics of the technologies listed in the table below. Furthermore, this application is featured as a showcase project in my portfolio at [jacobgrisham.com](https://www.jacobgrisham.com/). The skeleton of this project was based on the capstone project from the Udemy course [The Web Developer Bootcamp](https://www.udemy.com/course/the-web-developer-bootcamp/).
-
 ## 🖥 Walkthrough on Youtube
 [<img src="youtube-thumbnail.png" width="100%">](https://youtu.be/9IqcgAHhJ8k)
 
 ## Table of Contents
+- [Lessons Learned](https://github.com/JacobGrisham/YelpCamp#-lessons-learned)
 -	[Technologies](https://github.com/JacobGrisham/YelpCamp#-technologies)
 -	[Methodology](https://github.com/JacobGrisham/YelpCamp#%EF%B8%8F-methodology)
 -	[Features](https://github.com/JacobGrisham/YelpCamp#%EF%B8%8F-features)
@@ -19,13 +18,22 @@ First full-stack web application. Yelp for campsites. Compared to other projects
 -	[Acknowledgments](https://github.com/JacobGrisham/YelpCamp#-acknowledgments)
 -	[License](https://github.com/JacobGrisham/YelpCamp#-license)
 
+## 💡Lessons Learned
+- First full-stack web application
+- MongoDB database design
+- Optimizing performance, security, and accessibility using Google Lighthouse
+- Integration testing with Jest
+- Code review with Codacy and CodeClimate
+- CI/CD with CircleCI
+- Creating SVG art with Inkscape
+
 ## 🛠 Technologies
-Graphic Design|Front-End|Back-End|Database|Deployment|Testing
-------------- | ------- | ------ | ------ | -------- | -------
-Inkscape	  |HTML5	|Node.js |Mongoose|Heroku	 |Jest
-.			  |CSS3		|ExpressJS|MongoDB|MongoDB Atlas|Lighthouse
-.			  |Bootstrap 4|EJS	 |.		  |Git		 |.
-.			  |Javascript|.		 |.		  |.		 |.
+|Graphic Design|Front-End|Back-End|Database|Deployment|Testing |
+|------------- | ------- | ------ | ------ | -------- | -------|
+|Inkscape	     |HTML5	   |Node.js |Mongoose|Heroku	  |Jest    |
+|.			       |CSS3		 |ExpressJS|MongoDB|MongoDB Atlas|Lighthouse|
+|.			       |Bootstrap 4|EJS	  |.		   |Git		    |.       |
+|.			       |Javascript|.		  |.		   |.		      |.       |
 
 ## ⚖️ Methodology
 -	Developed app in [GoormIDE](https://ide.goorm.io/) to gain exposure to cloud-based IDE.
