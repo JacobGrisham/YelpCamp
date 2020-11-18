@@ -8,7 +8,7 @@
 [<img src="youtube-thumbnail.png" width="100%">](https://youtu.be/9IqcgAHhJ8k)
 
 ## Table of Contents
-- [Lessons Learned](https://github.com/JacobGrisham/YelpCamp#-lessons-learned)
+- [Lessons Learned](https://github.com/JacobGrisham/YelpCamp#lessons-learned)
 -	[Technologies](https://github.com/JacobGrisham/YelpCamp#-technologies)
 -	[Methodology](https://github.com/JacobGrisham/YelpCamp#%EF%B8%8F-methodology)
 -	[Features](https://github.com/JacobGrisham/YelpCamp#%EF%B8%8F-features)
