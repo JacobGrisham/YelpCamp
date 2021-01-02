@@ -1,5 +1,4 @@
 # [YelpCamp](https://aqueous-reaches-28926.herokuapp.com/)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat&color=green)](https://github.com/feross/standard)
 [![Maintainability](https://api.codeclimate.com/v1/badges/5db672c308be3e556462/maintainability)](https://codeclimate.com/github/JacobGrisham/YelpCamp/maintainability)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/6272d48144774479b06e9b4b2caea0d6)](https://www.codacy.com/manual/JacobGrisham/YelpCamp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JacobGrisham/YelpCamp&amp;utm_campaign=Badge_Grade)
 [![JacobGrisham](https://circleci.com/gh/JacobGrisham/YelpCamp.svg?style=svg)](https://app.circleci.com/pipelines/github/JacobGrisham/YelpCamp)
