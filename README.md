@@ -3,11 +3,13 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/6272d48144774479b06e9b4b2caea0d6)](https://www.codacy.com/manual/JacobGrisham/YelpCamp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JacobGrisham/YelpCamp&amp;utm_campaign=Badge_Grade)
 [![JacobGrisham](https://circleci.com/gh/JacobGrisham/YelpCamp.svg?style=svg)](https://app.circleci.com/pipelines/github/JacobGrisham/YelpCamp)
 
-## 🖥 Walkthrough on Youtube
-[<img src="youtube-thumbnail.png" width="100%">](https://youtu.be/9IqcgAHhJ8k)
+## ▶️ Walkthrough on Youtube
+[<img src="public/stylesheets/youtube-thumbnail.png" width="100%">](https://youtu.be/9IqcgAHhJ8k)
+
+## 🖥 [Live Application](https://aqueous-reaches-28926.herokuapp.com/)
 
 ## Table of Contents
-- [Lessons Learned](https://github.com/JacobGrisham/YelpCamp#lessons-learned)
+-	[Lessons Learned](https://github.com/JacobGrisham/YelpCamp#lessons-learned)
 -	[Technologies](https://github.com/JacobGrisham/YelpCamp#-technologies)
 -	[Methodology](https://github.com/JacobGrisham/YelpCamp#%EF%B8%8F-methodology)
 -	[Features](https://github.com/JacobGrisham/YelpCamp#%EF%B8%8F-features)
@@ -18,13 +20,13 @@
 -	[License](https://github.com/JacobGrisham/YelpCamp#-license)
 
 ## 💡Lessons Learned
-- First full-stack web application
-- MongoDB database design
-- Optimizing performance, security, and accessibility using Google Lighthouse
-- Integration testing with Jest
-- Code review with Codacy and CodeClimate
-- CI/CD with CircleCI
-- Creating SVG art with Inkscape
+-	First full-stack web application
+-	MongoDB database design
+-	Optimizing performance, security, and accessibility using Google Lighthouse
+-	Integration testing with Jest
+-	Code review with Codacy and CodeClimate
+-	CI/CD with CircleCI
+-	Creating SVG art with Inkscape
 
 ## 🛠 Technologies
 |Graphic Design|Front-End|Back-End|Database|Deployment|Testing |
@@ -63,11 +65,34 @@ To Do:
 -	Complete
 
 ## 🚀 Getting Started
-To run this project, install it locally using npm:
+Create an .env file and add values to the following variables:
+```
+GEOCODER_API_KEY=
+API_KEY=
+DATABASEURL=
+PASSPORT_SECRET=
+ADMIN_CODE=
+```
+In a terminal window, initialize a Mongoose Database 
+```
+$ ./mongod
+```
+In a second terminal window, display the Mongoose Database 
+```
+$ mongoose
+```
+In a third terminal window, install dependencies using npm:
 
 ```
 $ npm install
+```
+And then run the application with
+```
 $ npm start
+```
+or
+```
+$ nodemon app.js
 ```
 
 ## 📐 Tests
