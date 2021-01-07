@@ -24,7 +24,7 @@ jobs:
       - checkout
       - run: echo "run commands to generate the coverage result"
       - coverage-reporter/send_report:
-          coverage-reports: 'results.xml,lcov.info'
+          coverage-reports: 'test-results/jest/results.xml,coverage/lcov.info'
           project-token: $CODACY_PROJECT_TOKEN
   
 
