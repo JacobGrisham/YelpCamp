@@ -22,12 +22,15 @@
 
 ## 💡Lessons Learned
 -	First full-stack web application
+-	ExpressJS
 -	MongoDB database design
+-	Bootstrap 4
 -	Optimizing performance, security, and accessibility using Google Lighthouse
 -	Integration testing with Jest
 -	Code review with Codacy and CodeClimate
 -	CI/CD with CircleCI
--	Creating SVG art with Inkscape
+-	Creating SVG illustrations
+-	Deploying app to Heroku and Database to MongoDB Atlas
 
 ## 🛠 Technologies
 |Graphic Design|Front-End|Back-End|Database|Deployment|Testing |
@@ -104,7 +107,7 @@ $ npm test
 ```
 
 ## 📣 Acknowledgments
--	[Colt Steele's YelpCamp Github Repository](https://github.com/Colt/yelp-camp-refactored)
+-	The skeleton of this project was based on [Colt Steele's YelpCamp](https://github.com/Colt/yelp-camp-refactored) during the Web Development Bootcamp.
 
 ## 🔒 License
 Copyright Notice and Statement: currently not offering any license. Permission only to view and download.
