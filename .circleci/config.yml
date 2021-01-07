@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run: echo "testing stuff"
       - run: npm install
-      - run: npm test
+      - run: npm run test
   codacy-coverage-report:
     docker:
       - image: 'circleci/openjdk:8-jdk'
