@@ -1,6 +1,5 @@
 version: 2.1
 orbs:
-  node: circleci/node4.0.0
   coverage-reporter: codacy/coverage-reporter@11.5.0
 jobs:
   build:
