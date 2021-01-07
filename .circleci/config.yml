@@ -1,17 +1,18 @@
 version: 2.1
 orbs:
+  node: circleci/node4.0.0
   coverage-reporter: codacy/coverage-reporter@11.5.0
 jobs:
   build:
     docker:
-      - image: circleci/node:8.9
+      - image: circleci/node:latest
     steps:
       - checkout
       - run: echo "npm installing"
       - run: npm install
   test:
     docker:
-      - image: circleci/node:8.9
+      - image: circleci/node:latest
     steps:
       - checkout
       - run: echo "testing stuff"
