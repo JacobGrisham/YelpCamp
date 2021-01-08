@@ -41,9 +41,9 @@ mongoose.connect(url, {
 		useNewUrlParser: true,
 		useCreateIndex: true
 	}). then (() => {
-		//console.log("Conencted to DB");
+		console.log("Conencted to DB");
 	}). catch((err) => {
-		//console.log("ERROR:", err.message);
+		console.log("ERROR:", err.message);
 });
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -57,14 +57,14 @@ app.use(flash());
 //app.use(morgan("combined")); // HTTP request logger middleware for node.js. Use for production purposes
 
 // Helmet helps you secure your Express apps by setting various HTTP headers
-app.use(
-  helmet({
-    contentSecurityPolicy: false,
-  })
-);
+// app.use(
+//   helmet({
+//     contentSecurityPolicy: false,
+//   })
+// );
 
 // CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
-const whitelist = ["https://goorm-ide-test-ngvdz.run-us-west2.goorm.io/", "https://aqueous-reaches-28926.herokuapp.com/"];
+const whitelist = ["https://goorm-ide-test-ngvdz.run-us-west2.goorm.io/", "https://aqueous-reaches-28926.herokuapp.com/", "http://goorm-ide-test-ngvdz.run-us-west2.goorm.io/"];
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
@@ -74,7 +74,7 @@ const corsOptions = {
     }
   }
 }
-pp.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 
 // compress all responses
 app.use(compression());
@@ -110,5 +110,5 @@ app.use("/campgrounds/:id/reviews", reviewRoutes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, process.env.IP, function(){
-	//console.log("Server is on");
+	console.log("Server is on");
 	});
