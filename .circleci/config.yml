@@ -1,6 +1,8 @@
 version: 2.1
 orbs:
-  coverage-reporter: codacy/coverage-reporter@11.5.0
+  coverage-reporter: codacy/coverage-reporter@11.5.0 # Invoke the Codacy Code Coverage orb
+orbs:
+  heroku: circleci/heroku@1.2.4 # Invoke the Heroku orb
 jobs:
   build:
     docker:
@@ -35,3 +37,12 @@ workflows:
       - build
       - test
       - codacy-coverage-report
+  heroku_deploy:
+     jobs:
+       - build
+       - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+           requires:
+             - build # only run deploy-via-git job if the build job has completed
+           filters:
+             branches:
+               only: master # only run deploy-via-git job on master branch
