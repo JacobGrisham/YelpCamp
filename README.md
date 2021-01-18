@@ -46,7 +46,7 @@
 -	[ExpressJS](https://expressjs.com/) as the Node.js application framework for its basic functionality. Some companies still use ExpressJS so it was important to implement it.
 -	[PassportJs](https://github.com/jaredhanson/passport) for the authentication and authorization.
 -	NoSQL database for the flexibility compared to a SQL database, [MongoDB](https://www.mongodb.com/) in particular because of its prevalence in the industry.
--	[Heroku](https://www.heroku.com/) due to the simple nature of the application and don't foresee scaling up server usage.
+-	[Heroku](https://www.heroku.com/) for the CirceCI continous integration and development support. Application is kept awake from 6:00 a.m. to 11:59 p.m. PST with [Kaffeine](https://kaffeine.herokuapp.com/)
 
 ## ⚙️ Features
 -	Login, sign-up, Admin role
