@@ -33,7 +33,7 @@ mongoose.set("useCreateIndex", true);
 mongoose.set("useUnifiedTopology", true);
 // linking the database here with the one on Heroku
 var url = process.env.DATABASEURL;
-// Use the database below when in production
+// Use the database below when in development
 // "mongodb://localhost/temporary_database"
 // checking DATABASEURL value
 //console.log(process.env.DATABASEURL);
@@ -53,15 +53,15 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 // Uncomment the code below for additional logging during development
-//app.use(cors()); // CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options. Use for production purposes
-//app.use(morgan("combined")); // HTTP request logger middleware for node.js. Use for production purposes
+app.use(cors()); // CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options. Use for production purposes
+app.use(morgan("combined")); // HTTP request logger middleware for node.js. Use for production purposes
 
 // Helmet helps you secure your Express apps by setting various HTTP headers
-// app.use(
-//   helmet({
-//     contentSecurityPolicy: false,
-//   })
-// );
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 
 // CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
 const whitelist = ["https://goorm-ide-test-ngvdz.run-us-west2.goorm.io/", "https://aqueous-reaches-28926.herokuapp.com/", "http://goorm-ide-test-ngvdz.run-us-west2.goorm.io/"];
@@ -74,7 +74,7 @@ const corsOptions = {
     }
   }
 }
-//app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 // compress all responses
 app.use(compression());
