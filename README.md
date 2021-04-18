@@ -9,17 +9,6 @@
 
 ## 🖥 [Live Application](https://aqueous-reaches-28926.herokuapp.com/)
 
-## Table of Contents
--	[Lessons Learned](https://github.com/JacobGrisham/YelpCamp#lessons-learned)
--	[Technologies](https://github.com/JacobGrisham/YelpCamp#-technologies)
--	[Methodology](https://github.com/JacobGrisham/YelpCamp#%EF%B8%8F-methodology)
--	[Features](https://github.com/JacobGrisham/YelpCamp#%EF%B8%8F-features)
--	[Project Status](https://github.com/JacobGrisham/YelpCamp#-project-status)
--	[Getting Started](https://github.com/JacobGrisham/YelpCamp#-getting-started)
--	[Tests](https://github.com/JacobGrisham/YelpCamp#-tests)
--	[Acknowledgments](https://github.com/JacobGrisham/YelpCamp#-acknowledgments)
--	[License](https://github.com/JacobGrisham/YelpCamp#-license)
-
 ## 💡Lessons Learned
 -	First full-stack web application
 -	ExpressJS
