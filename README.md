@@ -12,15 +12,16 @@
 
 ## 💡Lessons Learned
 -	First full-stack web application
--	ExpressJS
--	MongoDB database design
--	Bootstrap 4
--	Optimizing performance, security, and accessibility using Google Lighthouse
--	Integration testing with Jest
--	Code review with Codacy and CodeClimate
--	CI/CD with CircleCI
--	Creating SVG illustrations
--	Deploying app to Heroku and Database to MongoDB Atlas
+-	Introduction to [ExpressJS](https://expressjs.com/)
+-	Introduction to [MongoDB](https://www.mongodb.com/) database design
+-	Introduction to [Bootstrap 4](https://getbootstrap.com/)
+-	Optimizing performance, security, and accessibility using [Google Lighthouse](https://developers.google.com/web/tools/lighthouse)
+-	Integration testing with [Jest](https://jestjs.io/)
+-	Code review with [Codacy](https://app.codacy.com/project/badge/Coverage/6272d48144774479b06e9b4b2caea0d6) and [CodeClimate](https://codeclimate.com/github/JacobGrisham/YelpCamp/maintainability)
+-	CI/CD with [CircleCI]((https://app.circleci.com/pipelines/github/JacobGrisham/YelpCamp))
+-	Creating SVG illustrations with [Inkscape](https://inkscape.org/)
+-	Deploying app to [Heroku](https://www.heroku.com/) and Database to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+-	Using [Cloudflare](https://www.cloudflare.com/) as a Content Delivery Network in conjunction with custom [Google Domain](https://domains.google/) and Heroku
 
 ## 🛠 Technologies
 |Graphic Design|Front-End|Back-End|Database|Deployment|Testing |
@@ -37,6 +38,7 @@
 -	[PassportJs](https://github.com/jaredhanson/passport) for the authentication and authorization.
 -	NoSQL database for the flexibility compared to a SQL database, [MongoDB](https://www.mongodb.com/) in particular because of its prevalence in the industry.
 -	[Heroku](https://www.heroku.com/) for the CirceCI continous integration and development support. Application is kept awake from 6:00 a.m. to 11:59 p.m. PST with [Kaffeine](https://kaffeine.herokuapp.com/)
+-	[Cloudflare](https://www.cloudflare.com/) for the free SSL certificate, which is needed for domain forwarding to [https://www.yelpcamp.app](https://www.yelpcamp.app). Cloudflare also offers improved security and performance over the defaults in Google Domains.
 
 ## ⚙️ Features
 -	Login, sign-up, Admin role
@@ -45,17 +47,8 @@
 -	Edit, Update, and Delete routes have authentication and authorization
 -	[Google Maps API](https://developers.google.com/maps/documentation)
 
-To Do:
--	Sort campgrounds by review, distance, country, and state
--	Disallow duplicate campgrounds. I.e. no more than one unique campground
--	Not safe for work (NSFW) picture filter
--	Allow multiple photos to be uploaded
--	Write comment directly on show page
--	Write review directly on show page
--	Show 1/3, 1/2, and 2/3 of a star
--	Forgot password, change username, change password
-
 ## 🚀 Getting Started
+### To run this project on your system:
 Create an .env file and add values to the following variables:
 ```
 GEOCODER_API_KEY=
@@ -64,11 +57,12 @@ DATABASEURL=
 PASSPORT_SECRET=
 ADMIN_CODE=
 ```
-In a terminal window, initialize a Mongoose Database 
+Make sure you have [MongoDB](https://docs.mongodb.com/manual/installation/) installed on your system
+In a terminal window, initialize a MongoDB Database 
 ```
 $ ./mongod
 ```
-In a second terminal window, display the Mongoose Database 
+In a second terminal window, access the MongoDB Database with Mongoose
 ```
 $ mongoose
 ```
@@ -81,7 +75,7 @@ And then run the application with
 ```
 $ npm start
 ```
-or
+or for hot reloading (recommended)
 ```
 $ nodemon app.js
 ```
