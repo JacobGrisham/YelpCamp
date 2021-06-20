@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="12" failures="0" errors="0" time="7.584">
+  <testsuite name="Test insert" errors="0" failures="0" skipped="0" timestamp="2021-06-20T04:21:29" time="7.305" tests="12">
+    <testcase classname="Test insert should insert a doc into collection" name="Test insert should insert a doc into collection" time="0.089">
+    </testcase>
+    <testcase classname="Campground Model Test should create &amp; save a campground successfully" name="Campground Model Test should create &amp; save a campground successfully" time="0.104">
+    </testcase>
+    <testcase classname="Campground Model Test should insert campground successfully, but the field that is not defined in schema should be undefined" name="Campground Model Test should insert campground successfully, but the field that is not defined in schema should be undefined" time="0.08">
+    </testcase>
+    <testcase classname="Campground Model Test should create campground without required image field, which should cause a fail" name="Campground Model Test should create campground without required image field, which should cause a fail" time="0.006">
+    </testcase>
+    <testcase classname="Comment Model Test should create &amp; save a comment successfully" name="Comment Model Test should create &amp; save a comment successfully" time="0.008">
+    </testcase>
+    <testcase classname="Comment Model Test should insert comment successfully, but the field that is not defined in schema should be undefined" name="Comment Model Test should insert comment successfully, but the field that is not defined in schema should be undefined" time="0.003">
+    </testcase>
+    <testcase classname="Review Model Test should create &amp; save a review successfully" name="Review Model Test should create &amp; save a review successfully" time="0.01">
+    </testcase>
+    <testcase classname="Review Model Test should insert review successfully, but the field that is not defined in schema should be undefined" name="Review Model Test should insert review successfully, but the field that is not defined in schema should be undefined" time="0.004">
+    </testcase>
+    <testcase classname="Review Model Test should create review with non-number, which should cause a fail" name="Review Model Test should create review with non-number, which should cause a fail" time="0.098">
+    </testcase>
+    <testcase classname="User Model Test should create &amp; save a user successfully" name="User Model Test should create &amp; save a user successfully" time="0.085">
+    </testcase>
+    <testcase classname="User Model Test should insert user successfully, but the field that is not defined in schema should be undefined" name="User Model Test should insert user successfully, but the field that is not defined in schema should be undefined" time="0.003">
+    </testcase>
+    <testcase classname="User Model Test should create user without required username value data type, which should cause a fail" name="User Model Test should create user without required username value data type, which should cause a fail" time="0.003">
+    </testcase>
+  </testsuite>
+</testsuites>
