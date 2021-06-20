@@ -24,9 +24,9 @@ jobs:
           name: Run Tests
           command: npm run test
       - store_test_results:
-          path: /junit.xml
+          path: ./coverage/jest
       - store_artifacts:
-          path: /coverage/lcov-report
+          path: ./coverage/lcov-report
 
   codacy-coverage-report:
     docker:
