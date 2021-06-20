@@ -24,7 +24,7 @@ jobs:
           name: Run Tests
           command: npm run test
       - store_test_results:
-	      path: ~/junit.xml
+          path: ~/junit.xml
       - store_artifacts:
           path: ~/junit.xml
 
@@ -43,7 +43,7 @@ workflows:
   build_test_deploy:
      jobs:
        - build-and-test
-	   - codacy-coverage-report
+       - codacy-coverage-report
        - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
            requires:
              - build-and-test # only run deploy-via-git job if this job has completed
