@@ -3,18 +3,32 @@ version: 2.1
 orbs:
   coverage-reporter: codacy/coverage-reporter@11.5.0 # Invoke the Codacy Code Coverage orb
   heroku: circleci/heroku@1.2.4 # Invoke the Heroku orb
-  
-jobs:
 
+
+commands:
+  avoid_non-deployment_updates:
+    steps:
+        - run:
+          name: Avoid Non-Deployment Updates
+          command: |
+              changes=`git show --name-only ${CIRCLE_SHA1} | tail -n +7`
+
+              if [ "$changes" = ".circleci/config.yml" ] || [ "$changes" = "README.md" ]; then
+                echo "Only found a configuration or documentation change. Stopping build"
+                circleci-agent step halt
+              fi
+
+jobs:
   build-and-test:
     docker:
       - image: circleci/node:14.17.1
     steps:
       - checkout
+	  - avoid_non-deployment_updates
       - restore_cache:
           keys:
             - yelpcamp-dependency-cache-v1-{{ checksum "package-lock.json" }}
-            - yelpcamp-dependency-cache-v1
+            - yelpcamp-dependency-cache-v1-
       - run:
           name: Install Dependencies
           command: npm ci
@@ -35,10 +49,19 @@ jobs:
       - image: 'circleci/openjdk:8-jdk'
     steps:
       - checkout
+	  - avoid_non-deployment_updates
       # run commands to generate the coverage result
       - coverage-reporter/send_report:
           coverage-reports: 'coverage/lcov.info'
           project-token: $CODACY_PROJECT_TOKEN
+
+  deploy:
+    executor: heroku/default
+    steps:
+      - checkout
+	  - avoid_non-deployment_updates
+      - heroku/install
+      - heroku/deploy-via-git
 
 workflows:
   version: 2
@@ -46,7 +69,7 @@ workflows:
      jobs:
        - build-and-test
        - codacy-coverage-report
-       - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+       - deploy: # Use the pre-configured job, deploy-via-git
            requires:
              - build-and-test # only run deploy-via-git job if this job has completed
            filters:
