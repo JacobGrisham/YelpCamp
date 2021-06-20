@@ -8,15 +8,15 @@ orbs:
 commands:
   avoid_non-deployment_updates:
     steps:
-        - run:
+      - run:
           name: Avoid Non-Deployment Updates
           command: |
-              changes=`git show --name-only ${CIRCLE_SHA1} | tail -n +7`
+            changes=`git show --name-only ${CIRCLE_SHA1} | tail -n +7`
 
-              if [ "$changes" = ".circleci/config.yml" ] || [ "$changes" = "README.md" ]; then
-                echo "Only found a configuration or documentation change. Stopping build"
-                circleci-agent step halt
-              fi
+            if [ "$changes" = ".circleci/config.yml" ] || [ "$changes" = "README.md" ]; then
+              echo "Only found a configuration or documentation change. Stopping build"
+              circleci-agent step halt
+            fi
 
 jobs:
   build-and-test:
