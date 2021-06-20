@@ -12,7 +12,9 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: yelpcamp-dependency-cache-v1-{{ checksum "package-lock.json" }}
+          keys:
+            - yelpcamp-dependency-cache-v1-{{ checksum "package-lock.json" }}
+            - yelpcamp-dependency-cache-v1
       - run:
           name: Install Dependencies
           command: npm ci
