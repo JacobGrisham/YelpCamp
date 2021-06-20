@@ -4,7 +4,7 @@
   "description": "YelpCamp v1 (my second time making it)",
   "main": "app.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --ci --reporters=default --reporters=jest-junit",
     "start": "node app.js"
   },
   "author": "",
