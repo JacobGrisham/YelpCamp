@@ -24,7 +24,7 @@ jobs:
       - image: circleci/node:14.17.1
     steps:
       - checkout
-	  - avoid_non-deployment_updates
+      - avoid_non-deployment_updates
       - restore_cache:
           keys:
             - yelpcamp-dependency-cache-v1-{{ checksum "package-lock.json" }}
@@ -49,7 +49,7 @@ jobs:
       - image: 'circleci/openjdk:8-jdk'
     steps:
       - checkout
-	  - avoid_non-deployment_updates
+      - avoid_non-deployment_updates
       # run commands to generate the coverage result
       - coverage-reporter/send_report:
           coverage-reports: 'coverage/lcov.info'
@@ -59,7 +59,7 @@ jobs:
     executor: heroku/default
     steps:
       - checkout
-	  - avoid_non-deployment_updates
+      - avoid_non-deployment_updates
       - heroku/install
       - heroku/deploy-via-git
 
