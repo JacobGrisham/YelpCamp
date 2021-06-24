@@ -7,14 +7,17 @@ var middleware = require("../middleware"); // Note that the default file in a di
 
 // This is the landing page
 router.get("/", function(req,res){
-	res.render("landing");
+	res.render("landing", {
+		title:"YelpCamp"
+	});
 });
-
 
 // Authorization Routes
 // Show register form
 router.get("/register", function(req, res){
-	res.render("register");
+	res.render("register", {
+		title:"Register"
+	});
 });
 
 //handle sign up logic
@@ -44,7 +47,9 @@ router.post("/register", function(req, res){
 });
 // Show form
 router.get("/login", function(req, res){
-	res.render("login");
+	res.render("login", {
+		title:"Login"
+	});
 });
 // Post form
 router.post("/login", passport.authenticate("local",
@@ -72,7 +77,11 @@ router.get("/users/:id", function (req, res){
 				req.flash("error", err.message);
 				res.redirect("/");
 			}
-		res.render("users/show", {user: foundUser, campgrounds: campgrounds});
+		res.render("users/show", {
+			user: foundUser, 
+			title: "Profile",
+			campgrounds: campgrounds
+			});
 		});
 	});
 });

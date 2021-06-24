@@ -37,7 +37,11 @@ router.get("/", function(req,res){
 				if(allCampgrounds.length < 1) {
 					noMatch = "No campgrounds found";
 				}
-				res.render("campgrounds/index", {campgrounds:allCampgrounds, noMatch: noMatch});
+				res.render("campgrounds/index", {
+					campgrounds:allCampgrounds,
+					title: "No Campgrounds",
+					noMatch: noMatch
+				});
 				// "campgrounds" is the name of the data that we expect to find in that file
 				// recall that {"name we want":"data"}. We could name them differently, but they are commonly called the same thing. 
 			}
@@ -48,7 +52,11 @@ router.get("/", function(req,res){
 			if(err){
 				console.log(err);
 			} else {
-				res.render("campgrounds/index", {campgrounds:allCampgrounds, noMatch: noMatch});
+				res.render("campgrounds/index", {
+					campgrounds:allCampgrounds,
+					title: "All Campgrounds",
+					noMatch: noMatch
+				});
 			}
 		});
 	}
@@ -91,7 +99,9 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 // This is page where we send/update the data
 router.get("/new", middleware.isLoggedIn, function(req, res){
 // Again, this naming convention is part of REST naming convention.
-	res.render("campgrounds/new");
+	res.render("campgrounds/new", {
+		title: "New Campground"
+	});
 });
 
 
@@ -108,7 +118,10 @@ router.get("/:id", function(req, res){
 			console.log(err);
 		} else {
 			// render the show template with that campground
-			res.render("campgrounds/show", {campground: foundCampground});
+			res.render("campgrounds/show", {
+				campground: foundCampground,
+				title: "Campground Details"
+			});
 		}
 	});
 });
@@ -118,7 +131,10 @@ router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res){
 	// Find the Campground by Id
 	Campground.findById(req.params.id, function(err, foundCampground){
 		// Third Render the edit page in order to access to the edit form
-		res.render("campgrounds/edit", {campground: foundCampground});
+		res.render("campgrounds/edit", {
+			campground: foundCampground,
+			title: `Edit Campground Info`
+		});
 	});
 });	
 

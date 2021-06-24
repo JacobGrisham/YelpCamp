@@ -14,7 +14,10 @@ router.get("/", function (req, res) {
             req.flash("error", err.message);
             return res.redirect("back");
         }
-        res.render("reviews/index", {campground: campground});
+        res.render("reviews/index", {
+			campground: campground,
+			title: "Campground Reviews"
+		});
     });
 });
 
@@ -26,7 +29,10 @@ router.get("/new", middleware.isLoggedIn, middleware.checkReviewExistence, funct
             req.flash("error", err.message);
             return res.redirect("back");
         }
-        res.render("reviews/new", {campground: campground});
+        res.render("reviews/new", {
+			campground: campground,
+			title: "Review Campground"
+		});
     });
 });
 
@@ -67,7 +73,11 @@ router.get("/:review_id/edit", middleware.checkReviewOwnership, function (req, r
             req.flash("error", err.message);
             return res.redirect("back");
         }
-        res.render("reviews/edit", {campground_id: req.params.id, review: foundReview});
+        res.render("reviews/edit", {
+			campground_id: req.params.id,
+			review: foundReview,
+			title: "Edit Your Review"
+		});
     });
 });
 

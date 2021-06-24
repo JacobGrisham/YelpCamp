@@ -12,7 +12,10 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
 		if(err){
 			console.log(err);
 		} else {
-			res.render("comments/new", {campground: campground});
+			res.render("comments/new", {
+				campground: campground,
+				title: "Comment"
+			});
 		}
 	});
 	
@@ -58,7 +61,11 @@ router.get("/:comment_id/edit", function(req, res){
 				if (err){
 					console.log(err);
 				} else {
-					res.render("comments/edit", {campground: foundCampground, comment: foundComment});
+					res.render("comments/edit", {
+						campground: foundCampground,
+						title: "Edit Comment",
+						comment: foundComment
+					});
 				}
 			});
 		}
