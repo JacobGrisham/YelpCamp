@@ -1,30 +1,46 @@
 <%- include ("partials/header") %>
 <div class="container">
 	<div class="row">
-			<div class="col-9 col-md-6 col-lg-5 signup-login">
-				<h1 class="text-center title-font">Sign Up!</h1>
-				<form action="/register" method="POST">
-					<div class="form-group">
-						<label for="username">Username</label>
-						<input class="form-control" id="username" type="text" name="username" placeholder="Happy Camper" required>
+			<div class="login-container signup-login">
+				
+				<form class="form-signin needs-validation" novalidate action="/register" method="POST">
+					
+					<h1 class="text-center title-font">Sign Up!</h1>
+					
+					<div class="form-label-group">
+						<input id="inputUsername" class="form-control" type="text" name="username" placeholder="Happy Camper" required autofocus>
+						<label for="inputUsername">Username</label>
+						<div class="valid-feedback"></div>
+						<div class="invalid-feedback">
+							Please provide username.
+						</div>
 					</div>
-					<div class="form-group">
-						<label for="password">Password</label>
-						<input class="form-control" type="password" name="password" placeholder="Super secret..." required></input>
+					
+					<div class="form-label-group">
+						<input id="inputPassword" class="form-control" type="password" name="password" placeholder="Super secret..." required></input>
+						<label for="inputPassword">Password</label>
+						<div class="valid-feedback"></div>
+						<div class="invalid-feedback">
+							Please provide password.
+						</div>
 					</div>
-					<div class="form-group">
-						<label for="email">Email</label>
-						<input class="form-control" id="email" type="email" name="email" placeholder="happycamper@gmail.com">
+				
+					<div class="form-label-group">
+						<input id="inputEmail" class="form-control" type="email" name="email" placeholder="(optional) happycamper@gmail.com">
+						<label for="inputEmail">Email</label>
 					</div>
-					<div class="form-group">
+				
+					<div class="form-label-group">
 						<label for="adminCode">Admin Code</label>
 						<input class="form-control" type="text" name="adminCode" placeholder="Enter only if you have it"></input>
 					</div>
-					<div class="form-group">
-						<button class="btn btn-lg btn-block btn-success">Submit</button>
+		
+					<div class="form-label-group">
+						<button type="submit" class="btn btn-lg btn-block btn-success" style="width:100%">Register</button>
 					</div>
+		
+					<p class="d-flex justify-content-between"><a href="/" class="mr-4 btn btn-success"><i class="fa fa-angle-left back text-white" aria-hidden="true"></i> Back</a><a href="/login" class="btn btn-success">Login</a></p>
 				</form>
-				<i class="fa fa-angle-left back" aria-hidden="true"></i><a href="/"> Back</a>
 			</div>
 	</div>
 
