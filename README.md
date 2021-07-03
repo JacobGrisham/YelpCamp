@@ -14,26 +14,26 @@
 -	First full-stack web application
 -	Introduction to [ExpressJS](https://expressjs.com/)
 -	Introduction to [MongoDB](https://www.mongodb.com/) database design
--	Introduction to [Bootstrap 4](https://getbootstrap.com/)
+-	Introduction to [Bootstrap 5](https://getbootstrap.com/)
 -	Optimizing performance, security, and accessibility using [Google Lighthouse](https://developers.google.com/web/tools/lighthouse)
 -	Integration testing with [Jest](https://jestjs.io/)
--	Code review with [Codacy](https://app.codacy.com/project/badge/Coverage/6272d48144774479b06e9b4b2caea0d6) and [CodeClimate](https://codeclimate.com/github/JacobGrisham/YelpCamp/maintainability)
+-	Automated code review with [Codacy](https://app.codacy.com/project/badge/Coverage/6272d48144774479b06e9b4b2caea0d6) and [CodeClimate](https://codeclimate.com/github/JacobGrisham/YelpCamp/maintainability)
 -	CI/CD with [CircleCI](https://app.circleci.com/pipelines/github/JacobGrisham/YelpCamp)
--	Creating SVG illustrations with [Inkscape](https://inkscape.org/)
+-	Creating the background SVG illustration with [Inkscape](https://inkscape.org/)
 -	Deploying app to [Heroku](https://www.heroku.com/) and Database to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
--	Using [Cloudflare](https://www.cloudflare.com/) as a Content Delivery Network in conjunction with custom [Google Domain](https://domains.google/) and Heroku
+-	[Cloudflare](https://www.cloudflare.com/) as a Content Delivery Network in conjunction with custom [Google Domain](https://domains.google/) and Heroku
 
 ## 🛠 Technologies
-|Graphic Design|Front-End|Back-End|Database|Deployment|Testing |
-|------------- | ------- | ------ | ------ | -------- | -------|
-|Inkscape	     |HTML5	   |Node.js |Mongoose|Heroku	  |Jest    |
-|.			       |CSS3		 |ExpressJS|MongoDB|MongoDB Atlas|Lighthouse|
-|.			       |Bootstrap 4|EJS	  |.		   |Git		    |.       |
-|.			       |Javascript|.		  |.		   |.		      |.       |
+|Graphic Design|Front-End	|Back-End	|Database	|Deployment		|Testing 	|
+|------------- | ------- 	| ------ 	| ------ 	| --------		| -------	|
+|Inkscape	   |HTML5	 	|Node.js 	|Mongoose	|Heroku	  		|Jest    	|
+|.			   |CSS3	 	|ExpressJS	|MongoDB	|MongoDB Atlas	|Lighthouse	|
+|.			   |Bootstrap 5	|EJS	  	|.		    |Cloudflare		|.       	|
+|.			   |Javascript	|.		  	|.		    |Git	      	|.       	|
 
 ## ⚖️ Methodology
 -	Developed app in [GoormIDE](https://ide.goorm.io/) to gain exposure to cloud-based IDE.
--	[Bootstrap 4](https://getbootstrap.com/) as the CSS framework to keep the UI simple and quick to build.
+-	[Bootstrap 5](https://getbootstrap.com/) as the CSS framework to keep the UI simple and quick to build. Since the project loads Bootstrap, took full advantage of Bootstrap features such as [custom validation](https://getbootstrap.com/docs/5.0/forms/validation/) and [advanced login](https://getbootstrap.com/docs/4.0/examples/floating-labels/)
 -	[ExpressJS](https://expressjs.com/) as the Node.js application framework for its basic functionality. Some companies still use ExpressJS so it was important to implement it.
 -	[PassportJs](https://github.com/jaredhanson/passport) for the authentication and authorization.
 -	NoSQL database for the flexibility compared to a SQL database, [MongoDB](https://www.mongodb.com/) in particular because of its prevalence in the industry.
@@ -42,7 +42,7 @@
 
 ## ⚙️ Features
 -	Login, sign-up, Admin role
--	REST API (create, read, update, delete) for campgrounds, comments, and reviews
+-	RESTful routes (create, read, update, delete) for campgrounds, comments, and reviews
 -	Create routes have authentication
 -	Edit, Update, and Delete routes have authentication and authorization
 -	[Google Maps API](https://developers.google.com/maps/documentation)
