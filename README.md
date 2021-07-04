@@ -32,13 +32,14 @@
 |.			   |Javascript	|.		  	|.		    |Git	      	|.       	|
 
 ## ⚖️ Methodology
--	Developed app in [GoormIDE](https://ide.goorm.io/) to gain exposure to cloud-based IDE.
--	[Bootstrap 5](https://getbootstrap.com/) as the CSS framework to keep the UI simple and quick to build. Since the project loads Bootstrap, took full advantage of Bootstrap features such as [custom validation](https://getbootstrap.com/docs/5.0/forms/validation/) and [advanced login](https://getbootstrap.com/docs/4.0/examples/floating-labels/)
--	[ExpressJS](https://expressjs.com/) as the Node.js application framework for its basic functionality. Some companies still use ExpressJS so it was important to implement it.
+-	Developed and maintina the app in [GoormIDE](https://ide.goorm.io/) to gain exposure to a cloud-based IDE.
+-	[Bootstrap 5](https://getbootstrap.com/) as the CSS framework to keep the UI simple and quick to build. Since the project loads Bootstrap, took full advantage of advanced Bootstrap features such as [custom validation](https://getbootstrap.com/docs/5.0/forms/validation/) for all forms and [animated form input](https://getbootstrap.com/docs/4.0/examples/floating-labels/) for the login and register pages.
+-	[ExpressJS](https://expressjs.com/) as the Node.js application framework for its basic functionality to gain understanding of how to build the backend from scratch.
 -	[PassportJs](https://github.com/jaredhanson/passport) for the authentication and authorization.
 -	NoSQL database for the flexibility compared to a SQL database, [MongoDB](https://www.mongodb.com/) in particular because of its prevalence in the industry.
--	[Heroku](https://www.heroku.com/) for the CirceCI continous integration and development support. Application is kept awake from 6:00 a.m. to 11:59 p.m. PST with [Kaffeine](https://kaffeine.herokuapp.com/)
--	[Cloudflare](https://www.cloudflare.com/) for the free SSL certificate, which is needed for domain forwarding to [https://www.yelpcamp.app](https://www.yelpcamp.app). Cloudflare also offers improved security and performance over the defaults in Google Domains.
+-	[Heroku](https://www.heroku.com/) as the cloud hosting provider to gain experience with PaaS. Since I'm using the free tier, which normally causes the application to sleep after 30 minutes of inactivity, the application is kept awake from 6:00 a.m. to 11:59 p.m. PST with [Kaffeine](https://kaffeine.herokuapp.com/).
+-	[Cloudflare](https://www.cloudflare.com/) as the Content Delivery Network to serve users outside of the U.S. with faster load times and for the free SSL certificate, which is needed for domain forwarding to [https://www.yelpcamp.app](https://www.yelpcamp.app). Cloudflare also offers improved security and performance over the defaults in Google Domains.
+-	[Inkscape](https://inkscape.org/) to create SVG illustrations from scratch to gain a deeper understanding of SVG. I don't plan on creating SVG graphics from scratch often, but now that I know how to do it, I can easily edit existing SVGs. If I'm unable to find an open-source SVG, now I can always create one exactly as needed.
 
 ## ⚙️ Features
 -	Login, sign-up, Admin role
