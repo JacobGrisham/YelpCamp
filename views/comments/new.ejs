@@ -4,7 +4,7 @@
 	<div class="row justify-content-center">
 			<div class="col-12 col-md-9">
 				
-				<form class="new-edit-forms opaque-background needs-validation" action="/campgrounds/<%= campground._id %>/comments" method="POST">
+				<form class="new-edit-forms opaque-background needs-validation" novalidate action="/campgrounds/<%= campground._id %>/comments" method="POST">
 					<!-- Note that the action="__" should equal the name of the post request url. -->
 					
 					<h2 class="text-center title-font">Add Comment to <%= campground.name %> </h2>
@@ -13,7 +13,7 @@
 						<input class="form-control" type="textarea" name="comment[text]" placeholder="Share your thoughts!" required autofocus></input>
 						<div class="valid-feedback"></div>
 						<div class="invalid-feedback">
-							What's the point of a comment without <em>something</em>?
+							Did you forget to write something?
 						</div>
 					</div>
 					

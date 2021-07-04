@@ -4,7 +4,7 @@
 	<div class="row justify-content-center">
 			<div class="col-12 col-md-9">
 
-				<form class="new-edit-forms opaque-background needs-validation" action="/campgrounds" method="POST">
+				<form class="new-edit-forms opaque-background needs-validation" novalidate action="/campgrounds" method="POST">
 					
 					<!-- Note that the action="__" should equal the name of the post request url. -->
 					<!-- We use the name attribute in our route to grab the data from our request.body -->
@@ -12,8 +12,8 @@
 					<h1 class="text-center title-font">Add Campground</h1>
 					
 					<div class="form-group">
-						<label class="form-label" for="name">Name</label>
-						<input class="form-control" type="text" name="name" id="name" placeholder="Name of the campground" required autofocus>
+						<label class="form-label" for="campgroundName">Name</label>
+						<input class="form-control" type="text" name="name" id="campgroundName" placeholder="Name of the campground" required autofocus>
 						<div class="valid-feedback"></div>
 						<div class="invalid-feedback">
 							Please provide name of the campground.
@@ -21,12 +21,13 @@
 					</div>
 					
 					<div class="form-group">
-   						 <label class="form-label" for="location">Location</label>
-   						 <input class="form-control" type="text" name="location" id="location" placeholder="Address or latitude, longitude to display on Google Maps" required>
-						<div class="valid-feedback"></div>
+   						 <label class="form-label" for="campgroundLocation">Location</label>
+   						 <input class="form-control <% if(campgroundLocationError.length > 0) { %> is-invalid <% } %>" type="text" name="location" id="campgroundLocation" placeholder="Address or latitude, longitude to display on Google Maps" required>
+						<% if(campgroundLocationError) { %>
 						<div class="invalid-feedback">
-							Please provide a valid location of the campground.
+							<%= campgroundLocationError %>
 						</div>
+						<% } %>
 					</div>
 					
 					<div class="form-group">
@@ -35,8 +36,8 @@
 					</div>
 					
 					<div class="form-group">
-						<label class="form-label" for="image">Image Url</label>
-						<input class="form-control" type="text" name="image" id="image" placeholder="paste the website url of the image here" required>
+						<label class="form-label" for="campgroundImage">Image Url</label>
+						<input class="form-control" type="text" name="image" id="campgroundImage" placeholder="Paste the website url of the image here" required>
 						<div class="valid-feedback"></div>
 						<div class="invalid-feedback">
 							Please provide photo of the campground.

@@ -4,7 +4,7 @@
 	<div class="row justify-content-center">
 			<div class="col-12 col-md-9">
 				<!-- campground_id is not working -->
-				<form class="new-edit-forms opaque-background needs-validation" action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=PUT" method="POST">
+				<form class="new-edit-forms opaque-background needs-validation" novalidate action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=PUT" method="POST">
 					<!-- Note that the action="__" should equal the name of the post request url. -->
 					
 					<h1 class="text-center title-font">Edit <%= campground.name %> Comment</h1>

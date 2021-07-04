@@ -32,7 +32,7 @@ router.get("/", function(req,res){
 		// Get the campground that matches the query string
 		Campground.find({name: regex}, function(err, allCampgrounds){
 			if(err){
-				console.log(err);
+				req.flash("error", "Sorry, something unexpected went wrong. Please let me know by sending an email to jacob.d.grisham@gmail.com");
 			} else {
 				if(allCampgrounds.length < 1) {
 					noMatch = "No campgrounds found";
@@ -50,7 +50,7 @@ router.get("/", function(req,res){
 		// Get all campgrounds from DB
 		Campground.find({}, function(err, allCampgrounds){
 			if(err){
-				console.log(err);
+				req.flash("error", "Sorry, something unexpected went wrong. Please let me know by sending an email to jacob.d.grisham@gmail.com");
 			} else {
 				res.render("campgrounds/index", {
 					campgrounds:allCampgrounds,
@@ -75,8 +75,10 @@ router.post("/", middleware.isLoggedIn, function(req, res){
   }
   geocoder.geocode(req.body.location, function (err, data) {
     if (err || !data.length) {
-      req.flash("error", "Invalid address");
-      return res.redirect("back");
+		res.render("campgrounds/new", {
+		title: "New Campground",
+		campgroundLocationError: err.message,
+	});
     }
     var lat = data[0].latitude;
     var lng = data[0].longitude;
@@ -85,7 +87,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
     // Create a new campground and save to DB
     Campground.create(newCampground, function(err, newlyCreated){
         if(err){
-            console.log(err);
+            req.flash("error", "Sorry, something unexpected went wrong. Please let me know by sending an email to jacob.d.grisham@gmail.com");
         } else {
             //redirect back to campgrounds page
             res.redirect("/campgrounds");
@@ -100,7 +102,8 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 router.get("/new", middleware.isLoggedIn, function(req, res){
 // Again, this naming convention is part of REST naming convention.
 	res.render("campgrounds/new", {
-		title: "New Campground"
+		title: "New Campground",
+		campgroundLocationError: "",
 	});
 });
 
@@ -115,7 +118,7 @@ router.get("/:id", function(req, res){
 			options: {sort: {createdAt: -1}}
 	}).exec(function(err, foundCampground){
 		if(err){
-			console.log(err);
+			req.flash("error", "Sorry, something unexpected went wrong. Please let me know by sending an email to jacob.d.grisham@gmail.com");
 		} else {
 			// render the show template with that campground
 			res.render("campgrounds/show", {
@@ -133,7 +136,8 @@ router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res){
 		// Third Render the edit page in order to access to the edit form
 		res.render("campgrounds/edit", {
 			campground: foundCampground,
-			title: `Edit Campground Info`
+			title: `Edit Campground Info`,
+			campgroundLocationError: "",
 		});
 	});
 });	
@@ -143,9 +147,9 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
 	delete req.body.campground.rating; // protect the campground.rating field from manipulation
   geocoder.geocode(req.body.location, function (err, data) {
     if (err || !data.length) {
-      req.flash("error", "Something went wrong");
-		console.log(err);
-		return res.redirect("back");
+		res.render("back", {
+			campgroundLocationError: err.message,
+		});
     }
     req.body.campground.lat = data[0].latitude;
     req.body.campground.lng = data[0].longitude;
@@ -154,8 +158,7 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
 	// First find and update the correct campgrounds
     Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, campground){
         if(err){
-            req.flash("error", err.message);
-            res.redirect("back");
+			req.flash("error", "Sorry, something unexpected went wrong. Please let me know by sending an email to jacob.d.grisham@gmail.com");
         } else {
 			// Second redirect to the show page. We need to add the Id.
 			// We can use req.params.id or updatedCampground._id

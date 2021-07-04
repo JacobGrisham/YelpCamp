@@ -14,7 +14,7 @@ middlewareObj.isLoggedIn = function(req, res, next){
 	if(req.isAuthenticated()){
 		return next();
 	}
-	req.flash("error", "You need to logged in to do that"); // line must come before the redirect.
+	req.flash("error", "You need to be logged in to do that"); // line must come before the redirect.
 	res.redirect("/login");
 };
 
@@ -38,7 +38,7 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next){
 			}
 		});
 	} else {
-		req.flash("error", "You need to logged in to do that");
+		req.flash("error", "You need be to logged in to do that");
 		res.redirect("back");
 	}
 }
@@ -62,7 +62,7 @@ middlewareObj.checkCommentOwnership = function(req, res, next){
 			}
 		});
 	} else {
-		req.flash("error", "You need to logged in to do that");
+		req.flash("error", "You need to be logged in to do that");
 		res.redirect("back");
 	}
 }
