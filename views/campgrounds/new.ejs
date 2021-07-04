@@ -1,37 +1,61 @@
 <%- include ("../partials/header") %>
 
 <div class="container">
-	<div class="row">
-			<div class="col-12 col-md-9 new-edit-forms">
-				<h1 class="text-center title-font">Add Campground</h1>
-				<form action="/campgrounds" method="POST">
+	<div class="row justify-content-center">
+			<div class="col-12 col-md-9">
+
+				<form class="new-edit-forms opaque-background needs-validation" action="/campgrounds" method="POST">
+					
 					<!-- Note that the action="__" should equal the name of the post request url. -->
+					<!-- We use the name attribute in our route to grab the data from our request.body -->
+					
+					<h1 class="text-center title-font">Add Campground</h1>
+					
 					<div class="form-group">
-						<label for="name">Name</label>
-						<input class="form-control" type="text" name="name" id="name" placeholder="Name of the campground" required>
+						<label class="form-label" for="name">Name</label>
+						<input class="form-control" type="text" name="name" id="name" placeholder="Name of the campground" required autofocus>
+						<div class="valid-feedback"></div>
+						<div class="invalid-feedback">
+							Please provide name of the campground.
+						</div>
 					</div>
+					
 					<div class="form-group">
-   						 <label for="location">Location</label>
-   						 <input class="form-control" type="text" name="location" id="location" placeholder="Address or latitude, longitude to display on Google Maps">
+   						 <label class="form-label" for="location">Location</label>
+   						 <input class="form-control" type="text" name="location" id="location" placeholder="Address or latitude, longitude to display on Google Maps" required>
+						<div class="valid-feedback"></div>
+						<div class="invalid-feedback">
+							Please provide a valid location of the campground.
+						</div>
 					</div>
+					
 					<div class="form-group">
-						<label for="price">Price</label>
+						<label class="form-label" for="price">Price</label>
 						<input class="form-control" type="number" name="price" id="price" placeholder="Price in USD" min="0.01" step="0.01">
 					</div>
+					
 					<div class="form-group">
-						<label for="image">Image Url</label>
+						<label class="form-label" for="image">Image Url</label>
 						<input class="form-control" type="text" name="image" id="image" placeholder="paste the website url of the image here" required>
-						<!-- We use the name attribute in our route to grab the data from our request.body -->
+						<div class="valid-feedback"></div>
+						<div class="invalid-feedback">
+							Please provide photo of the campground.
+						</div>
 					</div>
+					
 					<div class="form-group">
-						<label for="description">Description</label>
+						<label class="form-label" for="description">Description</label>
 						<textarea class="form-control" type="text" name="description" id="description" placeholder="Share your experience!"></textarea>
 					</div>
-					<div class="form-group">
-						<button class="btn btn-lg btn-block btn-success">Submit!</button>
+					
+					<div class="form-group mt-2">
+						<button class="btn btn-lg btn-block btn-success form-control">Add Campground!</button>
 					</div>
+					
+					<a href="/campgrounds" class="mr-4 btn btn-sm btn-success mt-4"><i class="fa fa-angle-left text-white" aria-hidden="true"></i> Back</a>
+					
 				</form>
-				<a href="/campgrounds"><i class="fa fa-angle-left back" aria-hidden="true"></i> Back</a>
+				
 			</div>
 	</div>
 

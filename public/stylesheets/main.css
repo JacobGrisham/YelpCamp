@@ -95,12 +95,9 @@
 
 .new-edit-forms {
 	margin: 5rem auto;
+	padding: 2rem;
 }
 
-/* Coloring back arrow icon blue */
-.back {
-	color: rgb(38, 126, 246);
-}
 
 /* Coloring plus icon white */
 .add {

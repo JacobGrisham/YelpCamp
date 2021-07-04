@@ -1,20 +1,30 @@
 <%- include ("../partials/header") %>
 
 <div class="container">
-	<div class="row">
-			<div class="col-12 col-md-9 new-edit-forms">
-				<h1 class="text-center title-font">Edit <%= campground.name %> Comment</h1>
+	<div class="row justify-content-center">
+			<div class="col-12 col-md-9">
 				<!-- campground_id is not working -->
-				<form action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=PUT" method="POST">
+				<form class="new-edit-forms opaque-background needs-validation" action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=PUT" method="POST">
 					<!-- Note that the action="__" should equal the name of the post request url. -->
+					
+					<h1 class="text-center title-font">Edit <%= campground.name %> Comment</h1>
+
 					<div class="form-group">
-						<input class="form-control" type="text" name="comment[text]" value="<%=comment.text%>"></input>
+						<input class="form-control" type="text" name="comment[text]" value="<%=comment.text%>" required autofocus></input>
+						<div class="valid-feedback"></div>
+						<div class="invalid-feedback">
+							If you don't want anything in your comment, just delete it
+						</div>
 					</div>
-					<div class="form-group">
-						<button class="btn btn-lg btn-block btn-success">Submit!</button>
+				
+					<div class="form-group mt-2">
+						<button class="btn btn-lg btn-success btn-block form-control">Update!</button>
 					</div>
+				
+					<a href="/campgrounds" class="mr-4 btn btn-sm btn-success mt-4"><i class="fa fa-angle-left text-white" aria-hidden="true"></i> Back</a>
+				
 				</form>
-				<a href="/campgrounds"><i class="fa fa-angle-left back" aria-hidden="true"></i> Back</a>
+
 			</div>
 	</div>
 

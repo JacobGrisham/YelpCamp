@@ -3,11 +3,14 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-12 col-md-9 new-edit-forms">
-			<h2 class="text-center title-font">New Review: <%= campground.name %></h2>
-			<form action="/campgrounds/<%= campground._id %>/reviews" method="POST">
-				<div class="form-group opaque-background p-3">
+			<form class="new-edit-forms opaque-background" action="/campgrounds/<%= campground._id %>/reviews" method="POST">
+				
+				<div class="form-group p-3">
+					
+					<h2 class="text-center title-font">New Review: <%= campground.name %></h2>
+					
 					<label for="rating">Leave a rating:</label>
-					<fieldset class="starability-basic form-group" id="rating">
+					<fieldset class="starability-basic form-group d-flex flex-row justify-content-evenly" id="rating">
 						<div>
 							<input type="radio" id="first-rate5" name="review[rating]" value="5" checked />
 							<label for="first-rate5" title="5 stars - Amazing" class="bg-warning rounded-pill p-1">
@@ -40,14 +43,17 @@
 						</div>
 					</fieldset>
 				</div>
+				
 				<div class="form-group">
 					<textarea class="form-control" type="text" name="review[text]" placeholder="Write a review for this campground..." rows="5"></textarea>
 				</div>
-				<div class="form-group">
-					<button class="btn btn-lg btn-success btn-block">Submit!</button>
+				
+				<div class="form-group mt-2">
+					<button class="btn btn-lg btn-success btn-block">Add Review!</button>
 				</div>
+				
+				<a href="/campgrounds/<%= campground._id %>" class="mr-4 btn btn-sm btn-success mt-4"><i class="fa fa-angle-left text-white" aria-hidden="true"></i> Back</a>
 			</form>
-			<a href="/campgrounds/<%= campground._id %>"><i class="fa fa-angle-left back" aria-hidden="true"></i> Back</a>
 		</div>
 	</div>
 </div>
