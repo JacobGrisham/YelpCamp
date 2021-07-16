@@ -1,3 +1,6 @@
+<div align="center">
+  <img width="200" src="public/stylesheets/android-chrome-512x512.png" alt="YelpCamp logo">
+
 # [YelpCamp](https://www.yelpcamp.app/)
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://www.yelpcamp.app/)
 ![Security Headers](https://img.shields.io/security-headers?url=https%3A%2F%2Fwww.yelpcamp.app)
@@ -6,6 +9,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/6272d48144774479b06e9b4b2caea0d6)](https://www.codacy.com/gh/JacobGrisham/YelpCamp/dashboard?utm_source=github.com&utm_medium=referral&utm_content=JacobGrisham/YelpCamp&utm_campaign=Badge_Coverage)
 [![CircleCI](https://img.shields.io/circleci/build/github/JacobGrisham/YelpCamp)](https://app.circleci.com/pipelines/github/JacobGrisham/YelpCamp)
 ![David](https://img.shields.io/david/jacobgrisham/yelpcamp)
+ </div>
 
 ## 🎥 Walkthrough on Youtube
 [<img src="public/stylesheets/youtube-thumbnail.png" width="100%">](https://youtu.be/9IqcgAHhJ8k)
