@@ -57,10 +57,12 @@
 /* Bringing the navbar to the very top to avoid fade effect on it */
 #navbar {
 	z-index: 3;
+	opacity: 0.5;
 }
 
-.navbar-light {
-	background-color: #e3f2fd;
+#navbar:hover {
+	opacity: 1;
+	transition: 0.3s;
 }
 
 
@@ -104,14 +106,15 @@
 	color: white;
 }
 
-/* Coloring heart icon red */
-.heart {
-	color: red;
-}
-
 /* footer properties */
 .footer {
 	font-size: .75rem;
+	background-color: rgb(122, 150, 88);
+}
+
+.footer p svg {
+	height: 16px;
+    width: 20px;
 }
 
 .photo-link {

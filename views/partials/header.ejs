@@ -48,23 +48,23 @@
 	<body class="site">
 		<main class="site-content body-font">
 			<!-- NAVBAR -->
-			<nav class="navbar sticky-top navbar-expand navbar-light mb-4" id="navbar">
+			<nav class="navbar sticky-top navbar-expand navbar-light bg-light mb-4 p-3" id="navbar">
 				<div class="container-fluid">
 					<a class="navbar-brand logo" href="/">YelpCamp</a>
 					<ul class="navbar-nav">
 						<% if(!currentUser){ %>
 						<li class="nav-item">
-							<a class="nav-link btn btn-primary text-light" href="/register">Sign Up</a>
+							<a class="nav-link btn btn-outline-success" href="/login">Login</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link btn .btn-outline-primary" href="/login">Login</a>
+							<a class="nav-link btn btn-success" href="/register">Sign Up</a>
 						</li>
 						<% } else { %>
 						<li class="nav-item">
-							<a class="nav-link btn .btn-outline-primary"><i class="fa fa-user add" aria-hidden="true"></i> <%= currentUser.username %></a>
+							<a class="nav-link btn btn-outline-success"><i class="fa fa-user add" aria-hidden="true"></i> <%= currentUser.username %></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link btn .btn-outline-primary" href="/logout">Logout</a>
+							<a class="nav-link btn btn-outline-success" href="/logout">Logout</a>
 						</li>
 						<% } %>
 					</ul>
