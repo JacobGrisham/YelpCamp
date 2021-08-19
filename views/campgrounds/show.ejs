@@ -1,15 +1,15 @@
 <%- include ("../partials/header") %>
-	<div class="container">
+	<div class="container text-white">
 		<!-- CAMPGROUND INFO AND USER SECTION -->
 		<div class="row" id="campground-container">
 			<div class="col-md-9">
-				<div class="card p-3 mb-4">
+				<div class="card p-3 mb-4 dark-brown">
 					<img src="<%= campground.image %> " class="img-fluid rounded">
 					<div>
 						<h4 class="text-right mt-2">$<%= campground.price %>/night</h4>
 						<h1 class="title-font"><a><%= campground.name %></a></h1>
 						<p><%= campground.description %></p>
-						<p>Submitted by <strong><a href="/users/<%= campground.author.id %>"><%= campground.author.username %></a></strong> on 
+						<p>Submitted by <strong><a class="link-light" href="/users/<%= campground.author.id %>"><%= campground.author.username %></a></strong> on 
 							<em> <%= moment(campground.createdAt).format("dddd, MMMM Do YYYY")%></em>
 						</p>
 						<% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
@@ -27,26 +27,26 @@
 			<div class="col-md-3 mb-4 d-flex flex-column">
 				<div class="card border border-white mb-2" id="map"></div>
 				<div class="mb-2">
-					<a href="https://www.accuweather.com/en/world-weather" class="btn btn-light show-btn"><i class="fa fa-sun-o" aria-hidden="true"></i> Weather</a>
+					<a href="https://www.accuweather.com/en/world-weather" class="btn light-brown text-white show-btn"><i class="fa fa-sun-o add" aria-hidden="true"></i> Weather</a>
 				</div>
 				<div class="mb-2">
-					<a href="https://ngmdb.usgs.gov/topoview/viewer/#4/39.98/-100.06" class="btn btn-light show-btn"><i class="fa fa-map" aria-hidden="true"></i> Topo Map</a>
+					<a href="https://ngmdb.usgs.gov/topoview/viewer/#4/39.98/-100.06" class="btn light-brown text-white show-btn"><i class="fa fa-map add" aria-hidden="true"></i> Topo Map</a>
 				</div>
 				<div class="mb-2">
-					<a href="https://www.rei.com/h/camping-and-hiking" class="btn btn-light show-btn"><i class="fa fa-binoculars" aria-hidden="true"></i> Gear Up</a>
+					<a href="https://www.rei.com/h/camping-and-hiking" class="btn light-brown text-white show-btn"><i class="fa fa-binoculars add" aria-hidden="true"></i> Gear Up</a>
 				</div>
 			</div>
 		</div>
 		<!-- REVIEWS SECTION -->
 		<div class="row mt-5">
 			<div class="col-12 d-flex justify-content-start mb-4">
-				<div class="card col-12 col-md-9 bg-light p-3">
+				<div class="card col-12 col-md-9 dark-brown p-3">
 					<div class="d-flex flex-column">
 						<!-- DISPLAY REVIEW SECTION -->
 						<% if (campground.rating === 0) { %>
 							<h5>Be the first to write a review!</h5>
 							<span>
-								<a class="btn btn-success float-right <% if (currentUser && campground.reviews.some(function (review) {return review.author.id.equals(currentUser._id)})) { %> disabled <% } %>" href="/campgrounds/<%= campground._id %>/reviews/new">
+								<a class="btn light-brown text-white float-right <% if (currentUser && campground.reviews.some(function (review) {return review.author.id.equals(currentUser._id)})) { %> disabled <% } %>" href="/campgrounds/<%= campground._id %>/reviews/new">
 									Add Review <i class="fa fa-pencil add" aria-hidden="true"></i></a>
 							</span>
 					</div>
@@ -64,17 +64,17 @@
 						</p>
 						<!-- ADD REVIEW -->
 						<span>
-							<a class="btn btn-success float-right <% if (currentUser && campground.reviews.some(function (review) {return review.author.id.equals(currentUser._id)})) { %> disabled <% } %>" href="/campgrounds/<%= campground._id %>/reviews/new">
+							<a class="btn light-brown text-white float-right <% if (currentUser && campground.reviews.some(function (review) {return review.author.id.equals(currentUser._id)})) { %> disabled <% } %>" href="/campgrounds/<%= campground._id %>/reviews/new">
 								Add Review <i class="fa fa-pencil add" aria-hidden="true"></i></a>
 						</span>
 						<!-- SEE ALL REVIEWS -->
-						<span class="float-right"><a href="/campgrounds/<%= campground._id %>/reviews"><i class="fa fa-search" aria-hidden="true"></i> See all reviews</a></span>
+						<span class="float-right"><a class="link-light" href="/campgrounds/<%= campground._id %>/reviews"><i class="fa fa-search add" aria-hidden="true"></i> See all reviews</a></span>
 						<!-- DISPLAY RECENT REVIEWS -->
 						<p><h5>Recent reviews:</h5></p>
 					</div>
 					<hr class="mt-0">
 					<% campground.reviews.slice(0, 5).forEach(function(review){ %>
-					<div class="card mx-1 mb-2">
+					<div class="card mx-1 mb-2 light-brown">
 						<div class="card-body">
 							<p class="float-right"><em><%= moment(review.createdAt).fromNow() %></em></p>
 							<div class="card-title">
@@ -103,12 +103,12 @@
 		<!-- COMMENT SECTION -->
 		<div class="row">
 			<div class="col-12 d-flex justify-content-start mb-4">
-				<div class="card col-12 col-md-9 bg-light p-3">
+				<div class="card col-12 col-md-9 p-3 dark-brown">
 					<% if (campground.comments === undefined || campground.comments.length == 0) { %>
 					<div class="d-flex justify-content-between">
 						<h5>Be the first to write a comment!</h5>
 						<div>
-							<a href="/campgrounds/<%= campground._id %>/comments/new" class="btn btn-success">Add Comment <i class="fa fa-comment add" aria-hidden="true"></i></a>
+							<a href="/campgrounds/<%= campground._id %>/comments/new" class="btn light-brown text-white">Add Comment <i class="fa fa-comment add" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
@@ -116,13 +116,13 @@
 		</div>
 					<% } else { %>
 					<div class="text-right">
-						<a href="/campgrounds/<%= campground._id %>/comments/new" class="btn btn-success">Add Comment <i class="fa fa-comment add" aria-hidden="true"></i></a>
+						<a href="/campgrounds/<%= campground._id %>/comments/new" class="btn light-brown text-white">Add Comment <i class="fa fa-comment add" aria-hidden="true"></i></a>
 					</div>
 					<hr>
 				<% campground.comments.forEach(function(comment){ %>
 					<div class="row">
 						<div class="col-12 mb-2">
-							<div class="card">
+							<div class="card light-brown">
 								<div class="card-body">
 									<p class="float-right"><em><%= moment(comment.createdAt).fromNow() %></em></p>
 									<p class="card-title"><strong><%= comment.author.username %></a></strong></p>

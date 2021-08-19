@@ -46,25 +46,42 @@
 	</head>
 
 	<body class="site">
-		<main class="site-content body-font">
+		<main class="site-content body-font text-white">
 			<!-- NAVBAR -->
-			<nav class="navbar sticky-top navbar-expand navbar-light bg-light mb-4 p-3" id="navbar">
+			<nav class="navbar sticky-top navbar-expand mb-4 p-3" id="navbar">
 				<div class="container-fluid">
-					<a class="navbar-brand logo" href="/">YelpCamp</a>
-					<ul class="navbar-nav">
+					<ul class="navbar-nav w-100">
+						<li class="nav-item me-auto">
+							<div class="wood-btn">
+								<img class="wood-arrow flip-horizontally" src="/stylesheets/button-arrow.svg">
+								<a class="navbar-brand logo wood-sign text-white" style="margin-left: 1rem" href="/">YelpCamp</a>	
+							</div>
+						</li>
 						<% if(!currentUser){ %>
 						<li class="nav-item">
-							<a class="nav-link btn btn-outline-success" href="/login">Login</a>
+							<div class="wood-btn mx-4">
+								<img class="wood-arrow flip-horizontally" src="/stylesheets/button-arrow.svg">
+								<a class="nav-link link-light px-4 py-2" href="/login">Login</a>	
+							</div>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link btn btn-success" href="/register">Sign Up</a>
+							<div class="wood-btn mx-4">
+								<img class="wood-arrow" src="/stylesheets/button-arrow.svg">
+								<a class="nav-link link-light px-4 py-2" href="/register">Sign Up</a>
+							</div>
 						</li>
 						<% } else { %>
 						<li class="nav-item">
-							<a class="nav-link btn btn-outline-success"><i class="fa fa-user add" aria-hidden="true"></i> <%= currentUser.username %></a>
+							<div class="wood-btn mx-4">
+								<img class="wood-arrow flip-horizontally" src="/stylesheets/button-arrow.svg">
+								<a class="nav-link link-light px-4 py-2"><i class="fa fa-user add" aria-hidden="true"></i> <%= currentUser.username %></a>
+							</div>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link btn btn-outline-success" href="/logout">Logout</a>
+							<div class="wood-btn mx-4">
+								<img class="wood-arrow" src="/stylesheets/button-arrow.svg">
+								<a class="nav-link link-light px-4 py-2" href="/logout">Logout</a>
+							</div>
 						</li>
 						<% } %>
 					</ul>

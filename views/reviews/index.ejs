@@ -2,7 +2,7 @@
 
 <div class="container my-5">
 	<div class="row">
-		<div class="col-md-12 opaque-background">
+		<div class="col-md-12 dark-brown p-3">
 			<h2 class="text-center title-font">Review Page: <%= campground.name %></h2>
 			<div class="thumbnail">
 				<div class="caption-full">
@@ -23,7 +23,7 @@
 					<p><h5>All reviews for this campground:</h5></p>
 					<hr class="mt-0">
 					<div>
-						<a class="btn btn-success <% if (currentUser && campground.reviews.some(function (review)
+						<a class="btn light-brown text-white <% if (currentUser && campground.reviews.some(function (review)
 						{return review.author.id.equals(currentUser._id)})) { %> disabled <% } %>" href="/campgrounds/<%= campground._id %>/reviews/new">
 						Add Review <i class="fa fa-pencil add" aria-hidden="true"></i>
 						</a>
@@ -55,7 +55,7 @@
 					<% }); %>
 					<% } %>
 					<div style="margin-top: 10px;">
-						<a href="/campgrounds/<%= campground._id %>"><i class="fa fa-angle-left back" aria-hidden="true"></i> Back</a>
+						<a class="link-light" href="/campgrounds/<%= campground._id %>"><i class="fa fa-angle-left back" aria-hidden="true"></i> Back</a>
 					</div>
 				</div>
 			</div>

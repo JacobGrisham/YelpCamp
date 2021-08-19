@@ -1,3 +1,6 @@
+/* -------------------------------------------------------- */
+/* Base */
+/* -------------------------------------------------------- */
 /* Inputs */
 :root {
   --input-padding-x: .75rem;
@@ -11,7 +14,7 @@
 
 .logo-lg {
 	font-family: 'Pacifico', cursive;
-	font-size: 5.5rem;
+	font-size: 5rem;
 }
 
 .logo-md {
@@ -25,6 +28,27 @@
 
 .body-font {
 	font-family: 'Montserrat', sans-serif;
+}
+
+/* Colors */
+
+.opaque-background {
+	background: linear-gradient(80deg, rgba(255,255,255,.9), rgba(255,255,255,0.3));
+	border-radius: 10px;
+}
+
+.wood {
+	background-image: url("button-square.svg");
+	background-size: auto;
+	background-repeat: repeat;
+}
+
+.light-brown {
+	background-color: #AC7D35;
+}
+
+.dark-brown {
+	background-color: #6E4821;
 }
 
 /* Background */
@@ -42,50 +66,75 @@
 	background-repeat: no-repeat;
 }
 
+/* -------------------------------------------------------- */
+/* Navbar */
+/* -------------------------------------------------------- */
+/* Bringing the navbar to the very top to avoid fade effect on it */
+#navbar {
+	z-index: 3;
+}
+
+/* -------------------------------------------------------- */
+/* Landing */
+/* -------------------------------------------------------- */
 .landing-header {
 	z-index: 1;
 	text-align: center;
 	margin-top: 3rem;
 	color: white;
+	position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
-.opaque-background {
-	background: linear-gradient(80deg, rgba(255,255,255,.9), rgba(255,255,255,0.3));
-	border-radius: 10px;
+.landing-header div {
+	z-index: 2;
+	position: absolute;
 }
 
-/* Bringing the navbar to the very top to avoid fade effect on it */
-#navbar {
-	z-index: 3;
-	opacity: 0.5;
+.landing-svg {
+	position: absolute;
+	top: 20%;
 }
 
-#navbar:hover {
-	opacity: 1;
-	transition: 0.3s;
-}
-
-
-/* Campground index page campground card positioning */
-#campground-container {
-	display: flex;
-	justify-content: space-around;
-}
-
+/* -------------------------------------------------------- */
+/* Buttons */
+/* -------------------------------------------------------- */
 .show-btn {
 	width: 100%;
 }
 
-/* Google Maps */
-#map {
-	height: 500px;
-    width: 100%;
+.wood-background-btn {
+	background-image: url("button-square.svg");
+	background-size: cover;
 }
 
-.signup-login {
-	margin: 5rem auto;
+.wood-btn {
+	position: relative;
 }
 
+.wood-arrow {
+	z-index: -1;
+	width: 7.5rem;
+	position: absolute;
+	filter: drop-shadow(4px 4px 3px #000);
+}
+
+.flip-horizontally {
+  transform: scaleX(-1);
+}
+
+/* Coloring plus icon white */
+.add {
+	color: white;
+}
+
+/* -------------------------------------------------------- */
+/* Reviews */
+/* -------------------------------------------------------- */
 /* Coloring the review stars yellow  */
 .checked {
     color: yellow;
@@ -95,26 +144,22 @@
 	display: none;
 }
 
-.new-edit-forms {
-	margin: 5rem auto;
-	padding: 2rem;
+/* -------------------------------------------------------- */
+/* Campground Index Page */
+/* -------------------------------------------------------- */
+
+.index-svg {
+	background-image: url("landing.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 20rem;
+	width: 25rem;
 }
 
-
-/* Coloring plus icon white */
-.add {
-	color: white;
-}
-
-/* footer properties */
-.footer {
-	font-size: .75rem;
-	background-color: rgb(122, 150, 88);
-}
-
-.footer p svg {
-	height: 16px;
-    width: 20px;
+/* Campground index page campground card positioning */
+#campground-container {
+	display: flex;
+	justify-content: space-around;
 }
 
 .photo-link {
@@ -129,27 +174,18 @@
 	transform: scale(1.25);
 }
 
-
-/* Bootstrap template login properties */
-.login-container {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-align: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+/* Google Maps */
+#map {
+	height: 500px;
+    width: 100%;
 }
 
-.form-signin {
-  width: 100%;
-  max-width: 420px;
-  padding: 15px;
-  margin: 0 auto;
+/* -------------------------------------------------------- */
+/* Forms */
+/* -------------------------------------------------------- */
+.new-edit-forms {
+	margin: 5rem auto;
+	padding: 2rem;
 }
 
 .form-label-group {
@@ -207,4 +243,46 @@
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
   color: #777;
+}
+
+/* -------------------------------------------------------- */
+/* Bootstrap template login properties */
+/* -------------------------------------------------------- */
+.login-container {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+
+.signup-login {
+	margin: 5rem auto;
+}
+
+/* -------------------------------------------------------- */
+/* Footer */
+/* -------------------------------------------------------- */
+.footer {
+	font-size: .75rem;
+}
+
+.footer p svg {
+	height: 16px;
+    width: 20px;
+	vertical-align: top;
 }

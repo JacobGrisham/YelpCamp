@@ -1,20 +1,20 @@
 <%- include ("../partials/header") %>
 
-<div class="container landing-page">
-	<header class="jumbotron opaque-background mb-4 p-5">
-		<div class="container">
+<div class="container">
+	<div class="row pt-5 justify-content-around">
+		<div class="col-6 index-svg p-5">
 			<h1 class="logo">Welcome to <span class="logo-md">YelpCamp</span>!</h1>
-			<p class="title-font mt-4">Upload your favorite campgrounds, rate the ones you've visited, and engage the community with comments. Click on each campground photo to learn more. Happy camping!</p>
-			<div class="d-flex">
-				<a href="/campgrounds/new" class="btn btn-outline-dark"><i class="fa fa-plus-circle" aria-hidden="true"></i> Campground </a>
-				<form action="/campgrounds" method="GET" class="form-inline">
-					<div class="form-group">
-						<input type="text" name="search" placeholder="Search" class="form-control">
-					</div>
-				</form>
-			</div>
+			<p class="title-font mt-4 ps-4">Upload your favorite campgrounds, rate the ones you've visited, and engage the community with comments.</p>
 		</div>
-	</header>
+		<div class="col-6 index-svg d-flex flex-column justify-content-evenly px-5">
+			<form action="/campgrounds" method="GET" class="form-inline">
+				<div class="form-group">
+					<input type="text" name="search" placeholder="Search" class="form-control p-3">
+				</div>
+			</form>
+			<a href="/campgrounds/new" class="btn light-brown text-white ms-3"><i class="fa fa-plus-circle add" aria-hidden="true"></i> Campground </a>
+		</div>
+	</div>
 
 	<div class="row text-center" id="campground-listings">
 		<div col-md-12>
@@ -24,7 +24,7 @@
 		</div>
 		<% campgrounds.forEach(function(campground){ %>
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-				<div class="card rounded">
+				<div class="card rounded dark-brown">
 					<a href="/campgrounds/<%= campground._id %>">
 						<div class="photo-link rounded-top">
 							<img src="<%= campground.image %>" class="img-fluid" alt="<%= campground.name %>"></img>
