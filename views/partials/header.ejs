@@ -47,6 +47,12 @@
 
 	<body class="site">
 		<main class="site-content body-font text-white">
+			
+			<!-- CLOUDS -->
+			<img class="cloud cloud-1" src="/stylesheets/cloud.svg">
+			<img class="cloud cloud-2" src="/stylesheets/cloud.svg">
+			<img class="cloud cloud-3" src="/stylesheets/cloud.svg">
+			
 			<!-- NAVBAR -->
 			<nav class="navbar sticky-top navbar-expand mb-4 p-3" id="navbar">
 				<div class="container-fluid">
@@ -55,6 +61,12 @@
 							<div class="wood-btn">
 								<img class="wood-arrow flip-horizontally" src="/stylesheets/button-arrow.svg">
 								<a class="navbar-brand logo wood-sign text-white" style="margin-left: 1rem" href="/">YelpCamp</a>	
+							</div>
+						</li>
+						<li class="nav-item">
+							<div class="mx-4 btn btn-toggle">
+								<i class="fa fa-moon-o night-color" aria-hidden="true"></i><span class="night-color">Night</span>
+								<span class="day-color">Day</span><i class="fa fa-sun-o day-color" aria-hidden="true"></i>
 							</div>
 						</li>
 						<% if(!currentUser){ %>

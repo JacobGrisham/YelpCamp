@@ -56,14 +56,53 @@
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
-	background: linear-gradient(160deg, rgb(208, 236, 253), rgb(232, 246, 254));
+	background-color: rgb(208, 236, 253);
+	overflow-x: hidden;
+}
+
+.nighttime {
+	background-color: rgb(2,17,41);
 }
 
 .site-content {
 	flex: 1;
-	background-image: url(YelpCamp_Optimized.svg);
+	background-image: url(site-background.svg);
 	background-position: bottom;
 	background-repeat: no-repeat;
+}
+
+.cloud {
+	animation: cloud-movement infinite linear;
+	position: fixed;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.cloud-1 {
+	width: 50rem;
+	top: 2%;
+	animation-duration: 200s;
+}
+
+.cloud-2 {
+	width: 30rem;
+	top: 9%;
+	animation-duration: 120s;
+}
+
+.cloud-3 {
+	width: 25rem;
+	top: 15%;
+	animation-duration: 60s;
+}
+
+@keyframes cloud-movement {
+	0% {
+    left: -10%;
+  }
+ 
+  100% {
+    left: 120%;
+  }
 }
 
 /* -------------------------------------------------------- */
@@ -72,6 +111,14 @@
 /* Bringing the navbar to the very top to avoid fade effect on it */
 #navbar {
 	z-index: 3;
+}
+
+.night-color { 
+	color: rgb(2,17,41);
+}
+
+.day-color {
+	color: rgb(208, 236, 253);
 }
 
 /* -------------------------------------------------------- */
@@ -154,6 +201,7 @@
 	background-repeat: no-repeat;
 	height: 20rem;
 	width: 25rem;
+	z-index: 1;
 }
 
 /* Campground index page campground card positioning */

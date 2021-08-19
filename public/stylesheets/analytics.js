@@ -4,7 +4,12 @@ window.dataLayer = window.dataLayer || [];
   gtag('js', new Date());
   gtag('config', 'UA-139163603-2');
 
+// Toggle Daytime and Nighttime
+const btn = document.querySelector('.btn-toggle');
 
+btn.addEventListener('click', function() {
+  document.body.classList.toggle('nighttime');  
+})
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
