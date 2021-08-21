@@ -56,6 +56,7 @@
 -	[Google Maps API](https://developers.google.com/maps/documentation)
 
 ## 🧭 Folder/File Structure
+(ignoring image and SEO files)
 ```
 |-- README.md
 |-- app.js
@@ -82,7 +83,6 @@
 |   |-- index.js
 |   `-- reviews.js
 `-- views
-    |-- Clouds.svg
     |-- campgrounds
     |   |-- edit.ejs
     |   |-- index.ejs
