@@ -2,7 +2,7 @@
 	<div class="container text-white">
 		<!-- CAMPGROUND INFO AND USER SECTION -->
 		<div class="row" id="campground-container">
-			<div class="col-md-9">
+			<div class="col-lg-9">
 				<div class="card p-3 mb-4 dark-brown">
 					<img src="<%= campground.image %> " class="img-fluid rounded">
 					<div>
@@ -13,7 +13,7 @@
 							<em> <%= moment(campground.createdAt).format("dddd, MMMM Do YYYY")%></em>
 						</p>
 						<% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
-							<div class="d-inline-flex float-right">
+							<div class="d-inline-flex float-end">
 								<a href="/campgrounds/<%= campground._id %>/edit" class="btn btn-outline-warning mr-2">Edit</a>
 								<form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
 									<button class="btn btn-outline-danger delete-button">Delete</button>
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			<!-- Tools Section -->
-			<div class="col-md-3 mb-4 d-flex flex-column">
+			<div class="col-lg-3 d-flex flex-column">
 				<div class="card border border-white mb-2" id="map"></div>
 				<div class="mb-2">
 					<a href="https://www.accuweather.com/en/world-weather" class="btn light-brown text-white show-btn"><i class="fa fa-sun-o add" aria-hidden="true"></i> Weather</a>
@@ -46,7 +46,7 @@
 						<% if (campground.rating === 0) { %>
 							<h5>Be the first to write a review!</h5>
 							<span>
-								<a class="btn light-brown text-white float-right <% if (currentUser && campground.reviews.some(function (review) {return review.author.id.equals(currentUser._id)})) { %> disabled <% } %>" href="/campgrounds/<%= campground._id %>/reviews/new">
+								<a class="btn light-brown text-white float-end <% if (currentUser && campground.reviews.some(function (review) {return review.author.id.equals(currentUser._id)})) { %> disabled <% } %>" href="/campgrounds/<%= campground._id %>/reviews/new">
 									Add Review <i class="fa fa-pencil add" aria-hidden="true"></i></a>
 							</span>
 					</div>
@@ -64,11 +64,11 @@
 						</p>
 						<!-- ADD REVIEW -->
 						<span>
-							<a class="btn light-brown text-white float-right <% if (currentUser && campground.reviews.some(function (review) {return review.author.id.equals(currentUser._id)})) { %> disabled <% } %>" href="/campgrounds/<%= campground._id %>/reviews/new">
+							<a class="btn light-brown text-white float-end <% if (currentUser && campground.reviews.some(function (review) {return review.author.id.equals(currentUser._id)})) { %> disabled <% } %>" href="/campgrounds/<%= campground._id %>/reviews/new">
 								Add Review <i class="fa fa-pencil add" aria-hidden="true"></i></a>
 						</span>
 						<!-- SEE ALL REVIEWS -->
-						<span class="float-right"><a class="link-light" href="/campgrounds/<%= campground._id %>/reviews"><i class="fa fa-search add" aria-hidden="true"></i> See all reviews</a></span>
+						<span class="float-end"><a class="link-light" href="/campgrounds/<%= campground._id %>/reviews"><i class="fa fa-search add" aria-hidden="true"></i> See all reviews</a></span>
 						<!-- DISPLAY RECENT REVIEWS -->
 						<p><h5>Recent reviews:</h5></p>
 					</div>
@@ -76,7 +76,7 @@
 					<% campground.reviews.slice(0, 5).forEach(function(review){ %>
 					<div class="card mx-1 mb-2 light-brown">
 						<div class="card-body">
-							<p class="float-right"><em><%= moment(review.createdAt).fromNow() %></em></p>
+							<p class="float-end"><em><%= moment(review.createdAt).fromNow() %></em></p>
 							<div class="card-title">
 								<%- '<span class="fa fa-star bg-warning rounded-pill p-1 mr-1 checked"></span>'.repeat(review.rating) %><%- '<span class="fa fa-star transparent"></span>'.repeat(5 - review.rating) %>
 								<div class="mt-1"><strong><%= review.author.username %></strong></div>
@@ -84,7 +84,7 @@
 							<div class="card-text">
 								<p style="text-align: justify; word-wrap: break-word;"><%= review.text %></p>
 							</div>
-							<div class="float-right d-inline-flex">
+							<div class="float-end d-inline-flex">
 								<% if(currentUser && review.author.id.equals(currentUser._id)){ %>
 									<a class="btn btn-xs btn-outline-warning mr-2"
 									   href="/campgrounds/<%=campground._id %>/reviews/<%=review._id %>/edit">Edit</a>
@@ -115,7 +115,7 @@
 			</div>
 		</div>
 					<% } else { %>
-					<div class="text-right">
+					<div class="ms-auto">
 						<a href="/campgrounds/<%= campground._id %>/comments/new" class="btn light-brown text-white">Add Comment <i class="fa fa-comment add" aria-hidden="true"></i></a>
 					</div>
 					<hr>
@@ -124,11 +124,11 @@
 						<div class="col-12 mb-2">
 							<div class="card light-brown">
 								<div class="card-body">
-									<p class="float-right"><em><%= moment(comment.createdAt).fromNow() %></em></p>
+									<p class="float-end"><em><%= moment(comment.createdAt).fromNow() %></em></p>
 									<p class="card-title"><strong><%= comment.author.username %></a></strong></p>
 									<p class="card-text"><%= comment.text %></p>
 									<% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
-									<div class="float-right d-inline-flex">
+									<div class="float-end d-inline-flex">
 										<a href="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit" class="btn btn-xs btn-outline-warning mr-2">Edit</a>
 										<form action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
 											<button class="btn btn-xs btn-outline-danger delete-button">Delete</button>

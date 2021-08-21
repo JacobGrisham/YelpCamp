@@ -121,6 +121,17 @@
 	color: rgb(208, 236, 253);
 }
 
+.wiggle:hover{
+  animation: wiggle 1s infinite;
+  animation-timing-function: ease-in-out; 
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(3deg); }
+  50% { transform: rotate(-3deg); }
+  100% { transform: rotate(3deg); }
+}
+
 /* -------------------------------------------------------- */
 /* Landing */
 /* -------------------------------------------------------- */
@@ -145,6 +156,53 @@
 .landing-svg {
 	position: absolute;
 	top: 20%;
+}
+
+.bounce:hover i {
+	animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+	0% {
+		transform: translateX(0%);
+	}
+
+	12% {
+		transform: translateX(10.89%);
+	}
+
+	24% {
+		transform: translateX(43.56%);
+	}
+
+	36% {
+		transform: translateX(108.01%);
+	}
+
+	54% {
+		transform: translateX(75.02%);
+	}
+
+	74% {
+		transform: translateX(108.37%);
+	}
+
+	82% {
+		transform: translateX(103.75%);
+	}
+
+	92% {
+		transform: translateX(109.34%);
+	}
+
+	96% {
+		transform: translateX(108.46%);
+	}
+
+	100% {
+		transform: translateX(109%);
+	}
+
 }
 
 /* -------------------------------------------------------- */
