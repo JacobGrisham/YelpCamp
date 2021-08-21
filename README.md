@@ -55,6 +55,56 @@
 -	Update, and Delete routes have authentication and authorization
 -	[Google Maps API](https://developers.google.com/maps/documentation)
 
+## 🧭 Folder/File Structure
+```
+|-- README.md
+|-- app.js
+|-- globalConfig.json
+|-- index.test.js
+|-- jest-mongodb-config.js
+|-- jest.config.js
+|-- middleware
+|   `-- index.js
+|-- models
+|   |-- campground.js
+|   |-- comment.js
+|   |-- review.js
+|   `-- user.js
+|-- package-lock.json
+|-- package.json
+|-- public
+|   `-- stylesheets
+|       |-- analytics.js
+|       |-- main.css
+|-- routes
+|   |-- campgrounds.js
+|   |-- comments.js
+|   |-- index.js
+|   `-- reviews.js
+`-- views
+    |-- Clouds.svg
+    |-- campgrounds
+    |   |-- edit.ejs
+    |   |-- index.ejs
+    |   |-- new.ejs
+    |   `-- show.ejs
+    |-- comments
+    |   |-- edit.ejs
+    |   `-- new.ejs
+    |-- landing.ejs
+    |-- login.ejs
+    |-- partials
+    |   |-- footer.ejs
+    |   `-- header.ejs
+    |-- register.ejs
+    |-- reviews
+    |   |-- edit.ejs
+    |   |-- index.ejs
+    |   `-- new.ejs
+    `-- users
+        `-- show.ejs
+```
+
 ## 🚀 Getting Started
 ### To run this project on your system:
 Create an .env file and add values to the following variables:
