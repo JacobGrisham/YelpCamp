@@ -3,22 +3,24 @@ require("dotenv").config();
 
 // CALLING DEPENDECNIES IN PACKAGE.JSON
 const express 			= require("express"),
-	app 				= express(),
-	bodyParser 			= require("body-parser"),
-	mongoose 			= require("mongoose"),
-	flash				= require("connect-flash"),
-	passport 			= require("passport"),
+	app 							= express(),
+	bodyParser 				= require("body-parser"),
+	mongoose 					= require("mongoose"),
+	flash							= require("connect-flash"),
+	passport 					= require("passport"),
 	LocalStrategy 		= require("passport-local"),
 	methodOverride		= require("method-override"),
-	Campground 			= require("./models/campground"),
-	Comment 			= require("./models/comment"),
-	User 				= require("./models/user"),
-	MongoClient			= require("mongodb"),
-	morgan				= require("morgan"),
-	cors				= require("cors"),
-	winston				= require("winston"),
-	helmet				= require("helmet"),
-	compression			= require("compression");
+	Campground 				= require("./models/campground"),
+	Comment 					= require("./models/comment"),
+	User 							= require("./models/user"),
+	MongoClient				= require("mongodb"),
+	morgan						= require("morgan"),
+	cors							= require("cors"),
+	winston						= require("winston"),
+	helmet						= require("helmet"),
+	compression				= require("compression");
+	Sentry 						= require("@sentry/node");
+	Tracing 					= require("@sentry/tracing");
 
 // CALLING ROUTES
 const 	commentRoutes 		= require("./routes/comments"),
@@ -102,11 +104,20 @@ app.use(function(req, res, next){
 	next();
 });
 
-
 app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds/:id/reviews", reviewRoutes);
+
+// Sentry Error Logging
+Sentry.init({
+  dsn: "https://0cd84944ffb44d55a8b354bda4bfa04e@o958423.ingest.sentry.io/6091936",
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+});
 
 const port = process.env.PORT || 3000;
 app.listen(port, process.env.IP, function(){
