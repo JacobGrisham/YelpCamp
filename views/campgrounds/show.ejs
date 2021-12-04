@@ -35,12 +35,26 @@
 				<div class="mb-2">
 					<a href="https://www.rei.com/h/camping-and-hiking" class="btn light-brown text-white show-btn"><i class="fa fa-binoculars add" aria-hidden="true"></i> Gear Up</a>
 				</div>
+				<div class="card border border-white mb-2">
+					<!-- Google AdSense -->
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1576072318340130"
+					crossorigin="anonymous"></script>
+					<ins class="adsbygoogle"
+					style="display:block"
+					data-ad-client="ca-pub-1576072318340130"
+					data-ad-slot="1885321990"
+					data-ad-format="auto"
+					data-full-width-responsive="true"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
 			</div>
 		</div>
 		<!-- REVIEWS SECTION -->
 		<div class="row mt-5">
-			<div class="col-12 d-flex justify-content-start mb-4">
-				<div class="card col-12 col-md-9 dark-brown p-3">
+			<div class="col-lg-9 mb-4">
+				<div class="card dark-brown p-3">
 					<div class="d-flex flex-column">
 						<!-- DISPLAY REVIEW SECTION -->
 						<% if (campground.rating === 0) { %>
@@ -102,8 +116,8 @@
 		</div>
 		<!-- COMMENT SECTION -->
 		<div class="row">
-			<div class="col-12 d-flex justify-content-start mb-4">
-				<div class="card col-12 col-md-9 p-3 dark-brown">
+			<div class="col-lg-9 mb-4">
+				<div class="card p-3 dark-brown">
 					<% if (campground.comments === undefined || campground.comments.length == 0) { %>
 					<div class="d-flex justify-content-between">
 						<h5>Be the first to write a comment!</h5>
@@ -175,8 +189,5 @@
   }
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY4KrSmNNdCc5jY1Kl77hXJYFzEwITSe0&callback=initMap"></script>
-
-<!-- Google AdSense Script -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1576072318340130" crossorigin="anonymous"></script>
 
 <%- include ("../partials/footer") %>
