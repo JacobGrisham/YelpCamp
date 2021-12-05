@@ -9,6 +9,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/6272d48144774479b06e9b4b2caea0d6)](https://www.codacy.com/gh/JacobGrisham/YelpCamp/dashboard?utm_source=github.com&utm_medium=referral&utm_content=JacobGrisham/YelpCamp&utm_campaign=Badge_Coverage)
 [![CircleCI](https://img.shields.io/circleci/build/github/JacobGrisham/YelpCamp)](https://app.circleci.com/pipelines/github/JacobGrisham/YelpCamp)
 ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/jacobgrisham/YelpCamp)
+![GitHub all releases](https://img.shields.io/github/downloads/jacobgrisham/yelpcamp/total)
  </div>
 
 ## 🎥 Walkthrough on Youtube
