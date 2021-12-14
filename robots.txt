@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /campgrounds/new
+Disallow: /campgrounds/*/edit
+Disallow: /campgrounds/*/comments/new
+Disallow: /campgrounds/*/comments/edit
+Disallow: /campgrounds/*/reviews/new
+Disallow: /campgrounds/*/reviews/edit
+Sitemap: https://www.yelpcamp.app/sitemap.xml
