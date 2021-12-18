@@ -113,6 +113,19 @@
 	z-index: 3;
 }
 
+.navbar-nav {
+	justify-content: flex-end;
+}
+
+.nav-item {
+	margin: 15px 0;
+}
+
+.campfire {
+	width: 50px;
+	height: auto;
+}
+
 .night-color { 
 	color: rgb(2,17,41);
 }
@@ -121,15 +134,40 @@
 	color: rgb(208, 236, 253);
 }
 
+.wood-arrow {
+	z-index: -1;
+	width: 7.5rem;
+	position: absolute;
+	filter: drop-shadow(4px 4px 3px #000);
+}
+
+.flip-horizontally {
+  transform: scaleX(-1);
+}
+
+.navbar-toggler {
+	z-index: 10;
+}
+
 .wiggle:hover{
   animation: wiggle 1s infinite;
   animation-timing-function: ease-in-out; 
+}
+
+.point:hover {
+	animation: point 2s infinite alternate-reverse;
 }
 
 @keyframes wiggle {
   0% { transform: rotate(3deg); }
   50% { transform: rotate(-3deg); }
   100% { transform: rotate(3deg); }
+}
+
+@keyframes point {
+	0% { transform: translateX(-5px); }
+  50% { transform: translateX(0); }
+	100% { transform: translateX(5px); }
 }
 
 /* -------------------------------------------------------- */
@@ -219,17 +257,6 @@
 
 .wood-btn {
 	position: relative;
-}
-
-.wood-arrow {
-	z-index: -1;
-	width: 7.5rem;
-	position: absolute;
-	filter: drop-shadow(4px 4px 3px #000);
-}
-
-.flip-horizontally {
-  transform: scaleX(-1);
 }
 
 /* Coloring plus icon white */
