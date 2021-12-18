@@ -23,10 +23,10 @@ const express 			= require("express"),
 	Tracing 					= require("@sentry/tracing");
 
 // CALLING ROUTES
-const 	commentRoutes 		= require("./routes/comments"),
-		reviewRoutes     	= require("./routes/reviews"),
-		campgroundRoutes 	= require("./routes/campgrounds"),
-		indexRoutes 		= require("./routes/index");
+const commentRoutes 		= require("./routes/comments"),
+	reviewRoutes     			= require("./routes/reviews"),
+	campgroundRoutes 			= require("./routes/campgrounds"),
+	indexRoutes 					= require("./routes/index");
 
 
 mongoose.set("useNewUrlParser", true);
