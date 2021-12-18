@@ -71,7 +71,7 @@
 							<span class="fa fa-star bg-warning rounded-pill p-1 <% if (campground.rating > 2.5) { %> checked <% } else { %> transparent <% } %>"></span>
 							<span class="fa fa-star bg-warning rounded-pill p-1 <% if (campground.rating > 3.5) { %> checked <% } else { %> transparent <% } %>"></span>
 							<span class="fa fa-star bg-warning rounded-pill p-1 <% if (campground.rating > 4.5) { %> checked <% } else { %> transparent <% } %>"></span>
-							<span class="ml-1"><%= campground.reviews.length %> reivews</span>
+							<span class="ml-1"><%= campground.reviews.length %> reviews</span>
 						</p>
 						<p class="mb-0">
 							Average rating: <strong><%= campground.rating.toFixed(2) %></strong>
@@ -113,6 +113,23 @@
 					<% } %>
 				</div>
 			</div>
+			<div class="col-lg-3 mb-4">
+				<div class="card border border-white mb-2">
+					<!-- Google AdSense -->
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1576072318340130"
+					crossorigin="anonymous"></script>
+					<ins class="adsbygoogle"
+						style="display:block"
+						data-ad-client="ca-pub-1576072318340130"
+						data-ad-slot="3194258567"
+						data-ad-format="auto"
+						data-full-width-responsive="true">
+					</ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+		 			</script>
+				</div>
+			</div>
 		</div>
 		<!-- COMMENT SECTION -->
 		<div class="row">
@@ -139,7 +156,7 @@
 							<div class="card light-brown">
 								<div class="card-body">
 									<p class="float-end"><em><%= moment(comment.createdAt).fromNow() %></em></p>
-									<p class="card-title"><strong><%= comment.author.username %></a></strong></p>
+									<p class="card-title"><strong><%= comment.author.username %></strong></p>
 									<p class="card-text"><%= comment.text %></p>
 									<% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
 									<div class="float-end d-inline-flex">

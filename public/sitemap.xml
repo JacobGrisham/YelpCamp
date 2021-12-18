@@ -3,10 +3,18 @@
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+      xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
+<url>
+    <loc>https://yelpcamp.app/</loc>
+    <image:image>
+      <image:loc>https://yelpcamp.app/images/YelpCampMetaImage.png</image:loc>
+      <image:title>YelpCamp</image:title>
+      <image:caption>Stylized screenshot of YelpCamp landing page</image:caption>
+    </image:image>
+  </url>
 <url>
   <loc>https://www.yelpcamp.app/</loc>
   <lastmod>2021-12-14T00:47:14+00:00</lastmod>

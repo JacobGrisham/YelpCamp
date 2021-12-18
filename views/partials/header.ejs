@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-cast-api-enabled="true">
 	<head>		
-		<title><%= title %></title>
-		
 		<!-- FAVICON -->
-		<link rel="icon" href="/stylesheets/favicon.ico" type="image/x-icon">
-		<link rel="shortcut icon" href="/stylesheets/favicon.ico">
-		<link rel="apple-touch-icon" sizes="180x180" href="/stylesheets/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/stylesheets/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/stylesheets/favicon-16x16.png">
-		<link rel="manifest" href="/stylesheets/site.webmanifest">
+		<link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="/favicon/favicon.ico">
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/favicon/site.webmanifest">
 		
     <!-- Primary Meta Tags -->
 		<meta charset="UTF-8">
@@ -17,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><%= title %></title>
     <meta name="author" content="Jacob Grisham">
-    <meta name="keywords" content="Jacob,Grisham,Jacob Grisham,engineer,software engineer,web developer,developer,full-stack,frontend,portfolio">
+    <meta name="keywords" content="Colt Steele, Web Developer Bootcamp, Udemy">
     <meta name="description" content="Upload your favorite campgrounds, rate the ones you've visited, and engage the community with comments. Click on each campground photo to learn more.">
 
 		<!-- Open Graph -->
@@ -26,8 +24,8 @@
 		<meta property="og:url" content="https://yelpcamp.app">
 		<meta property="og:title" content="YelpCamp">
 		<meta property="og:site_name" content="YelpCamp">
-		<meta property="og:image" content="https://yelpcamp.app/stylesheets/YelpCampMetaImage.png">
-		<meta property="og:image:secure_url" content="https://yelpcamp.app/stylesheets/YelpCampMetaImage.png">
+		<meta property="og:image" content="https://yelpcamp.app/images/YelpCampMetaImage.png">
+		<meta property="og:image:secure_url" content="https://yelpcamp.app/images/YelpCampMetaImage.png">
 		<meta property="og:image:type" content="image/png">
 		<meta property="og:image:height" content="1364">
 		<meta property="og:image:width" content="2436">
@@ -57,19 +55,19 @@
 		<main class="site-content body-font text-white">
 			
 			<!-- CLOUDS -->
-			<img class="cloud cloud-1" src="/stylesheets/cloud.svg" alt="Slow-moving animated cloud">
-			<img class="cloud cloud-2" src="/stylesheets/cloud.svg" alt="Faster-moving animated cloud">
-			<img class="cloud cloud-3" src="/stylesheets/cloud.svg" alt="Fastest moving animated cloud">
+			<img class="cloud cloud-1" src="/images/cloud.svg" alt="Slow-moving animated cloud">
+			<img class="cloud cloud-2" src="/images/cloud.svg" alt="Faster-moving animated cloud">
+			<img class="cloud cloud-3" src="/images/cloud.svg" alt="Fastest moving animated cloud">
 			
 			<!-- NAVBAR -->
 			<nav class="navbar sticky-top navbar-expand-md mb-4 p-3" id="navbar">
 				<div class="container-fluid">
 					<div class="wood-btn wiggle">
-						<img class="wood-arrow flip-horizontally" src="/stylesheets/button-arrow.svg" alt="wooden sign post as button">
+						<img class="wood-arrow flip-horizontally" src="/images/button-arrow.svg" alt="wooden sign post as button">
 						<a class="nav-link link-light logo wood-sign text-white" style="margin-left: 1rem" href="/">YelpCamp</a>	
 					</div>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<img class="campfire" src="/stylesheets/campfire.png" alt="campfire">
+						<img class="camp" src="/favicon/android-chrome-192x192.png" alt="camp">
 					</button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav w-100">
@@ -82,26 +80,26 @@
 							<% if(!currentUser){ %>
 							<li class="nav-item point">
 								<div class="wood-btn mx-4">
-									<img class="wood-arrow flip-horizontally" src="/stylesheets/button-arrow.svg" alt="wooden sign post as button">
+									<img class="wood-arrow flip-horizontally" src="/images/button-arrow.svg" alt="wooden sign post as button">
 									<a class="nav-link link-light px-4 py-2 title-font" href="/login">Login</a>	
 								</div>
 							</li>
 							<li class="nav-item point">
 								<div class="wood-btn mx-4">
-									<img class="wood-arrow" src="/stylesheets/button-arrow.svg" alt="wooden sign post as button">
+									<img class="wood-arrow" src="/images/button-arrow.svg" alt="wooden sign post as button">
 									<a class="nav-link link-light px-4 py-2 title-font" href="/register">Register</a>
 								</div>
 							</li>
 							<% } else { %>
 							<li class="nav-item">
 								<div class="wood-btn mx-4">
-									<img class="wood-arrow flip-horizontally" src="/stylesheets/button-arrow.svg" alt="wooden sign post as button">
+									<img class="wood-arrow flip-horizontally" src="/images/button-arrow.svg" alt="wooden sign post as button">
 									<a class="nav-link link-light px-4 py-2 title-font"><i class="fa fa-user add" aria-hidden="true"></i> <%= currentUser.username %></a>
 								</div>
 							</li>
 							<li class="nav-item point">
 								<div class="wood-btn mx-4">
-									<img class="wood-arrow" src="/stylesheets/button-arrow.svg" alt="wooden sign post as button">
+									<img class="wood-arrow" src="/images/button-arrow.svg" alt="wooden sign post as button">
 									<a class="nav-link link-light px-4 py-2 title-font" href="/logout">Logout</a>
 								</div>
 							</li>

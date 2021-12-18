@@ -38,7 +38,7 @@
 }
 
 .wood {
-	background-image: url("button-square.svg");
+	background-image: url("../images/button-square.svg");
 	background-size: auto;
 	background-repeat: repeat;
 }
@@ -66,7 +66,7 @@
 
 .site-content {
 	flex: 1;
-	background-image: url(site-background.svg);
+	background-image: url("../images/site-background.svg");
 	background-position: bottom;
 	background-repeat: no-repeat;
 }
@@ -121,7 +121,7 @@
 	margin: 15px 0;
 }
 
-.campfire {
+.camp {
 	width: 50px;
 	height: auto;
 }
@@ -251,7 +251,7 @@
 }
 
 .wood-background-btn {
-	background-image: url("button-square.svg");
+	background-image: url("../images/button-square.svg");
 	background-size: cover;
 }
 
@@ -281,7 +281,7 @@
 /* -------------------------------------------------------- */
 
 .index-svg {
-	background-image: url("landing.svg");
+	background-image: url("../images/landing.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	height: 20rem;
@@ -411,11 +411,11 @@
 /* Footer */
 /* -------------------------------------------------------- */
 .footer {
-	font-size: .75rem;
+	font-size: .85rem;
 }
 
 .footer p svg {
 	height: 16px;
-    width: 20px;
+  width: 20px;
 	vertical-align: top;
 }

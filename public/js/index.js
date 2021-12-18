@@ -3,6 +3,12 @@ document.getElementById('btn-toggle').addEventListener('click', function() {
   document.body.classList.toggle('nighttime');  
 }, false);
 
+// Copyright Date
+var date = new Date();
+var year = date.getFullYear();
+
+document.getElementById("date").innerHTML = year;
+
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
   'use strict'

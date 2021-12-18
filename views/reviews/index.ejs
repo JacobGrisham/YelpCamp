@@ -3,11 +3,11 @@
 <div class="container my-5">
 	<div class="row">
 		<div class="col-md-12 dark-brown p-3">
-			<h2 class="text-center title-font">Review Page: <%= campground.name %></h2>
+			<h1 class="text-center title-font">Review Page: <%= campground.name %></h1>
 			<div class="thumbnail">
 				<div class="caption-full">
 					<% if (campground.rating === 0) { %>
-					<h5><em>Be the first to write a review!</em></h5>
+					<h2><em>Be the first to write a review!</em></h2>
 					<% } else { %>
 					<p>
 						<span class="fa fa-star bg-warning rounded-pill p-1 checked"></span>
@@ -20,7 +20,7 @@
 					<p>
 						Current campground rating: <strong><%= campground.rating.toFixed(2) %></strong>
 					</p>
-					<p><h5>All reviews for this campground:</h5></p>
+					<p><h2>All reviews for this campground:</h2></p>
 					<hr class="mt-0">
 					<div>
 						<a class="btn light-brown text-white <% if (currentUser && campground.reviews.some(function (review)
