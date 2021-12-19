@@ -8,8 +8,8 @@ var middleware = require("../middleware"); // Note that the default file in a di
 // This is the landing page
 router.get("/", function(req,res){
 	res.render("landing", {
-		title: "YelpCamp: Jacob Grisham's Final Project in Colt Steele's Web Developer Bootcamp",
-		description: "YelpCamp is a full-stack web application built using Node.js, MongoDB, Bootstrap and hosted on Heroku, MongoDB Atlas, and Cloudflare. This is the final project from Colt Steele's Web Developer Bootcamp. This website is Jacob Grisham's unique take on the project.",
+		title: "YelpCamp: the Definitive Application Jacob Grisham",
+		description: "YelpCamp is a full-stack web application built using Node.js, MongoDB, Bootstrap and hosted on Heroku, MongoDB Atlas, and Cloudflare.",
 	});
 });
 
