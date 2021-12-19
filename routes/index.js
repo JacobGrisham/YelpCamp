@@ -8,8 +8,8 @@ var middleware = require("../middleware"); // Note that the default file in a di
 // This is the landing page
 router.get("/", function(req,res){
 	res.render("landing", {
-		title: "YelpCamp",
-		description: "YelpCamp is a full-stack web application built using Node.js, MongoDB, Bootstrap and hosted on Heroku, MongoDB Atlas, and Cloudflare. Final project from Colt Steele's Web Developer Bootcamp.",
+		title: "YelpCamp: Jacob Grisham's Final Project in Colt Steele's Web Developer Bootcamp",
+		description: "YelpCamp is a full-stack web application built using Node.js, MongoDB, Bootstrap and hosted on Heroku, MongoDB Atlas, and Cloudflare. This is the final project from Colt Steele's Web Developer Bootcamp. This website is Jacob Grisham's unique take on the project.",
 	});
 });
 
@@ -17,8 +17,8 @@ router.get("/", function(req,res){
 // Show register form
 router.get("/register", function(req, res){
 	res.render("register", {
-		title:"Register",
-		description: "Register for an account on YelpCamp to add campgrounds, comments, and reviews.",
+		title:"Register For a New Account",
+		description: "Register for an account on YelpCamp to add campgrounds, comments, and reviews. An account is required for authentication prior to creating content on this site.",
 	});
 });
 
@@ -40,7 +40,7 @@ router.post("/register", function(req, res){
 		if(err){
 			console.log(err);
 			return res.render("register", {
-				title:"Register",
+				title:"Register For a New Account",
 				"error": err.message,
 				description: "Register for an account on YelpCamp to add campgrounds, comments, and reviews.",
 			});
@@ -55,8 +55,8 @@ router.post("/register", function(req, res){
 // Show form
 router.get("/login", function(req, res){
 	res.render("login", {
-		title: "Login",
-		description: "Welcome back to YelpCamp! Login to edit or delete your campground posts, comments, and reviews.",
+		title: "Welcome Back to YelpCamp! Login",
+		description: "Welcome back to YelpCamp! Login to edit or delete your campground posts, comments, and reviews. You're authenticated to create content on this site and you're authorized to edit or delete your own content.",
 	});
 });
 

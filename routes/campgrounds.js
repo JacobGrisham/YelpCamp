@@ -128,7 +128,7 @@ router.get("/:id", function(req, res){
 			res.render("campgrounds/show", {
 				campground: foundCampground,
 				title: `${foundCampground.name}`,
-				description: `See more details for ${foundCampground.name}.`,
+				description: `${foundCampground.description}`,
 			});
 		}
 	});
