@@ -8,7 +8,8 @@ var middleware = require("../middleware"); // Note that the default file in a di
 // This is the landing page
 router.get("/", function(req,res){
 	res.render("landing", {
-		title:"YelpCamp"
+		title: "YelpCamp",
+		description: "YelpCamp is a full-stack web application built using Node.js, MongoDB, Bootstrap and hosted on Heroku, MongoDB Atlas, and Cloudflare. Final project from Colt Steele's Web Developer Bootcamp.",
 	});
 });
 
@@ -16,7 +17,8 @@ router.get("/", function(req,res){
 // Show register form
 router.get("/register", function(req, res){
 	res.render("register", {
-		title:"Register"
+		title:"Register",
+		description: "Register for an account on YelpCamp to add campgrounds, comments, and reviews.",
 	});
 });
 
@@ -39,7 +41,8 @@ router.post("/register", function(req, res){
 			console.log(err);
 			return res.render("register", {
 				title:"Register",
-				"error": err.message
+				"error": err.message,
+				description: "Register for an account on YelpCamp to add campgrounds, comments, and reviews.",
 			});
 		}
 		passport.authenticate("local")(req, res, function(){
@@ -52,7 +55,8 @@ router.post("/register", function(req, res){
 // Show form
 router.get("/login", function(req, res){
 	res.render("login", {
-		title:"Login"
+		title: "Login",
+		description: "Welcome back to YelpCamp! Login to edit or delete your campground posts, comments, and reviews.",
 	});
 });
 
@@ -86,8 +90,9 @@ router.get("/users/:id", function (req, res){
 			}
 		res.render("users/show", {
 			user: foundUser, 
-			title: "Profile",
-			campgrounds: campgrounds
+			title: `${foundUser.username}'s Campgrounds`,
+			campgrounds: campgrounds,
+			description: `Welcome ${foundUser.username}, to your account profile page where you can easily access all the campgrounds you've added.`,
 			});
 		});
 	});

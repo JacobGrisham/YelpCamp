@@ -40,7 +40,8 @@ router.get("/", function(req,res){
 				res.render("campgrounds/index", {
 					campgrounds:allCampgrounds,
 					title: "No Campgrounds",
-					noMatch: noMatch
+					noMatch: noMatch,
+					description: "Bummer, looks like that campground isn't listed here on YelpCamp.",
 				});
 				// "campgrounds" is the name of the data that we expect to find in that file
 				// recall that {"name we want":"data"}. We could name them differently, but they are commonly called the same thing. 
@@ -55,7 +56,8 @@ router.get("/", function(req,res){
 				res.render("campgrounds/index", {
 					campgrounds:allCampgrounds,
 					title: "All Campgrounds",
-					noMatch: noMatch
+					noMatch: noMatch,
+					description: "View all the campgrounds listed on YelpCamp. Happy camping!",
 				});
 			}
 		});
@@ -78,6 +80,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 		res.render("campgrounds/new", {
 		title: "New Campground",
 		campgroundLocationError: err.message,
+		description: "Add a new campground to YelpCamp. Thanks for helping to keep this site useful for the community!",
 	});
     }
     var lat = data[0].latitude;
@@ -104,6 +107,7 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
 	res.render("campgrounds/new", {
 		title: "New Campground",
 		campgroundLocationError: "",
+		description: "Add a new campground to YelpCamp. Thanks for helping to keep this site useful for the community!",
 	});
 });
 
@@ -123,7 +127,8 @@ router.get("/:id", function(req, res){
 			// render the show template with that campground
 			res.render("campgrounds/show", {
 				campground: foundCampground,
-				title: "Campground Details"
+				title: `${foundCampground.name}`,
+				description: `See more details for ${foundCampground.name}.`,
 			});
 		}
 	});
@@ -136,8 +141,9 @@ router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res){
 		// Third Render the edit page in order to access to the edit form
 		res.render("campgrounds/edit", {
 			campground: foundCampground,
-			title: `Edit Campground Info`,
+			title: `Edit ${foundCampground.name}`,
 			campgroundLocationError: "",
+			description: `Edit the information for ${foundCampground.name}. Perhaps there was a misspelling, an update in the campground site, or another reason.`,
 		});
 	});
 });	

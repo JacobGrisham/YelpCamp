@@ -14,7 +14,8 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
 		} else {
 			res.render("comments/new", {
 				campground: campground,
-				title: "Comment"
+				title: `Add Comment to ${campground.name}`,
+				description: `Engage the community by adding a comment to ${campground.name}`,
 			});
 		}
 	});
@@ -63,8 +64,9 @@ router.get("/:comment_id/edit", function(req, res){
 				} else {
 					res.render("comments/edit", {
 						campground: foundCampground,
-						title: "Edit Comment",
-						comment: foundComment
+						title: `Edit Comment for ${foundCampground.name}`,
+						comment: foundComment,
+						description: `Edit your comment for ${foundCampground.name}. Perhaps there was a misspelling or another reason.`,
 					});
 				}
 			});

@@ -16,7 +16,8 @@ router.get("/", function (req, res) {
         }
         res.render("reviews/index", {
 			campground: campground,
-			title: "Campground Reviews"
+			title: `Reviews for ${campground.name}`,
+            description: `See the complete list of reviews for ${campground.name}.`,
 		});
     });
 });
@@ -31,7 +32,8 @@ router.get("/new", middleware.isLoggedIn, middleware.checkReviewExistence, funct
         }
         res.render("reviews/new", {
 			campground: campground,
-			title: "Review Campground"
+			title: `Add a Review for ${campground.name}`,
+            description: `Let others know if you enjoyed your experience at ${campground.name}. Love it? Hate it? Leave a review.`,
 		});
     });
 });
@@ -76,7 +78,8 @@ router.get("/:review_id/edit", middleware.checkReviewOwnership, function (req, r
         res.render("reviews/edit", {
 			campground_id: req.params.id,
 			review: foundReview,
-			title: "Edit Your Review"
+			title: `Edit Your ${foundReview.rating} Star Rating`,
+            description: `Edit your ${foundReview.rating} star rating. Update the community with your most recent experience.`,
 		});
     });
 });
