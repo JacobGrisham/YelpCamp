@@ -317,7 +317,13 @@
 	background-image: url("../images/landing.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
-	z-index: 1;
+	z-index: 1;	
+}
+
+@media only screen and (max-width: 600px) {
+  .park-sign-svg {
+    background-image: none;
+  }
 }
 
 .default-park-sign-size {
