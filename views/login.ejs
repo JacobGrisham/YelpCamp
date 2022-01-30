@@ -1,48 +1,45 @@
-<%- include ("partials/header") %>
+<%- include ("partials/default-main") %>
 <div class="container">
 	<div class="row">
 			<div class="login-container signup-login">
-				
-				<form class="form-signin needs-validation" novalidate action="/login" method="POST">
+				<div class="col-6 park-sign-svg park-sign-size-for-login-and-register p-5">
+					<form class="form-signin needs-validation mt-4" novalidate action="/login" method="POST">
+						
+						<div class="form-label-group fs-4">
+							<input id="inputUsername" class="form-control fs-4 <% if(error.length > 0) { %> is-invalid <% } %>" type="text" name="username" placeholder="Happy Camper" required autofocus />
+							<label for="inputUsername">Username</label>
+							<div class="valid-feedback"></div>
+							<% if(error.length > 0) { %>
+							<div class="invalid-feedback">
+								<%= error %>
+							</div>
+							<% } else { %>
+							<div class="invalid-feedback">
+								Please provide username.
+							</div>
+							<% } %>
+						</div>
+						
+						<div class="form-label-group fs-4 mt-4">
+							<input id="inputPassword" class="form-control fs-4 <% if(error.length > 0) { %> is-invalid <% } %>" type="password" name="password" placeholder="Super secret..." required />
+							<label for="inputPassword">Password</label>
+							<div class="valid-feedback"></div>
+							<% if(error.length > 0) { %>
+							<div class="invalid-feedback">
+								<%= error %>
+							</div>
+							<% } else { %>
+							<div class="invalid-feedback">
+								Please provide password.
+							</div>
+							<% } %>
+						</div>
 					
-					<h1 class="text-center title-font">Welcome Back</h1>
-					
-					<div class="form-label-group">
-						<input id="inputUsername" class="form-control <% if(error.length > 0) { %> is-invalid <% } %>" type="text" name="username" placeholder="Happy Camper" required autofocus />
-						<label for="inputUsername">Username</label>
-						<div class="valid-feedback"></div>
-						<% if(error.length > 0) { %>
-						<div class="invalid-feedback">
-							<%= error %>
+						<div class="form-label-group mt-5">
+							<button type="submit" class="btn btn-lg light-brown rounded-pill title-font fs-4 text-white w-100">Login</button>
 						</div>
-						<% } else { %>
-						<div class="invalid-feedback">
-							Please provide username.
-						</div>
-						<% } %>
-					</div>
-					
-					<div class="form-label-group">
-						<input id="inputPassword" class="form-control <% if(error.length > 0) { %> is-invalid <% } %>" type="password" name="password" placeholder="Super secret..." required />
-						<label for="inputPassword">Password</label>
-						<div class="valid-feedback"></div>
-						<% if(error.length > 0) { %>
-						<div class="invalid-feedback">
-							<%= error %>
-						</div>
-						<% } else { %>
-						<div class="invalid-feedback">
-							Please provide password.
-						</div>
-						<% } %>
-					</div>
-				
-					<div class="form-label-group">
-						<button type="submit" class="btn btn-lg btn-block wood-background-btn title-font text-white w-100">Login</button>
-					</div>
-				
-					<p class="d-flex justify-content-between"><a href="/" class="mr-4 btn wood-background-btn title-font text-white"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</a><a href="/register" class="btn wood-background-btn title-font text-white">Register</a></p>
-				</form>
+					</form>
+				</div>
 			</div>
 	</div>
 

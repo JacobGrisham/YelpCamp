@@ -1,11 +1,28 @@
-<%- include ("partials/header") %>
-<div>
-	<div class="landing-header d-flex align-items-center flex-column mb-3">
-		<img class="landing-svg" src="/images/landing.svg" alt="Landing page background image">
-		<div>
- 			<h1 class="logo-lg my-5 pb-2">YelpCamp</h1>
-			<a href="/campgrounds" class="btn light-wood title-font fs-4 text-white rounded-pill bounce">View All Campgrounds<i class="ms-2 fa fa-angle-right" aria-hidden="true"></i></a>
-		</div>
-    </div>
-</div>
-<%- include ("partials/footer") %>
+<%- include ("partials/head-and-body") %>
+		<main class="body-font text-white" id="landing-main">
+			<div id="scene">
+				<img data-depth="0.2" src="/images/parallax/background.svg" alt="Mountains"></img>
+				<img data-depth="0.5" src="/images/parallax/midground.svg" alt="Hills and Trees"></img>
+				<img data-depth="0.7" src="/images/parallax/foreground.svg" alt="Trees, Grassland, Bunny, and Bear"></img>
+			</div>
+			<div>
+				<div class="landing-header d-flex align-items-center flex-column mb-3">
+					<img class="landing-svg" src="/images/landing.svg" alt="U.S. national park sign">
+					<div>
+						<h1 class="logo-lg my-5 pb-2">YelpCamp</h1>
+						<a href="/campgrounds" class="btn light-wood title-font fs-4 text-white rounded-pill bounce">View All Campgrounds<i class="ms-2 fa fa-angle-right" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139163603-2"></script>
+	<!-- Custom JS -->
+	<script type="text/javascript" src="/js/analytics.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+	<script>
+		var scene = document.getElementById('scene');
+		var parallaxInstance = new Parallax(scene);
+	</script>
+</html>

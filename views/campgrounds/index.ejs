@@ -1,12 +1,13 @@
-<%- include ("../partials/header") %>
+<%- include ("../partials/default-main") %>
+<%- include ("../partials/nav") %>
 
 <div class="container">
 	<div class="row pt-5 justify-content-around">
-		<div class="col-6 index-svg p-5">
+		<div class="col-6 park-sign-svg default-park-sign-size p-5">
 			<h1 class="logo">Welcome to <span class="logo-md">YelpCamp</span>!</h1>
 			<p class="title-font ps-4" style="line-height: 1; margin-top: 2.4rem;">Upload your favorite campgrounds, rate the ones you've visited, and engage the community with comments.</p>
 		</div>
-		<div class="col-6 index-svg d-flex flex-column justify-content-evenly px-5 pb-2">
+		<div class="col-6 park-sign-svg default-park-sign-size d-flex flex-column justify-content-evenly px-5 pb-2">
 			<form action="/campgrounds" method="GET" class="form-inline">
 				<div class="form-group">
 					<input type="text" name="search" placeholder="Search" class="form-control py-2 fs-4 title-font">
