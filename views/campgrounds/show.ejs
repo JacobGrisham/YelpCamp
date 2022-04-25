@@ -14,12 +14,12 @@
 							<em> <%= moment(campground.createdAt).format("dddd, MMMM Do YYYY")%></em>
 						</p>
 						<% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
-							<div class="d-inline-flex float-end">
+							<!-- <div class="d-inline-flex float-end">
 								<a href="/campgrounds/<%= campground._id %>/edit" class="btn btn-outline-warning mr-2">Edit</a>
 								<form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
 									<button class="btn btn-outline-danger delete-button">Delete</button>
 								</form>
-							</div>
+							</div> -->
 						<% } %>
 					</div>
 				</div>
