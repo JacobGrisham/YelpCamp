@@ -17,22 +17,22 @@
 		</div>
 	</div>
 
-	<div class="row text-center" id="campground-listings">
+	<div class="row text-center justify-content-around" id="campground-listings">
 		<div col-md-12>
 			<% if(noMatch !== null) { %>
 			<h2><%= noMatch %></h2>
 			<% } %>
 		</div>
 		<% campgrounds.forEach(function(campground){ %>
-			<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-				<div class="card rounded dark-brown">
+			<div class="col-lg-5 col-md-7 mb-5">
+				<div class="card campgrounds-card rounded">
 					<a href="/campgrounds/<%= campground._id %>">
 						<div class="photo-link rounded-top">
-							<img src="<%= campground.image %>" class="img-fluid" alt="<%= campground.name %>" />
+							<img data-src="<%= campground.image %>" class="campgrounds-image" alt="<%= campground.name %>" />
 						</div>
 					</a>
-					<div class="card-body p-1">
-						<h2 class="title-font"><%= campground.name %></h2>
+					<div class="card-body campgrounds-card-body p-4">
+						<h2 class="title-font mb-4"><%= campground.name %></h2>
 						<% if (campground.rating === 0) { %>
 							
 						<% } else { %>

@@ -122,4 +122,5 @@ Sentry.init({
 const port = process.env.PORT || 3000;
 app.listen(port, process.env.IP, function(){
 	console.log("Server is on");
+	console.log("Application is live at http://localhost:3000");
 	});

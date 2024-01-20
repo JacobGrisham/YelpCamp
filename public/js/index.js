@@ -1,15 +1,58 @@
+// --------------------------------------
 // Toggle Daytime and Nighttime
+// --------------------------------------
 document.getElementById('btn-toggle').addEventListener('click', function() {
   document.body.classList.toggle('nighttime');  
 }, false);
 
-// Copyright Date
-var date = new Date();
-var year = date.getFullYear();
+// --------------------------------------
+// Parallax
+// --------------------------------------
+window.onload = function () {
+  lax.init()
 
-document.getElementById("date").innerHTML = year;
+  // Add a driver that we use to control our animations
+  lax.addDriver('scrollY', function () {
+    return window.scrollY
+  });
+};
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+// --------------------------------------
+// Lazyloading Videos and Images
+// --------------------------------------
+const media = document.querySelectorAll(".campgrounds-image");
+
+function preloadMedia(img) {
+  const src = img.getAttribute("data-src");
+  if(!src) {
+    return;
+  }
+  img.src = src;
+}
+
+const mediaOptions = {
+  threshold: 0,
+  rootMargin: "0px 0px 300px 0px"
+};
+
+const mediaObserver = new IntersectionObserver((entries, mediaObserver) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      preloadMedia(entry.target);
+      mediaObserver.unobserve(entry.target);
+    }
+  });
+}, mediaOptions);
+
+media.forEach((image) => {
+  mediaObserver.observe(image);
+})
+
+// --------------------------------------
+// Disable form submissions if there are invalid fields
+// --------------------------------------
 (function () {
   'use strict'
 
@@ -29,3 +72,11 @@ document.getElementById("date").innerHTML = year;
       }, false)
     })
 })()
+
+// --------------------------------------
+// Copyright Date
+// --------------------------------------
+var date = new Date();
+var year = date.getFullYear();
+
+document.getElementById("date").innerHTML = year;

@@ -37,12 +37,6 @@
 	border-radius: 10px;
 }
 
-.wood {
-	background-image: url("../images/button-square.svg");
-	background-size: auto;
-	background-repeat: repeat;
-}
-
 .light-brown {
 	background-color: #AC7D35;
 }
@@ -52,23 +46,30 @@
 }
 
 /* Background */
-.site {
+.site-layout {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
-	background-color: rgb(208, 236, 253);
 	overflow-x: hidden;
 }
 
-.nighttime {
-	background-color: rgb(2,17,41);
+.default-background {
+	background-image: linear-gradient(rgb(158, 216, 233), rgb(228, 236, 273));
 }
 
-.site-background {
-	flex: 1;
-	background-image: url("../images/site-background.svg");
-	background-position: bottom;
-	background-repeat: no-repeat;
+#default-scene {
+	position: sticky;
+	top: 50%;
+}
+
+.landing-background {
+	background-image: url("../images/parallax/static-background.svg"), linear-gradient(rgb(158, 216, 233), rgb(228, 236, 273));
+	background-size: cover;
+	background-position: bottom left;
+}
+
+.nighttime {
+	background-image: linear-gradient(rgb(2,17,41), rgb(11, 37, 78));
 }
 
 .cloud {
@@ -138,7 +139,6 @@
 	z-index: -1;
 	width: 7.5rem;
 	position: absolute;
-	filter: drop-shadow(4px 4px 3px #000);
 }
 
 .flip-horizontally {
@@ -173,12 +173,6 @@
 /* -------------------------------------------------------- */
 /* Landing */
 /* -------------------------------------------------------- */
-
-#landing-main {
-	background-image: url("../images/parallax/static-background.svg");
-	background-position: bottom;
-	background-repeat: no-repeat;
-}
 
 #scene {
 	position: fixed;
@@ -283,11 +277,6 @@
 	width: 100%;
 }
 
-.wood-background-btn {
-	background-image: url("../images/button-square.svg");
-	background-size: cover;
-}
-
 .wood-btn {
 	position: relative;
 }
@@ -302,7 +291,7 @@
 /* -------------------------------------------------------- */
 /* Coloring the review stars yellow  */
 .checked {
-    color: yellow;
+  color: yellow;
 }
 /* Hiding review stars to prevent empty/black starts from showing */
 .transparent {
@@ -312,6 +301,24 @@
 /* -------------------------------------------------------- */
 /* Campground Index Page */
 /* -------------------------------------------------------- */
+
+.mountains, .hill, .grassland{
+	position: absolute;
+	z-index: -1;
+	right: 0;
+}
+
+.mountains {
+	top: 55%;
+}
+
+.hill {
+	top: 65%;
+}
+
+.grassland {
+	top: 74%;
+}
 
 .park-sign-svg {
 	background-image: url("../images/landing.svg");
@@ -342,16 +349,37 @@
 	justify-content: space-around;
 }
 
+.campgrounds-card {
+	display: block;
+}
+
 .photo-link {
 	overflow: hidden;
 }
 
 .photo-link img {
-	transition: transform .5s ease;
+	min-width: 100%;
+	max-height: 30rem;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	filter: blur(8px);
+	transition: filter .5s ease;
 }
 
 .photo-link:hover img {
-	transform: scale(1.25);
+	filter: none;
+}
+
+.campgrounds-card-body {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	text-align: right;
+}
+
+.photo-link:hover .campgrounds-card-body {
+	opacity: 0;
+	transition: opacity .5s ease;
 }
 
 /* Google Maps */
