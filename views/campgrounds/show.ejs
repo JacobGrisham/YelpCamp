@@ -7,10 +7,10 @@
 				<div class="card p-3 mb-4 dark-brown">
 					<img src="<%= campground.image %> " class="img-fluid rounded" alt="<%= campground.name %>">
 					<div>
-						<h4 class="text-right mt-2">$<%= campground.price %>/night</h4>
-						<h1 class="title-font"><a><%= campground.name %></a></h1>
-						<p><%= campground.description %></p>
-						<p>Submitted by <strong><a class="link-light" href="/users/<%= campground.author.id %>"><%= campground.author.username %></a></strong> on 
+						<h4 class="text-end mt-2">$<%= campground.price %>/night</h4>
+						<h1 class="title-font mb-4"><a><%= campground.name %></a></h1>
+						<p class="card-body light-brown rounded p-4"><%= campground.description %></p>
+						<p class="text-end">Submitted by <strong><a class="link-light" href="/users/<%= campground.author.id %>"><%= campground.author.username %></a></strong> on 
 							<em> <%= moment(campground.createdAt).format("dddd, MMMM Do YYYY")%></em>
 						</p>
 						<% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
