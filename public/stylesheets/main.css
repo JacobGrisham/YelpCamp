@@ -68,6 +68,12 @@
 	background-position: bottom left;
 }
 
+.default-site-background {
+	background-image: url("../images/site-background.svg"), linear-gradient(rgb(158, 216, 233), rgb(228, 236, 273));
+	background-size: cover;
+	background-position: bottom left;
+}
+
 .nighttime {
 	background-image: linear-gradient(rgb(2,17,41), rgb(11, 37, 78));
 }
@@ -79,26 +85,26 @@
 }
 
 .cloud-1 {
-	width: 50rem;
+	width: 70rem;
 	top: 2%;
 	animation-duration: 200s;
 }
 
 .cloud-2 {
-	width: 30rem;
+	width: 55rem;
 	top: 9%;
 	animation-duration: 120s;
 }
 
 .cloud-3 {
-	width: 25rem;
+	width: 45rem;
 	top: 15%;
 	animation-duration: 60s;
 }
 
 @keyframes cloud-movement {
 	0% {
-    left: -10%;
+    left: 10%;
   }
  
   100% {
