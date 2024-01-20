@@ -14,13 +14,13 @@ window.onload = function () {
   // Add a driver that we use to control our animations
   lax.addDriver('scrollY', function () {
     return window.scrollY
-  })
-}
+  });
+};
 
 // --------------------------------------
 // Lazyloading Videos and Images
 // --------------------------------------
-const media = document.querySelectorAll(".campgrounds-image")
+const media = document.querySelectorAll(".campgrounds-image");
 
 function preloadMedia(img) {
   const src = img.getAttribute("data-src");
@@ -36,7 +36,7 @@ const mediaOptions = {
 };
 
 const mediaObserver = new IntersectionObserver((entries, mediaObserver) => {
-  entries.forEach (entry => {
+  entries.forEach((entry) => {
     if (!entry.isIntersecting) {
       return;
     } else {
@@ -46,7 +46,7 @@ const mediaObserver = new IntersectionObserver((entries, mediaObserver) => {
   });
 }, mediaOptions);
 
-media.forEach(image => {
+media.forEach((image) => {
   mediaObserver.observe(image);
 })
 
