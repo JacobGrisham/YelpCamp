@@ -55,6 +55,7 @@
 
 .default-background {
 	background-image: linear-gradient(rgb(158, 216, 233), rgb(228, 236, 273));
+	justify-content: flex-end;
 }
 
 #default-scene {
@@ -491,6 +492,10 @@
 /* -------------------------------------------------------- */
 /* Footer */
 /* -------------------------------------------------------- */
+footer {
+	z-index: 2;
+}
+
 .footer {
 	font-size: .85rem;
 }
