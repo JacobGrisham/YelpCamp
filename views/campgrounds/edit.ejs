@@ -5,7 +5,7 @@
 	<div class="row justify-content-center">
 			<div class="col-12 col-md-9">
 				
-				<form class="new-edit-forms dark-brown needs-validation" novalidate action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+				<form id="javascript-validation" class="new-edit-forms dark-brown" novalidate action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
 					<!-- Note that the action="__" should equal the name of the post request url. -->
 					<!-- We use the name attribute in our route to grab the data from our request.body -->
 					
@@ -37,10 +37,10 @@
 					
 					<div class="form-group">
 						<label class="form-label" for="image">Image Url</label>
-						<input class="form-control" type="text" name="campground[image]" id="image" value="<%= campground.image %>" required>
+						<input id="image-url-validation" class="form-control" type="text" name="campground[image]" id="image" value="<%= campground.image %>" required>
 						<div class="valid-feedback"></div>
 						<div class="invalid-feedback">
-							Please provide photo of the campground.
+							Please provide photo of the campground by selecting a URL with ".jpg" at the end
 						</div>
 					</div>
 					

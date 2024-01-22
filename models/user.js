@@ -8,7 +8,7 @@ var UserSchema = new mongoose.Schema({
 	firstName: String,
 	lastName: String,
 	email: String,
-	isAdmin: {type: Boolean, defualt: false}
+	isAdmin: {type: Boolean, default: false}
 	// Note that you can put an "is" before the property name when delaing with booleans
 });
 

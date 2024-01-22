@@ -1,9 +1,12 @@
 // --------------------------------------
 // Toggle Daytime and Nighttime
 // --------------------------------------
-document.getElementById('btn-toggle').addEventListener('click', function() {
-  document.body.classList.toggle('nighttime');  
-}, false);
+var toggle = document.getElementById('btn-toggle')
+if (toggle) {
+  toggle.addEventListener('click', function() {
+    document.body.classList.toggle('nighttime');  
+  }, false);
+}
 
 // --------------------------------------
 // Parallax
@@ -53,25 +56,39 @@ media.forEach((image) => {
 // --------------------------------------
 // Disable form submissions if there are invalid fields
 // --------------------------------------
-(function () {
-  'use strict'
 
+window.addEventListener('load', function() {
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
+  var form = document.getElementById('javascript-validation')
 
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
+  if (form) {
+    // Loop over them and prevent submission
+    form.querySelectorAll('.form-control').forEach(input => {
+      input.addEventListener(('input'), () => {
+        var validImageURL = document.getElementById('image-url-validation').value.endsWith(".jpg" || ".jpeg" || ".png")
+        console.log(validImageURL)
+        if (input.checkValidity() || validImageURL) {
+          input.classList.remove('is-invalid')
+          input.classList.add('is-valid');
+        } else {
+          input.classList.remove('is-valid')
+          input.classList.add('is-invalid');
         }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
+        var is_valid = $('.form-control').length === $('.form-control.is-valid').length;
+        $("#submit").attr("disabled", !is_valid);
+      });
+      // Validate on submit:
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }
+});
+      
 
 // --------------------------------------
 // Copyright Date

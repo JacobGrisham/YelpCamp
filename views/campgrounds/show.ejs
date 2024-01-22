@@ -13,13 +13,13 @@
 						<p class="text-end">Submitted by <strong><a class="link-light" href="/users/<%= campground.author.id %>"><%= campground.author.username %></a></strong> on 
 							<em> <%= moment(campground.createdAt).format("dddd, MMMM Do YYYY")%></em>
 						</p>
-						<% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
-							<!-- <div class="d-inline-flex float-end">
-								<a href="/campgrounds/<%= campground._id %>/edit" class="btn btn-outline-warning mr-2">Edit</a>
+						<% if(currentUser && campground.author.id.equals(currentUser._id)|| currentUser.isAdmin) { %>
+							<div class="d-inline-flex float-end gap-3">
+								<a href="/campgrounds/<%= campground._id %>/edit" class="btn btn-outline-warning">Edit</a>
 								<form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
 									<button class="btn btn-outline-danger delete-button">Delete</button>
 								</form>
-							</div> -->
+							</div>
 						<% } %>
 					</div>
 				</div>
@@ -99,9 +99,9 @@
 							<div class="card-text">
 								<p style="text-align: justify; word-wrap: break-word;"><%= review.text %></p>
 							</div>
-							<div class="float-end d-inline-flex">
-								<% if(currentUser && review.author.id.equals(currentUser._id)){ %>
-									<a class="btn btn-xs btn-outline-warning mr-2"
+							<div class="float-end d-inline-flex gap-3">
+								<% if(currentUser && review.author.id.equals(currentUser._id) || currentUser.isAdmin){ %>
+									<a class="btn btn-xs btn-outline-warning"
 									   href="/campgrounds/<%=campground._id %>/reviews/<%=review._id %>/edit">Edit</a>
 									<form id="delete-form" action="/campgrounds/<%=campground._id %>/reviews/<%=review._id %>?_method=DELETE" method="POST">
 										<input type="submit" class="btn btn-xs btn-outline-danger delete-button" value="Delete">
@@ -159,9 +159,9 @@
 									<p class="float-end"><em><%= moment(comment.createdAt).fromNow() %></em></p>
 									<p class="card-title"><strong><%= comment.author.username %></strong></p>
 									<p class="card-text"><%= comment.text %></p>
-									<% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
-									<div class="float-end d-inline-flex">
-										<a href="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit" class="btn btn-xs btn-outline-warning mr-2">Edit</a>
+									<% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser.isAdmin){ %>
+									<div class="float-end d-inline-flex gap-3">
+										<a href="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit" class="btn btn-xs btn-outline-warning">Edit</a>
 										<form action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
 											<button class="btn btn-xs btn-outline-danger delete-button">Delete</button>
 										</form>
