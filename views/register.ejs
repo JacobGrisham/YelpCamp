@@ -3,7 +3,7 @@
 	<div class="row">
 			<div class="login-container signup-login">
 				<div class="park-sign-svg park-sign-size-for-login-and-register p-5">
-					<form class="form-signin needs-validation mt-4" novalidate action="/register" method="POST">
+					<form class="form-signin mt-4" action="/register" method="POST">
 						
 						<div class="form-label-group fs-4">
 							<input id="inputUsername" class="form-control fs-4 <% if(error.length > 0) { %> is-invalid <% } %>" type="text" name="username" placeholder="Happy Camper" required autofocus />
@@ -32,13 +32,13 @@
 						<!-- Uncomment below when you want to create admin account
 						Express.js doesn't come with an admin portal like Django does -->
 
-						<!-- <button class="btn btn-sm btn-success mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+						<!-- <button class="btn btn-sm btn-success mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" aria-expanded="false" aria-controls="collapse">
 							Optional
 							</button>
-						<div class="collapse" id="collapseExample">
-							<div class="form-label-group">
+						<div class="collapse" id="collapse">
+							<div class="form-label-group fs-4">
+								<input class="form-control fs-4" type="password" id="adminCode" name="adminCode" placeholder="Enter only if you have it" />
 								<label for="adminCode">Admin Code</label>
-								<input class="form-control" type="text" name="adminCode" placeholder="Enter only if you have it" />
 							</div>
 						</div> -->
 			
