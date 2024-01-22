@@ -33,10 +33,6 @@ router.post("/register", function(req, res){
 			avatar: req.body.avatar,
 			isAdmin: false
 		});
-	// Verify if user entered adminCode
-	if(req.body.adminCode === process.env.ADMIN_CODE){
-		newUser.isAdmin = true;
-	}
 	User.register(newUser, req.body.password, function(err, user){
 		if(err){
 			console.log(err);
