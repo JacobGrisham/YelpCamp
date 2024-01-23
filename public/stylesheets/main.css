@@ -103,6 +103,20 @@
 	animation-duration: 60s;
 }
 
+@media only screen and (max-width: 600px) {
+	.cloud-1 {
+		width: 50rem;
+	}
+
+	.cloud-2 {
+		width: 35rem;
+	}
+
+	.cloud-3 {
+		width: 25em;
+	}
+}
+
 @keyframes cloud-movement {
 	0% {
     left: 10%;
@@ -340,6 +354,16 @@
   }
 }
 
+
+@media only screen and (max-width: 600px) {
+	#campground-index-description {
+		margin-bottom: 4rem;
+	}
+	#campground-index-description p {
+		font-size: 2rem;
+	}
+}
+
 .default-park-sign-size {
 	height: 20rem;
 	width: 25rem;
@@ -393,6 +417,13 @@
 #map {
 	height: 500px;
     width: 100%;
+}
+
+/* -------------------------------------------------------- */
+/* User */
+/* -------------------------------------------------------- */
+#user-page {
+	height: 70vh;
 }
 
 /* -------------------------------------------------------- */
