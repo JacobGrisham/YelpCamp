@@ -54,7 +54,7 @@ router.get("/", function(req,res){
 				req.flash("error", "Sorry, something unexpected went wrong. Please let me know by sending an email to jacob.d.grisham@gmail.com");
 			} else {
 				res.render("campgrounds/index", {
-					campgrounds:allCampgrounds,
+					campgrounds:allCampgrounds.reverse(),
 					title: "All Campgrounds",
 					noMatch: noMatch,
 					description: "View all the campgrounds listed on YelpCamp. Happy camping!",
@@ -71,6 +71,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
   var name = req.body.name;
   var image = req.body.image;
   var desc = req.body.description;
+	var price = req.body.price;
   var author = {
       id: req.user._id,
       username: req.user.username
@@ -86,7 +87,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
     var lat = data[0].latitude;
     var lng = data[0].longitude;
     var location = data[0].formattedAddress;
-    var newCampground = {name: name, image: image, description: desc, author:author, location: location, lat: lat, lng: lng};
+    var newCampground = {name: name, image: image, description: desc, price:price, author:author, location: location, lat: lat, lng: lng};
     // Create a new campground and save to DB
     Campground.create(newCampground, function(err, newlyCreated){
         if(err){
@@ -141,6 +142,7 @@ router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res){
 		// Third Render the edit page in order to access to the edit form
 		res.render("campgrounds/edit", {
 			campground: foundCampground,
+			price: foundCampground.price,
 			title: `Edit ${foundCampground.name}`,
 			campgroundLocationError: "",
 			description: `Edit the information for ${foundCampground.name}. Perhaps there was a misspelling, an update in the campground site, or another reason.`,
