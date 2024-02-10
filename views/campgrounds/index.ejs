@@ -17,7 +17,7 @@
 		</div>
 	</div>
 
-	<div class="row text-center justify-content-around" id="campground-listings" style="z-index: 2;">
+	<div class="row text-center justify-content-around" id="campground-listings">
 		<div col-md-12>
 			<% if(noMatch !== null) { %>
 			<h2><%= noMatch %></h2>
@@ -25,7 +25,7 @@
 		</div>
 		<% campgrounds.forEach(function(campground){ %>
 			<div class="col-lg-5 col-md-7 mb-5">
-				<div class="card campgrounds-card rounded">
+				<div class="card campgrounds-card rounded" style="z-index: 2;">
 					<a href="/campgrounds/<%= campground._id %>">
 						<div class="photo-link rounded-top">
 							<img data-src="<%= campground.image %>" class="campgrounds-image" alt="<%= campground.name %>" />
